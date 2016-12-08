@@ -49,16 +49,20 @@ The modules are the following :</p>
 </pre></div>
 
 
-<p>Then in your application's build.gradle always add the core module:
-    :::java
-    compile 'com.tagcommander.lib:Core:4.0.0'</p>
+<p>Then in your application's build.gradle always add the core module:</p>
+<div class="codehilite"><pre><span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">tagcommander</span><span class="o">.</span><span class="na">lib</span><span class="o">:</span><span class="n">Core</span><span class="o">:</span><span class="mf">4.0</span><span class="o">.</span><span class="mi">0</span><span class="err">&#39;</span>
+</pre></div>
+
+
 <p>And in addition to the core module you can add the other modules you need the same way. See each module's documentation for more specific information.</p>
-<p>For exemple:
-    :::java
-    compile 'com.tagcommander.lib:SDK:4.0.0'
-    compile 'com.tagcommander.lib:Segment:4.0.0'</p>
+<p>For exemple:</p>
+<div class="codehilite"><pre><span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">tagcommander</span><span class="o">.</span><span class="na">lib</span><span class="o">:</span><span class="n">SDK</span><span class="o">:</span><span class="mf">4.0</span><span class="o">.</span><span class="mi">0</span><span class="err">&#39;</span>
+<span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">tagcommander</span><span class="o">.</span><span class="na">lib</span><span class="o">:</span><span class="n">Segment</span><span class="o">:</span><span class="mf">4.0</span><span class="o">.</span><span class="mi">0</span><span class="err">&#39;</span>
+</pre></div>
+
+
 <h2 id="jar-file">Jar file</h2>
-<p>If you'd rather use the jar files directly in your project, you can get them from our github account: https://github.com/TagCommander/AndroidModules</p>
+<p>If you'd rather use the jar files directly in your project, you can get them from our github account: https://github.com/TagCommander/Android</p>
 <div class="warning"></div>
 
 <blockquote>
@@ -67,8 +71,6 @@ The modules are the following :</p>
 <p>After you downloaded the modules you need, add them to your libs folder and either ask gradle to compile with all the jars in your lib directory or directly with the chosen files.</p>
 <div class="codehilite"><pre><span class="c1">// All the jars.</span>
 <span class="n">compile</span> <span class="nf">fileTree</span><span class="o">(</span><span class="n">dir</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">libs</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">include</span><span class="o">:</span> <span class="err">&#39;</span><span class="o">*.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
-
-<span class="o">:::</span><span class="n">java</span>
 <span class="c1">// Specific files</span>
 <span class="n">compile</span> <span class="nf">files</span><span class="o">(</span><span class="err">&#39;</span><span class="n">libs</span><span class="o">/</span><span class="n">TCCore4</span><span class="o">.</span><span class="mf">0.0</span><span class="o">.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
 <span class="n">compile</span> <span class="nf">files</span><span class="o">(</span><span class="err">&#39;</span><span class="n">libs</span><span class="o">/</span><span class="n">TCSDK4</span><span class="o">.</span><span class="mf">0.0</span><span class="o">.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
@@ -77,7 +79,7 @@ The modules are the following :</p>
 
 
 <h2 id="aar-file">Aar file</h2>
-<p>If you'd rather use the aar files directly in your project, you can get them from our github account: https://github.com/TagCommander/AndroidModules</p>
+<p>If you'd rather use the aar files directly in your project, you can get them from our github account: https://github.com/TagCommander/Android</p>
 <div class="warning"></div>
 
 <blockquote>
@@ -111,6 +113,6 @@ The modules are the following :</p>
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 08/12/2016 14:24:34</p>
+<p>This documentation was generated on 08/12/2016 17:23:53</p>
 </body>
 </html>
