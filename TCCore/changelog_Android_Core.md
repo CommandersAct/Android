@@ -6,7 +6,12 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
-*4.0.0*
+*4.0.1 : 12/14 2016*
+
+	~ Updated CompileSDK, BuildTools, TargetSDK, appCompat and PlayServices versions.
+	~ Corrected warnings in Lint report.
+
+*4.0.0 : 12/12 2016*
 
 	+ Added JCenter support
     + Separated all the core functions into a separated and reusable module.

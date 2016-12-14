@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="segments-implementation-guide">Segment's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>09/12/2016</em><br />
-Release version : <em>4.0.0</em></p>
+<p>Last update : <em>14/12/2016</em><br />
+Release version : <em>4.0.1</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -84,6 +84,6 @@ Release version : <em>4.0.0</em></p>
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 09/12/2016 14:57:47</p>
+<p>This documentation was generated on 14/12/2016 14:55:05</p>
 </body>
 </html>

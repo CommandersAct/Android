@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="res/logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>09/12/2016</em><br />
-Release version : <em>4.0.0</em></p>
+<p>Last update : <em>14/12/2016</em><br />
+Release version : <em>4.0.1</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -50,14 +50,14 @@ The modules are the following :</p>
 
 
 <p>Then in your application's build.gradle always add the core module:</p>
-<div class="codehilite"><pre><span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">tagcommander</span><span class="o">.</span><span class="na">lib</span><span class="o">:</span><span class="n">Core</span><span class="o">:</span><span class="mf">4.0</span><span class="o">.</span><span class="mi">0</span><span class="err">&#39;</span>
+<div class="codehilite"><pre><span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">tagcommander</span><span class="o">.</span><span class="na">lib</span><span class="o">:</span><span class="n">Core</span><span class="o">:</span><span class="mf">4.0</span><span class="o">.</span><span class="mi">1</span><span class="err">&#39;</span>
 </pre></div>
 
 
 <p>And in addition to the core module you can add the other modules you need the same way. See each module's documentation for more specific information.</p>
 <p>For exemple:</p>
-<div class="codehilite"><pre><span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">tagcommander</span><span class="o">.</span><span class="na">lib</span><span class="o">:</span><span class="n">SDK</span><span class="o">:</span><span class="mf">4.0</span><span class="o">.</span><span class="mi">0</span><span class="err">&#39;</span>
-<span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">tagcommander</span><span class="o">.</span><span class="na">lib</span><span class="o">:</span><span class="n">Segment</span><span class="o">:</span><span class="mf">4.0</span><span class="o">.</span><span class="mi">0</span><span class="err">&#39;</span>
+<div class="codehilite"><pre><span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">tagcommander</span><span class="o">.</span><span class="na">lib</span><span class="o">:</span><span class="n">SDK</span><span class="o">:</span><span class="mf">4.0</span><span class="o">.</span><span class="mi">1</span><span class="err">&#39;</span>
+<span class="n">compile</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">tagcommander</span><span class="o">.</span><span class="na">lib</span><span class="o">:</span><span class="n">Segment</span><span class="o">:</span><span class="mf">4.0</span><span class="o">.</span><span class="mi">1</span><span class="err">&#39;</span>
 </pre></div>
 
 
@@ -72,9 +72,9 @@ The modules are the following :</p>
 <div class="codehilite"><pre><span class="c1">// All the jars.</span>
 <span class="n">compile</span> <span class="nf">fileTree</span><span class="o">(</span><span class="n">dir</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">libs</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">include</span><span class="o">:</span> <span class="err">&#39;</span><span class="o">*.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
 <span class="c1">// Specific files</span>
-<span class="n">compile</span> <span class="nf">files</span><span class="o">(</span><span class="err">&#39;</span><span class="n">libs</span><span class="o">/</span><span class="n">TCCore4</span><span class="o">.</span><span class="mf">0.0</span><span class="o">.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
-<span class="n">compile</span> <span class="nf">files</span><span class="o">(</span><span class="err">&#39;</span><span class="n">libs</span><span class="o">/</span><span class="n">TCSDK4</span><span class="o">.</span><span class="mf">0.0</span><span class="o">.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
-<span class="n">compile</span> <span class="nf">files</span><span class="o">(</span><span class="err">&#39;</span><span class="n">libs</span><span class="o">/</span><span class="n">TCSegment4</span><span class="o">.</span><span class="mf">0.0</span><span class="o">.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
+<span class="n">compile</span> <span class="nf">files</span><span class="o">(</span><span class="err">&#39;</span><span class="n">libs</span><span class="o">/</span><span class="n">TCCore4</span><span class="o">.</span><span class="mf">0.1</span><span class="o">.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
+<span class="n">compile</span> <span class="nf">files</span><span class="o">(</span><span class="err">&#39;</span><span class="n">libs</span><span class="o">/</span><span class="n">TCSDK4</span><span class="o">.</span><span class="mf">0.1</span><span class="o">.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
+<span class="n">compile</span> <span class="nf">files</span><span class="o">(</span><span class="err">&#39;</span><span class="n">libs</span><span class="o">/</span><span class="n">TCSegment4</span><span class="o">.</span><span class="mf">0.1</span><span class="o">.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
 </pre></div>
 
 
@@ -99,9 +99,9 @@ The modules are the following :</p>
 
 
 <p>After you downloaded the modules you need, add them to your libs folder and ask gradle to compile with them.</p>
-<div class="codehilite"><pre><span class="n">compile</span> <span class="o">(</span><span class="n">name</span><span class="o">:</span><span class="err">&#39;</span><span class="n">TCCore</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.0</span><span class="o">.</span><span class="mi">0</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">ext</span><span class="o">:</span><span class="err">&#39;</span><span class="n">aar</span><span class="err">&#39;</span><span class="o">)</span>
-<span class="n">compile</span> <span class="o">(</span><span class="n">name</span><span class="o">:</span><span class="err">&#39;</span><span class="n">TCSDK</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.0</span><span class="o">.</span><span class="mi">0</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">ext</span><span class="o">:</span><span class="err">&#39;</span><span class="n">aar</span><span class="err">&#39;</span><span class="o">)</span>
-<span class="n">compile</span> <span class="o">(</span><span class="n">name</span><span class="o">:</span><span class="err">&#39;</span><span class="n">TCSegment</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.0</span><span class="o">.</span><span class="mi">0</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">ext</span><span class="o">:</span><span class="err">&#39;</span><span class="n">aar</span><span class="err">&#39;</span><span class="o">)</span>
+<div class="codehilite"><pre><span class="n">compile</span> <span class="o">(</span><span class="n">name</span><span class="o">:</span><span class="err">&#39;</span><span class="n">TCCore</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.0</span><span class="o">.</span><span class="mi">1</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">ext</span><span class="o">:</span><span class="err">&#39;</span><span class="n">aar</span><span class="err">&#39;</span><span class="o">)</span>
+<span class="n">compile</span> <span class="o">(</span><span class="n">name</span><span class="o">:</span><span class="err">&#39;</span><span class="n">TCSDK</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.0</span><span class="o">.</span><span class="mi">1</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">ext</span><span class="o">:</span><span class="err">&#39;</span><span class="n">aar</span><span class="err">&#39;</span><span class="o">)</span>
+<span class="n">compile</span> <span class="o">(</span><span class="n">name</span><span class="o">:</span><span class="err">&#39;</span><span class="n">TCSegment</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.0</span><span class="o">.</span><span class="mi">1</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">ext</span><span class="o">:</span><span class="err">&#39;</span><span class="n">aar</span><span class="err">&#39;</span><span class="o">)</span>
 </pre></div>
 
 
@@ -113,6 +113,6 @@ The modules are the following :</p>
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 09/12/2016 14:57:47</p>
+<p>This documentation was generated on 14/12/2016 14:55:05</p>
 </body>
 </html>
