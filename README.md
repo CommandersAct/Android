@@ -108,8 +108,8 @@ The modules are the following :</p>
 
 <h1 id="demo-applications">Demo Applications</h1>
 <p>You can check the demo showcasing our modules on github:</p>
-<p><a href="https://github.com/TagCommander/Tag-Demo/tree/master/Android">Tag Demo</a>
-<a href="https://github.com/TagCommander/Segment-Demo/tree/master/Android">Segment Demo</a></p>
+<p><a href="https://github.com/TagCommander/Tag-Demo/tree/master/Android">Tag Demo</a></p>
+<p><a href="https://github.com/TagCommander/Segment-Demo/tree/master/Android">Segment Demo</a></p>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="res/logo.png" /></p>
 <hr />
@@ -118,6 +118,6 @@ The modules are the following :</p>
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 20/12/2016 14:40:37</p>
+<p>This documentation was generated on 20/12/2016 15:01:13</p>
 </body>
 </html>

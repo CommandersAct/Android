@@ -29,6 +29,6 @@ Release version : <em>4.0.1</em></p>
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 20/12/2016 14:40:37</p>
+<p>This documentation was generated on 20/12/2016 15:01:13</p>
 </body>
 </html>
