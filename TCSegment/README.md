@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="segments-implementation-guide">Segment's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>14/12/2016</em><br />
+<p>Last update : <em>20/12/2016</em><br />
 Release version : <em>4.0.1</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -19,6 +19,7 @@ Release version : <em>4.0.1</em></p>
 <li><a href="#asking-for-the-list">Asking for the List</a></li>
 </ul>
 </li>
+<li><a href="#demo-application">Demo Application</a></li>
 <li><a href="#support-and-contacts">Support and contacts</a></li>
 </ul>
 </div>
@@ -76,6 +77,9 @@ Release version : <em>4.0.1</em></p>
 
 
 <p>If no segment are found or they were never fetched, the list will be empty and not null.</p>
+<h1 id="demo-application">Demo Application</h1>
+<p>To check an example of how to use this module, please check: </p>
+<p><a href="https://github.com/TagCommander/Segment-Demo/tree/master/Android">Segment Demo</a></p>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <hr />
@@ -84,6 +88,6 @@ Release version : <em>4.0.1</em></p>
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 14/12/2016 14:55:05</p>
+<p>This documentation was generated on 20/12/2016 11:53:23</p>
 </body>
 </html>

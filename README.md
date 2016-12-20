@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="res/logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>14/12/2016</em><br />
+<p>Last update : <em>20/12/2016</em><br />
 Release version : <em>4.0.1</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -18,6 +18,7 @@ Release version : <em>4.0.1</em></p>
 <li><a href="#aar-file">Aar file</a></li>
 </ul>
 </li>
+<li><a href="#demo-applications">Demo Applications</a></li>
 <li><a href="#support-and-contacts">Support and contacts</a></li>
 </ul>
 </div>
@@ -25,7 +26,7 @@ Release version : <em>4.0.1</em></p>
 <p>TagCommander for mobile is a collection of small SDKs each designed to serve a dedicated purpose.
 The modules are the following :</p>
 <p><a href="TCCore/README.md">Core : Used as a base by the other modules.</a></p>
-<p><a href="TCSDK/README.md">SDK : Tag management system collecting data throught a server-side aproach.</a></p>
+<p><a href="TCSDK/README.md">SDK : Tag management system collecting data throught a server-side approach.</a></p>
 <p><a href="TCSegment/README.md">Segment : Get your user segmentation from our servers.</a></p>
 <p>For each of those modules, please check their respective documentation for more information.</p>
 <h1 id="adding-a-module-to-your-project">Adding a module to your project</h1>
@@ -105,6 +106,10 @@ The modules are the following :</p>
 </pre></div>
 
 
+<h1 id="demo-applications">Demo Applications</h1>
+<p>You can check the demo showcasing our modules on github:</p>
+<p><a href="https://github.com/TagCommander/Tag-Demo/tree/master/Android">Tag Demo</a>
+<a href="https://github.com/TagCommander/Segment-Demo/tree/master/Android">Segment Demo</a></p>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="res/logo.png" /></p>
 <hr />
@@ -113,6 +118,6 @@ The modules are the following :</p>
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 14/12/2016 14:55:05</p>
+<p>This documentation was generated on 20/12/2016 11:53:23</p>
 </body>
 </html>

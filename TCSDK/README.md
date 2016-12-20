@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>14/12/2016</em><br />
+<p>Last update : <em>20/12/2016</em><br />
 Release version : <em>4.0.1</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -390,8 +390,8 @@ You can ask for any variables computed by TagCommander through a simple getData 
 
 
 <h1 id="example-tcdemo">Example: TCDemo</h1>
-<p>Below is an example of how to integrate TagCommander:</p>
-<p>TCDemo is a mobile application displaying a list of nearby restaurants. It is tagged with analytics. Please read the TagCommanderExample.java and MainActivity.java files to see a typical integration.</p>
+<p>To check an example of how to use this module, please check: </p>
+<p><a href="https://github.com/TagCommander/Tag-Demo/tree/master/Android">Tag Demo</a></p>
 <h1 id="migration-from-v2-and-v3-to-v4">Migration from v2 and v3 to v4</h1>
 <p>The way we are doing thing in v4 is quite different as we can only send data in post and to TagCommander's servers. But the code didn't change much and we can still use the old basic integration for the v4.</p>
 <p>Remove all function not existing anymore like forceReload and the rest should still work.
@@ -408,6 +408,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 14/12/2016 14:55:05</p>
+<p>This documentation was generated on 20/12/2016 11:53:23</p>
 </body>
 </html>
