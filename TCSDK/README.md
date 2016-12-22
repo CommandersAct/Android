@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>20/12/2016</em><br />
+<p>Last update : <em>22/12/2016</em><br />
 Release version : <em>4.0.1</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -408,6 +408,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 20/12/2016 15:01:13</p>
+<p>This documentation was generated on 22/12/2016 16:18:58</p>
 </body>
 </html>
