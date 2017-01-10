@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>22/12/2016</em><br />
-Release version : <em>4.0.1</em></p>
+<p>Last update : <em>10/01/2017</em><br />
+Release version : <em>4.0.2</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -99,6 +99,12 @@ forget them when setting your dynamic variables.</p>
 <p>You need to add some dependencies in your build.gradle file for the SDK to work properly. You will need a tiny bit of google play services which is location.</p>
 <div class="codehilite"><pre><span class="n">compile</span> <span class="s1">&#39;com.google.android.gms:play-services-location:9.2.1&#39;</span>
 <span class="n">compile</span> <span class="s1">&#39;com.android.support:appcompat-v7:23.3.0&#39;</span>
+</pre></div>
+
+
+<p>The SDK module is compiled with the following dependencies :</p>
+<div class="codehilite"><pre><span class="n">compile</span> <span class="n">project</span><span class="p">(</span><span class="s1">&#39;:core&#39;</span><span class="p">)</span>
+<span class="n">compile</span> <span class="s1">&#39;com.android.support:appcompat-v7:25.1.0&#39;</span>
 </pre></div>
 
 
@@ -408,6 +414,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 22/12/2016 16:18:58</p>
+<p>This documentation was generated on 10/01/2017 10:49:14</p>
 </body>
 </html>

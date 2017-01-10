@@ -4,14 +4,15 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="segments-implementation-guide">Segment's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>22/12/2016</em><br />
-Release version : <em>4.0.1</em></p>
+<p>Last update : <em>10/01/2017</em><br />
+Release version : <em>4.0.2</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
 <ul>
 <li><a href="#segments-implementation-guide">Segment's Implementation Guide</a></li>
 <li><a href="#introduction">Introduction</a></li>
+<li><a href="#dependencies">Dependencies</a></li>
 <li><a href="#creating-segments">Creating Segments</a></li>
 <li><a href="#getting-segments">Getting Segments</a><ul>
 <li><a href="#fetching">Fetching</a></li>
@@ -26,6 +27,13 @@ Release version : <em>4.0.1</em></p>
 <h1 id="introduction">Introduction</h1>
 <p>By using TagCommander's Engage product you will be able to store a lot of data and create segments of users. With those segments you can target precisely your offers to your customers or server personalized content in your application.</p>
 <p>TCSegment is a small module especially made to get the segment of your user from within your application.</p>
+<h1 id="dependencies">Dependencies</h1>
+<p>The Segment module is compiled with the following dependencies :</p>
+<div class="codehilite"><pre><span class="n">compile</span> <span class="n">project</span><span class="p">(</span><span class="s1">&#39;:core&#39;</span><span class="p">)</span>
+<span class="n">compile</span> <span class="s1">&#39;com.android.support:appcompat-v7:25.1.0&#39;</span>
+</pre></div>
+
+
 <h1 id="creating-segments">Creating Segments</h1>
 <p>For the creation of segments, please check the documentation of the Engage product.</p>
 <h1 id="getting-segments">Getting Segments</h1>
@@ -88,6 +96,6 @@ Release version : <em>4.0.1</em></p>
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 22/12/2016 16:18:58</p>
+<p>This documentation was generated on 10/01/2017 10:49:14</p>
 </body>
 </html>
