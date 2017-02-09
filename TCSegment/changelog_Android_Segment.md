@@ -6,6 +6,10 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.1.0 : 02/06 2017*
+
+	+ Beacon module release.
+
 *4.0.2 : 01/10 2017*
 
 	~ removed the dependencies in the POM generated for the JCenter deployement.

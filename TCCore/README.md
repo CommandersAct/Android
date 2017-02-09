@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="core-guide">Core Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>10/01/2017</em><br />
-Release version : <em>4.0.2</em></p>
+<p>Last update : <em>09/02/2017</em><br />
+Release version : <em>4.1.0</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -23,7 +23,7 @@ Release version : <em>4.0.2</em></p>
 <p>The Core module is mandatory if you are using TagCommander's mobile solution so we simply put the dependencies needed for the Core module directly in the documentations of the other modules.</p>
 <p>Core is building with the following dependencies :</p>
 <div class="codehilite"><pre><span class="n">compile</span> <span class="s1">&#39;com.google.android.gms:play-services-base:10.0.1&#39;</span>
-<span class="n">compile</span> <span class="s1">&#39;com.android.support:appcompat-v7:25.1.0&#39;</span>
+<span class="n">compile</span> <span class="s1">&#39;com.android.support:appcompat-v7:25.1.1&#39;</span>
 </pre></div>
 
 
@@ -35,6 +35,6 @@ Release version : <em>4.0.2</em></p>
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 10/01/2017 10:51:59</p>
+<p>This documentation was generated on 09/02/2017 16:25:43</p>
 </body>
 </html>

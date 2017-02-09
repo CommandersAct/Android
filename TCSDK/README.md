@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/logo.png" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>10/01/2017</em><br />
-Release version : <em>4.0.2</em></p>
+<p>Last update : <em>09/02/2017</em><br />
+Release version : <em>4.1.0</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -97,14 +97,14 @@ forget them when setting your dynamic variables.</p>
 <p><a href="../README.md">Please check the Developers Implementation Guide to chose the best way to implement this module in your project.</a></p>
 <h2 id="gradle-additions">Gradle additions</h2>
 <p>You need to add some dependencies in your build.gradle file for the SDK to work properly. You will need a tiny bit of google play services which is location.</p>
-<div class="codehilite"><pre><span class="n">compile</span> <span class="s1">&#39;com.google.android.gms:play-services-location:9.2.1&#39;</span>
-<span class="n">compile</span> <span class="s1">&#39;com.android.support:appcompat-v7:23.3.0&#39;</span>
+<div class="codehilite"><pre><span class="n">compile</span> <span class="s1">&#39;com.google.android.gms:play-services-location:9.8.0&#39;</span>
+<span class="n">compile</span> <span class="s1">&#39;com.android.support:appcompat-v7:25.1.1&#39;</span>
 </pre></div>
 
 
 <p>The SDK module is compiled with the following dependencies :</p>
 <div class="codehilite"><pre><span class="n">compile</span> <span class="n">project</span><span class="p">(</span><span class="s1">&#39;:core&#39;</span><span class="p">)</span>
-<span class="n">compile</span> <span class="s1">&#39;com.android.support:appcompat-v7:25.1.0&#39;</span>
+<span class="n">compile</span> <span class="s1">&#39;com.android.support:appcompat-v7:25.1.1&#39;</span>
 </pre></div>
 
 
@@ -126,8 +126,8 @@ forget them when setting your dynamic variables.</p>
 <p>As of Android's SDK 23, we are only using the LOCATION group of permissions. In the case you need the latitude or longitude of the user, you will first need to ask your user for the LOCATION permission with "AppCompatActivity.requestPermissions".</p>
 <h2 id="compatibility">Compatibility</h2>
 <ul>
-<li>Minimum Android version is 10.</li>
-<li>Build Target version is 24.</li>
+<li>Minimum Android version is 11.</li>
+<li>Build Target version is 25.</li>
 <li>Build Tools Version : 24.0.3.</li>
 </ul>
 <h1 id="using-the-sdk">Using the SDK</h1>
@@ -137,7 +137,7 @@ forget them when setting your dynamic variables.</p>
 You need to pass your application context while instanciating TagCommander. The <code>context</code> is usually simply your activity from which we will be sure to get the application context.</p>
 <p>A single line of code is required to properly initialize an instance of TagCommander:</p>
 <div class="codehilite"><pre><span class="c1">//!\\ VERY IMPORTANT WHILE INTEGRATING TagCommander</span>
-<span class="n">TCDebug</span><span class="o">.</span><span class="na">setDebugLevelAndOutput</span><span class="o">(</span><span class="n">Log</span><span class="o">.</span><span class="na">VERBOSE</span><span class="o">,</span> <span class="n">EnumSet</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">ETCLogOutput</span><span class="o">.</span><span class="na">CONSOLE</span><span class="o">));</span>
+<span class="n">TCDebug</span><span class="o">.</span><span class="na">setDebugLevel</span><span class="o">(</span><span class="n">Log</span><span class="o">.</span><span class="na">VERBOSE</span><span class="o">);</span>
 
 <span class="n">TagCommander</span> <span class="n">TCInstance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TagCommander</span><span class="o">(</span><span class="n">TC_SITE_ID</span><span class="o">,</span> <span class="n">TC_CONTAINER_ID</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
 </pre></div>
@@ -289,17 +289,12 @@ anyway for a greater ease of use.</p>
 <span class="cm"> * Verbose is recommended during test as it prints information</span>
 <span class="cm"> * that helps figuring what is working and what&#39;s not.</span>
 <span class="cm"> */</span>
-  <span class="n">TCDebug</span><span class="o">.</span><span class="na">setDebugLevelAndOutput</span><span class="o">(</span><span class="n">Log</span><span class="o">.</span><span class="na">VERBOSE</span><span class="o">,</span> <span class="n">EnumSet</span><span class="o">.</span><span class="na">of</span><span class="o">(</span><span class="n">ETCLogOutput</span><span class="o">.</span><span class="na">CONSOLE</span><span class="o">));</span>
+  <span class="n">TCDebug</span><span class="o">.</span><span class="na">setDebugLevel</span><span class="o">(</span><span class="n">Log</span><span class="o">.</span><span class="na">VERBOSE</span><span class="o">);</span>
 </pre></div>
 
 
 <ul>
-<li>
-<p>The first line allows you to select the verbosity of TagCommander's logs, alongside the desired outputs.</p>
-</li>
-<li>
-<p>Verbosity</p>
-</li>
+<li>Verbosity</li>
 </ul>
 <table>
 <thead>
@@ -395,6 +390,8 @@ You can ask for any variables computed by TagCommander through a simple getData 
 </pre></div>
 
 
+<p>You can find a full list of variables computed by the SDK, explanations and examples here: </p>
+<p><a href="PredefinedVariables.md">TCPredefinedVariables</a></p>
 <h1 id="example-tcdemo">Example: TCDemo</h1>
 <p>To check an example of how to use this module, please check: </p>
 <p><a href="https://github.com/TagCommander/Tag-Demo/tree/master/Android">Tag Demo</a></p>
@@ -414,6 +411,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.tagcommander.com</p>
 <p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 10/01/2017 10:51:59</p>
+<p>This documentation was generated on 09/02/2017 16:25:43</p>
 </body>
 </html>
