@@ -6,6 +6,10 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.1.1 : 03/29 2017*
+
+	~ Corrected a missing log in the TCCore module.
+
 *4.1.0 : 02/06 2017*
 
 	+ Beacon module release.

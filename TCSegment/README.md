@@ -1,10 +1,10 @@
 
 <html>
 <body>
-<p><img alt="alt tag" src="../res/logo.png" /></p>
+<p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="segments-implementation-guide">Segment's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>09/02/2017</em><br />
+<p>Last update : <em>29/03/2017</em><br />
 Release version : <em>4.1.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -25,7 +25,7 @@ Release version : <em>4.1.0</em></p>
 </ul>
 </div>
 <h1 id="introduction">Introduction</h1>
-<p>By using TagCommander's Engage product you will be able to store a lot of data and create segments of users. With those segments you can target precisely your offers to your customers or server personalized content in your application.</p>
+<p>By using Data Commander product you will be able to store a lot of data and create segments of users. With those segments you can target precisely your offers to your customers or server personalized content in your application.</p>
 <p>TCSegment is a small module especially made to get the segment of your user from within your application.</p>
 <h1 id="dependencies">Dependencies</h1>
 <p>The Segment module is compiled with the following dependencies :</p>
@@ -35,7 +35,7 @@ Release version : <em>4.1.0</em></p>
 
 
 <h1 id="creating-segments">Creating Segments</h1>
-<p>For the creation of segments, please check the documentation of the Engage product.</p>
+<p>For the creation of segments, please check the documentation of the Data Commander product.</p>
 <h1 id="getting-segments">Getting Segments</h1>
 <p>The module needs some information to be able to fetch segments. It will need your siteID, the context of your application and also your security token. Your siteID and token are provided by TagCommander, the application context need to be provided by your application.</p>
 <p>For debugging purpose, we recommand the use of TCDebug which will help you seeing what's happening inside the modules.</p>
@@ -89,13 +89,13 @@ Release version : <em>4.1.0</em></p>
 <p>To check an example of how to use this module, please check: </p>
 <p><a href="https://github.com/TagCommander/Segment-Demo/tree/master/Android">Segment Demo</a></p>
 <h1 id="support-and-contacts">Support and contacts</h1>
-<p><img alt="alt tag" src="../res/logo.png" /></p>
+<p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
 <p><strong>Support</strong>
-<em>support@tagcommander.com</em></p>
-<p>http://www.tagcommander.com</p>
-<p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
+<em>support@commandersact.com</em></p>
+<p>http://www.commandersact.com</p>
+<p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 09/02/2017 16:25:43</p>
+<p>This documentation was generated on 29/03/2017 15:05:12</p>
 </body>
 </html>

@@ -1,10 +1,11 @@
 
 <html>
 <body>
-<p><img alt="alt tag" src="../res/logo.png" /></p>
+<p><img alt="alt tag" src="../res/ca_logo.png" /></p>
+<p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>09/02/2017</em><br />
+<p>Last update : <em>29/03/2017</em><br />
 Release version : <em>4.1.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -52,10 +53,10 @@ Release version : <em>4.1.0</em></p>
 </ul>
 </div>
 <h1 id="introduction">Introduction</h1>
-<p>TagCommander enables marketers to easily add, edit, update, and deactivate tags on web pages, videos and mobile applications with little-to-no support from IT departments.</p>
-<p>Instead of implementing several SDK's in the application, TagCommander for mobile provides clients with a single SDK which sends data to our server which then create and send hits to your partners.</p>
+<p>Commanders Act enables marketers to easily add, edit, update, and deactivate tags on web pages, videos and mobile applications with little-to-no support from IT departments.</p>
+<p>Instead of implementing several SDK's in the application, Commanders Act for mobile provides clients with a single SDK which sends data to our server which then create and send hits to your partners.</p>
 <p>Owing to remote configuration tools, it is also possible to modify the configuration without having to resubmit your application.</p>
-<p>The purpose of this document is to explain how to add TagCommander into your application.</p>
+<p>The purpose of this document is to explain how to add the SDK module into your application.</p>
 <h2 id="main-technical-specifications">Main Technical Specifications</h2>
 <ul>
 <li>Weight about 40 ko in your application.</li>
@@ -64,10 +65,10 @@ Release version : <em>4.1.0</em></p>
 <li>Offline mode (the hits are stored in the phone to be replayed at the next launch.)</li>
 <li>Very low CPU and memory usage.</li>
 <li>Dynamic variable storage. If a value never changes, it's possible to set it only once.</li>
-<li>The state of the phone is easily accessed through TagCommander (network connection type, name of the phone, geographical location.)</li>
+<li>The state of the phone is easily accessed through the module (network connection type, name of the phone, geographical location.)</li>
 </ul>
 <h2 id="dynamic-variables">Dynamic Variables</h2>
-<p>A dynamic variable is a combination of a name and a value. It is used to give the TagCommander SDK data such as the name of the current screen or the product ID in a cart.</p>
+<p>A dynamic variable is a combination of a name and a value. It is used to give the module data such as the name of the current screen or the product ID in a cart.</p>
 <p>Dynamic Variables are implemented inside the application. They are replaced on the server at the time of the execution by the value transmitted.</p>
 <p>A dynamic variable is formatted like this: <code>#SCREEN#</code>.</p>
 <div class="warning"></div>
@@ -83,7 +84,7 @@ forget them when setting your dynamic variables.</p>
 <li>Test if conditions are met to fire a tag. For instance, if you set the <code>#EVENT#</code> to <code>click</code>, the tag with the condition <code>#EVENT# EQUAL 'click'</code> will be executed.</li>
 </ol>
 <h2 id="execution">Execution</h2>
-<p>When you call the sendData method, a hit will be packaged and sent to TagCommander's server.</p>
+<p>When you call the sendData method, a hit will be packaged and sent to Commanders Act's server.</p>
 <p><img alt="alt tag" src="../res/sdk_scheme.png" /></p>
 <h1 id="sdk-integration">SDK integration</h1>
 <h2 id="steps">Steps</h2>
@@ -133,8 +134,8 @@ forget them when setting your dynamic variables.</p>
 <h1 id="using-the-sdk">Using the SDK</h1>
 <h2 id="initialisation">Initialisation</h2>
 <p>It is recommended to initialize TagCommander in your <code>onCreate(Bundle savedInstanceState)</code> in your <code>MainActivity</code> so it will be operational as soon as possible.
-<code>TC_SITE_ID</code> and <code>TC_CONTAINER_ID</code> are integers provided by TagCommander.
-You need to pass your application context while instanciating TagCommander. The <code>context</code> is usually simply your activity from which we will be sure to get the application context.</p>
+<code>TC_SITE_ID</code> and <code>TC_CONTAINER_ID</code> are integers provided by Commanders Act.
+You need to pass your application context while instantiating TagCommander. The <code>context</code> is usually simply your activity from which we will be sure to get the application context.</p>
 <p>A single line of code is required to properly initialize an instance of TagCommander:</p>
 <div class="codehilite"><pre><span class="c1">//!\\ VERY IMPORTANT WHILE INTEGRATING TagCommander</span>
 <span class="n">TCDebug</span><span class="o">.</span><span class="na">setDebugLevel</span><span class="o">(</span><span class="n">Log</span><span class="o">.</span><span class="na">VERBOSE</span><span class="o">);</span>
@@ -193,12 +194,13 @@ anyway for a greater ease of use.</p>
 <li><code>#EVENT#</code></li>
 <li><code>#SCREEN_NAME#</code></li>
 </ul>
-<p>With the code from the previous section, this tag could be fired from TagCommander's server. The application sends two dynamic variables (<code>#EVENT#</code> and <code>#SCREEN_NAME#</code>) and the SDK adds all information available to it (like #TC_SYSVERSION# and #TC_SYSNAME# in this hit).</p>
+<p>With the code from the previous section, this tag could be fired from Commanders Act's server. The application sends two dynamic variables (<code>#EVENT#</code> and <code>#SCREEN_NAME#</code>) and the SDK adds all information available to it (like #TC_SYSVERSION# and #TC_SYSNAME# in this hit).</p>
 <h2 id="product-tags">Product tags</h2>
 <p>There are some tags that need to be passed a list of dictionaries, usually representing products. By passing complex information, we are able to create and send complex hits or many hits at the same time.</p>
 <p>Tags that needs to be passed a list of dictionaries are easy to spot in the configuration. They have appended to the name of the dynamic variable the name of the key that is retrieved from the dictionary.</p>
 <p>Most of the time the data are provided ready to use, but we provide a TCProduct class representing a product and its possible values.</p>
-<div class="codehilite"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">SendViewCart</span><span class="o">()</span> <span class="o">{</span>
+<div class="codehilite"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">SendViewCart</span><span class="o">()</span>
+<span class="o">{</span>
   <span class="n">TCInstance</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="s">&quot;#REGIONAL_CODE#&quot;</span><span class="o">,</span> <span class="s">&quot;eu&quot;</span><span class="o">);</span>
   <span class="n">TCInstance</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="s">&quot;#EVENT#&quot;</span><span class="o">,</span> <span class="s">&quot;viewCart&quot;</span><span class="o">);</span>
   <span class="n">TCInstance</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="s">&quot;#PARTNER_ID#&quot;</span><span class="o">,</span> <span class="s">&quot;868&quot;</span><span class="o">);</span>
@@ -252,17 +254,17 @@ anyway for a greater ease of use.</p>
 <div class="warning"></div>
 
 <blockquote>
-<p>If you are updating from an old version of TagCommander you can still use old functions with TCAppVars and a list of products.</p>
+<p>If you are updating from an old version of the SDK you can still use old functions with TCAppVars and a list of products.</p>
 </blockquote>
 <h2 id="using-proguard">Using ProGuard</h2>
-<p>If your release build uses ProGuard to strip and obfuscate your code, you will need to add some configuration for Tag Commander to keep working.</p>
+<p>If your release build uses ProGuard to strip and obfuscate your code, you will need to add some configuration for the modules to keep working.</p>
 <p>Just add the following line in your proguard-rules.pro.</p>
 <div class="codehilite"><pre><span class="o">-</span><span class="n">keep</span> <span class="k">class</span> <span class="n">com</span><span class="o">.</span><span class="n">tagcommander</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n-Operator">**</span> <span class="p">{</span> <span class="o">*</span><span class="p">;</span> <span class="p">}</span>
 </pre></div>
 
 
 <h2 id="install-referrer">Install Referrer</h2>
-<p>If you want the source channel of your application in TagCommander, please point the INSTALL_REFERRER broadcast toward our receiver TCReferrerReceiver :</p>
+<p>If you want the source channel of your application in Commanders Act, please point the INSTALL_REFERRER broadcast toward our receiver TCReferrerReceiver :</p>
 <p>It's as simple as adding the following lines in the AndroidManifest.xml of your application and inside the "Application" tag.</p>
 <div class="codehilite"><pre><span class="nt">&lt;receiver</span>
     <span class="na">android:name=</span><span class="s">&quot;com.tagcommander.lib.TCReferrerReceiver&quot;</span>
@@ -338,7 +340,7 @@ anyway for a greater ease of use.</p>
 <li>The internal architecture is working with internal notifications. You can ask the Logger to display all the internal notifications with TCDebug.setNotificationLog(true);.</li>
 </ul>
 <h2 id="testing">Testing</h2>
-<p>There are three ways to verify that TagCommander executes the tags in your application:</p>
+<p>There are three ways to verify that the module executes the tags in your application:</p>
 <ul>
 <li>By reading the debug messages in the console.</li>
 <li>By going to your vendor's platform and check that the hits are displayed and that the data is correct. Please be aware that hits may not display immediately in the vendor account. This delay differs widely between vendors and may also vary for the type of hit under the same vendor.</li>
@@ -352,7 +354,7 @@ anyway for a greater ease of use.</p>
 <li>Enable the debug logs if you have any doubt.</li>
 <li>Check if TagCommander is called when you think it is. You should see it in the console logs.</li>
 <li>Make sure you have the latest version.</li>
-<li>Check if you are not stripping part of Tag Commander with ProGuard.</li>
+<li>Check if you are not stripping part of the module with ProGuard.</li>
 </ul>
 </blockquote>
 <h2 id="common-errors-with-the-tagging-plan">Common errors with the tagging plan</h2>
@@ -369,7 +371,7 @@ anyway for a greater ease of use.</p>
 </blockquote>
 <h1 id="helpers">Helpers</h1>
 <h2 id="persisting-variables">Persisting variables</h2>
-<p>TagCommander permits storing of variables that remain the same in the whole application, such as vendors ID, in a TagCommander instance, instead of sending them each time you want to send data.</p>
+<p>The SDK module permits storing of variables that remain the same in the whole application, such as vendors ID, in a TagCommander instance, instead of passing them to the instance each time you want to send data.</p>
 <p>These variables will have a lower priority to the one given by the addData method but will persist for the whole run of the application.</p>
 <div class="codehilite"><pre><span class="n">TCInstance</span><span class="o">.</span><span class="na">addPermanentData</span><span class="o">(</span><span class="s">&quot;#VENDOR_ID#&quot;</span><span class="o">,</span> <span class="s">&quot;UE-55668779-01&quot;</span><span class="o">);</span>
 </pre></div>
@@ -404,13 +406,13 @@ To use new methods you can check in this document how to.</p>
 What needs to be changed is the container in your TagCommander interface, please check with your consultant.</p>
 </blockquote>
 <h1 id="support-and-contacts">Support and contacts</h1>
-<p><img alt="alt tag" src="../res/logo.png" /></p>
+<p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
 <p><strong>Support</strong>
-<em>support@tagcommander.com</em></p>
-<p>http://www.tagcommander.com</p>
-<p>TagCommander | 3/5 rue Saint Georges - 75009 PARIS - France</p>
+<em>support@commandersact.com</em></p>
+<p>http://www.commandersact.com</p>
+<p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 09/02/2017 16:25:43</p>
+<p>This documentation was generated on 29/03/2017 15:05:12</p>
 </body>
 </html>
