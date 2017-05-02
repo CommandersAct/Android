@@ -6,6 +6,10 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.1.2 : 05/02 2017*
+
+	~ Updated modules' manifests to remove useless notions like application->allowrtl
+
 *4.1.1 : 03/29 2017*
 
 	~ Corrected a missing log in the TCCore module.

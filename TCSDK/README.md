@@ -6,7 +6,7 @@
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>Android</strong></p>
 <p>Last update : <em>02/05/2017</em><br />
-Release version : <em>4.1.0</em></p>
+Release version : <em>4.1.1</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -413,6 +413,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 02/05/2017 11:45:37</p>
+<p>This documentation was generated on 02/05/2017 17:56:09</p>
 </body>
 </html>

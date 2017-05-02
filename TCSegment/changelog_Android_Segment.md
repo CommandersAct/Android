@@ -6,6 +6,10 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.1.1 : 05/02 2017*
+
+	~ Updated modules' manifests to remove useless notions like application->allowrtl
+
 *4.1.0 : 02/06 2017*
 
 	+ Beacon module release.
