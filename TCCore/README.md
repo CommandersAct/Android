@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="core-guide">Core Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>02/05/2017</em><br />
-Release version : <em>4.1.2</em></p>
+<p>Last update : <em>10/08/2017</em><br />
+Release version : <em>4.1.3</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -22,7 +22,7 @@ Release version : <em>4.1.2</em></p>
 <h1 id="dependencies">Dependencies</h1>
 <p>The Core module is mandatory if you are using Commanders Act's mobile solution so we simply put the dependencies needed for the Core module directly in the documentations of the other modules.</p>
 <p>Core is building with the following dependencies :</p>
-<div class="codehilite"><pre><span class="n">compile</span> <span class="s1">&#39;com.google.android.gms:play-services-base:10.0.1&#39;</span>
+<div class="codehilite"><pre><span></span><span class="n">compile</span> <span class="s1">&#39;com.google.android.gms:play-services-base:10.0.1&#39;</span>
 <span class="n">compile</span> <span class="s1">&#39;com.android.support:appcompat-v7:25.1.1&#39;</span>
 </pre></div>
 
@@ -35,6 +35,6 @@ Release version : <em>4.1.2</em></p>
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 02/05/2017 17:56:09</p>
+<p>This documentation was generated on 10/08/2017 14:44:32</p>
 </body>
 </html>

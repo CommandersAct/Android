@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="beacons-implementation-guide">Beacon's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>02/05/2017</em><br />
+<p>Last update : <em>10/08/2017</em><br />
 Release version : <em>4.1.1</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -40,7 +40,7 @@ Release version : <em>4.1.1</em></p>
 <p>Here is the list of the types of beacons currently supported by Commanders Act's module:</p>
 <ul>
 <li>iBeacons : Which broadcast an UUID with a Major and a Minor.</li>
-<li>Eddystone : Exist with 4 types of frames, UUID</li>
+<li>Eddystone : Exist with 4 types of frames, UUID, URL, Telemetry and EID.</li>
 </ul>
 <p>When you use a beacon, it is recommended that you only access information from your network of beacons. To do that the scan are filtered by an ID (beside with Eddystone's URL beacons), on iBeacon we use the full UUID of the beacon, on Eddystone we use the first part of it (called the namespace).</p>
 <p>As an example for our demo application we filter on "397180b5-be24-4090-8af5-8237f4e17248" when we are dealing with our iBeacons and on "017180B5-BE24-4090-8AF5" for our Eddystone ones.</p>
@@ -55,7 +55,7 @@ If you need a specific implementation or information, please contact support.</p
 <h2 id="dependencies">Dependencies</h2>
 <p><em>The Beacon module can only be used on phones using android Lollipop or higher.</em></p>
 <p>To use the Beacon module, you need some permissions. If you are using JCenter or our .aar files they are defined in our manifests already, but if you use the jar files, you will need to add them yourself in your manifest.</p>
-<div class="codehilite"><pre><span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="ss">android</span><span class="p">:</span><span class="nb">name</span><span class="o">=</span><span class="s2">&quot;android.permission.BLUETOOTH_ADMIN&quot;</span><span class="o">/&gt;</span>
+<div class="codehilite"><pre><span></span><span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="ss">android</span><span class="p">:</span><span class="nb">name</span><span class="o">=</span><span class="s2">&quot;android.permission.BLUETOOTH_ADMIN&quot;</span><span class="o">/&gt;</span>
 <span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="ss">android</span><span class="p">:</span><span class="nb">name</span><span class="o">=</span><span class="s2">&quot;android.permission.BLUETOOTH&quot;</span><span class="o">/&gt;</span>
 <span class="o">&lt;</span><span class="n">uses</span><span class="o">-</span><span class="n">permission</span> <span class="ss">android</span><span class="p">:</span><span class="nb">name</span><span class="o">=</span><span class="s2">&quot;android.permission.ACCESS_COARSE_LOCATION&quot;</span> <span class="sr">/&gt;</span>
 <span class="sr">&lt;uses-permission android:name=&quot;android.permission.ACCESS_FINE_LOCATION&quot; /</span><span class="o">&gt;</span>
@@ -67,7 +67,7 @@ If you need a specific implementation or information, please contact support.</p
 <p>Scanning for beacon is pretty easy, tell us what we need to scan for, and we'll give you updates.</p>
 <p>The first thing you want to do is to listen to the events we will send you when we found, update or lost a beacon.</p>
 <p>You can use an helper class we created for notifications or do it all by yourself. The following lines show you how to do it and give you the names of the notifications.</p>
-<div class="codehilite"><pre><span class="n">LocalBroadcastManager</span> <span class="n">lbm</span> <span class="o">=</span> <span class="n">LocalBroadcastManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">());</span>
+<div class="codehilite"><pre><span></span><span class="n">LocalBroadcastManager</span> <span class="n">lbm</span> <span class="o">=</span> <span class="n">LocalBroadcastManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">getApplicationContext</span><span class="o">());</span>
 <span class="n">lbm</span><span class="o">.</span><span class="na">registerReceiver</span><span class="o">(</span><span class="n">mReceiver</span><span class="o">,</span> <span class="k">new</span> <span class="n">IntentFilter</span><span class="o">(</span><span class="n">TCBeaconConstant</span><span class="o">.</span><span class="na">kTCNotification_BeaconFound</span><span class="o">));</span>
 <span class="n">lbm</span><span class="o">.</span><span class="na">registerReceiver</span><span class="o">(</span><span class="n">mReceiver</span><span class="o">,</span> <span class="k">new</span> <span class="n">IntentFilter</span><span class="o">(</span><span class="n">TCBeaconConstant</span><span class="o">.</span><span class="na">kTCNotification_BeaconUpdate</span><span class="o">));</span>
 <span class="n">lbm</span><span class="o">.</span><span class="na">registerReceiver</span><span class="o">(</span><span class="n">mReceiver</span><span class="o">,</span> <span class="k">new</span> <span class="n">IntentFilter</span><span class="o">(</span><span class="n">TCBeaconConstant</span><span class="o">.</span><span class="na">kTCNotification_BeaconLost</span><span class="o">));</span>
@@ -75,19 +75,19 @@ If you need a specific implementation or information, please contact support.</p
 
 
 <p>When you have your user consent to scan for beacons, you can call the following code to scan for an Eddystone beacon:</p>
-<div class="codehilite"><pre><span class="n">TCDebug</span><span class="o">.</span><span class="na">setDebugLevel</span><span class="o">(</span><span class="n">Log</span><span class="o">.</span><span class="na">VERBOSE</span><span class="o">);</span>
+<div class="codehilite"><pre><span></span><span class="n">TCDebug</span><span class="o">.</span><span class="na">setDebugLevel</span><span class="o">(</span><span class="n">Log</span><span class="o">.</span><span class="na">VERBOSE</span><span class="o">);</span>
 <span class="n">TCBeacon</span> <span class="n">tcBeacon</span> <span class="o">=</span> <span class="n">TCBeacon</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="s">&quot;017180B5-BE24-4090-8AF5&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
 </pre></div>
 
 
 <p>Or if you want to scann for an iBeacon:</p>
-<div class="codehilite"><pre><span class="n">TCBeacon</span> <span class="n">tcBeacon</span> <span class="o">=</span> <span class="n">TCBeacon</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&quot;397180B5-BE24-4090-8AF5-8237F4E17248&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
+<div class="codehilite"><pre><span></span><span class="n">TCBeacon</span> <span class="n">tcBeacon</span> <span class="o">=</span> <span class="n">TCBeacon</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="s">&quot;397180B5-BE24-4090-8AF5-8237F4E17248&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
 </pre></div>
 
 
 <p>If you only want to scan URL type beacons, no need to pass the module any UUID at all.</p>
 <p>And then create the delegate method for the notifications:</p>
-<div class="codehilite"><pre><span class="n">BroadcastReceiver</span> <span class="n">mReceiver</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BroadcastReceiver</span><span class="o">()</span>
+<div class="codehilite"><pre><span></span><span class="n">BroadcastReceiver</span> <span class="n">mReceiver</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BroadcastReceiver</span><span class="o">()</span>
 <span class="o">{</span>
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onReceive</span><span class="o">(</span><span class="n">Context</span> <span class="n">context</span><span class="o">,</span> <span class="n">Intent</span> <span class="n">intent</span><span class="o">)</span>
@@ -117,7 +117,7 @@ If you need a specific implementation or information, please contact support.</p
 
 <h2 id="scan-settings">Scan settings</h2>
 <p>The third parameter of TCBeacon.getInstance is a custom scan settings, if passed to us, we will use those 3 parameters to override ours :</p>
-<div class="codehilite"><pre>- CallbackType
+<div class="codehilite"><pre><span></span>- CallbackType
 - ScanMode
 - ReportDelayMillis
 </pre></div>
@@ -125,7 +125,7 @@ If you need a specific implementation or information, please contact support.</p
 
 <h2 id="background-scanning">Background scanning</h2>
 <p>To be able to use the Beacon while the application is in background we created a service. You will thus need to add those lines in your manifest if you are using directly the jar files instead of our JCenter release or aar release.</p>
-<div class="codehilite"><pre><span class="o">&lt;</span><span class="n">service</span>
+<div class="codehilite"><pre><span></span><span class="o">&lt;</span><span class="n">service</span>
     <span class="ss">android</span><span class="p">:</span><span class="nb">name</span><span class="o">=</span><span class="s2">&quot;.TCBeaconScanService&quot;</span>
     <span class="ss">android</span><span class="p">:</span><span class="n">label</span><span class="o">=</span><span class="s2">&quot;TCBeaconScanService&quot;</span> <span class="o">&gt;</span>
 <span class="o">&lt;</span><span class="sr">/service&gt;</span>
@@ -143,6 +143,6 @@ If you need a specific implementation or information, please contact support.</p
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 02/05/2017 17:56:09</p>
+<p>This documentation was generated on 10/08/2017 14:44:32</p>
 </body>
 </html>

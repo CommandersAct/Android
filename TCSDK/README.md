@@ -5,7 +5,7 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>02/05/2017</em><br />
+<p>Last update : <em>10/08/2017</em><br />
 Release version : <em>4.1.1</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -98,13 +98,13 @@ forget them when setting your dynamic variables.</p>
 <p><a href="../README.md">Please check the Developers Implementation Guide to chose the best way to implement this module in your project.</a></p>
 <h2 id="gradle-additions">Gradle additions</h2>
 <p>You need to add some dependencies in your build.gradle file for the SDK to work properly. You will need a tiny bit of google play services which is location.</p>
-<div class="codehilite"><pre><span class="n">compile</span> <span class="s1">&#39;com.google.android.gms:play-services-location:9.8.0&#39;</span>
+<div class="codehilite"><pre><span></span><span class="n">compile</span> <span class="s1">&#39;com.google.android.gms:play-services-location:9.8.0&#39;</span>
 <span class="n">compile</span> <span class="s1">&#39;com.android.support:appcompat-v7:25.1.1&#39;</span>
 </pre></div>
 
 
 <p>The SDK module is compiled with the following dependencies :</p>
-<div class="codehilite"><pre><span class="n">compile</span> <span class="n">project</span><span class="p">(</span><span class="s1">&#39;:core&#39;</span><span class="p">)</span>
+<div class="codehilite"><pre><span></span><span class="n">compile</span> <span class="n">project</span><span class="p">(</span><span class="s1">&#39;:core&#39;</span><span class="p">)</span>
 <span class="n">compile</span> <span class="s1">&#39;com.android.support:appcompat-v7:25.1.1&#39;</span>
 </pre></div>
 
@@ -119,7 +119,7 @@ forget them when setting your dynamic variables.</p>
 <li>android.permission.ACCESS_COARSE_LOCATION</li>
 </ul>
 <p>If not already done, you should also add the dependecy to the GMS library:</p>
-<div class="codehilite"><pre><span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">&quot;com.google.android.gms.version&quot;</span>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">&quot;com.google.android.gms.version&quot;</span>
  <span class="na">android:value=</span><span class="s">&quot;@integer/google_play_services_version&quot;</span> <span class="nt">/&gt;</span>
 </pre></div>
 
@@ -137,7 +137,7 @@ forget them when setting your dynamic variables.</p>
 <code>TC_SITE_ID</code> and <code>TC_CONTAINER_ID</code> are integers provided by Commanders Act.
 You need to pass your application context while instantiating TagCommander. The <code>context</code> is usually simply your activity from which we will be sure to get the application context.</p>
 <p>A single line of code is required to properly initialize an instance of TagCommander:</p>
-<div class="codehilite"><pre><span class="c1">//!\\ VERY IMPORTANT WHILE INTEGRATING TagCommander</span>
+<div class="codehilite"><pre><span></span><span class="c1">//!\\ VERY IMPORTANT WHILE INTEGRATING TagCommander</span>
 <span class="n">TCDebug</span><span class="o">.</span><span class="na">setDebugLevel</span><span class="o">(</span><span class="n">Log</span><span class="o">.</span><span class="na">VERBOSE</span><span class="o">);</span>
 
 <span class="n">TagCommander</span> <span class="n">TCInstance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TagCommander</span><span class="o">(</span><span class="n">TC_SITE_ID</span><span class="o">,</span> <span class="n">TC_CONTAINER_ID</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
@@ -152,14 +152,14 @@ of <code>site ID</code> and <code>container ID</code>, you might want to use it 
 anyway for a greater ease of use.</p>
 </blockquote>
 <p>If you want to use localisation, you will need to initialise the TCLocation class after TagCommander.</p>
-<div class="codehilite"><pre><span class="n">TCLocation</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+<div class="codehilite"><pre><span></span><span class="n">TCLocation</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
 </pre></div>
 
 
 <p>We have set the default setInterval to 30 minutes to save battery. If you need another time precision, you can set TCLocation.GPSInterval to any value and it will be used instead of the default value.</p>
 <h2 id="executing-tags">Executing tags</h2>
 <p>For every element that needs tagging in your application, you need to call addData on your TagCommander instance and when you want to send all those information to the server, you will simply need to call sendData.</p>
-<div class="codehilite"><pre><span class="n">TCInstance</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="s">&quot;#EVENT#&quot;</span><span class="o">,</span> <span class="s">&quot;click&quot;</span><span class="o">);</span>
+<div class="codehilite"><pre><span></span><span class="n">TCInstance</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="s">&quot;#EVENT#&quot;</span><span class="o">,</span> <span class="s">&quot;click&quot;</span><span class="o">);</span>
 <span class="n">TCInstance</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="s">&quot;#PAGE#&quot;</span><span class="o">,</span> <span class="s">&quot;order&quot;</span><span class="o">);</span>
 <span class="n">TCInstance</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="s">&quot;#AMOUNT#&quot;</span><span class="o">,</span> <span class="s">&quot;10000&quot;</span><span class="o">);</span> <span class="c1">// don&#39;t forget to put numbers as String</span>
 
@@ -168,7 +168,7 @@ anyway for a greater ease of use.</p>
 
 
 <p>For compatibility reasons, we can still use TCAppVars to pass those information to TagCommander.</p>
-<div class="codehilite"><pre><span class="n">TCAppVars</span> <span class="n">appVars</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TCAppVars</span><span class="o">();</span>
+<div class="codehilite"><pre><span></span><span class="n">TCAppVars</span> <span class="n">appVars</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TCAppVars</span><span class="o">();</span>
 <span class="n">appVars</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;#EVENT#&quot;</span><span class="o">,</span> <span class="s">&quot;click&quot;</span><span class="o">);</span>
 <span class="n">appVars</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;#PAGE#&quot;</span><span class="o">,</span> <span class="s">&quot;order&quot;</span><span class="o">);</span>
 <span class="n">appVars</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;#AMOUNT#&quot;</span><span class="o">,</span> <span class="s">&quot;10000&quot;</span><span class="o">);</span> <span class="c1">// don&#39;t forget to put numbers as String</span>
@@ -184,7 +184,7 @@ anyway for a greater ease of use.</p>
 </blockquote>
 <h2 id="example">Example</h2>
 <p>Let's say that the URL you are using in your server-side container uses the following url:</p>
-<div class="codehilite"><pre>http://engage.commander1.com/dms?tc_s=3109&amp;tc_type=dms&amp;data_sysname=#TC_SYSNAME#
+<div class="codehilite"><pre><span></span>http://engage.commander1.com/dms?tc_s=3109&amp;tc_type=dms&amp;data_sysname=#TC_SYSNAME#
 &amp;data_sysversion=#TC_SYSVERSION#&amp;page=#SCREEN_NAME#&amp;event=#EVENT#
 </pre></div>
 
@@ -199,7 +199,7 @@ anyway for a greater ease of use.</p>
 <p>There are some tags that need to be passed a list of dictionaries, usually representing products. By passing complex information, we are able to create and send complex hits or many hits at the same time.</p>
 <p>Tags that needs to be passed a list of dictionaries are easy to spot in the configuration. They have appended to the name of the dynamic variable the name of the key that is retrieved from the dictionary.</p>
 <p>Most of the time the data are provided ready to use, but we provide a TCProduct class representing a product and its possible values.</p>
-<div class="codehilite"><pre><span class="kd">public</span> <span class="kt">void</span> <span class="nf">SendViewCart</span><span class="o">()</span>
+<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">SendViewCart</span><span class="o">()</span>
 <span class="o">{</span>
   <span class="n">TCInstance</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="s">&quot;#REGIONAL_CODE#&quot;</span><span class="o">,</span> <span class="s">&quot;eu&quot;</span><span class="o">);</span>
   <span class="n">TCInstance</span><span class="o">.</span><span class="na">addData</span><span class="o">(</span><span class="s">&quot;#EVENT#&quot;</span><span class="o">,</span> <span class="s">&quot;viewCart&quot;</span><span class="o">);</span>
@@ -246,7 +246,7 @@ anyway for a greater ease of use.</p>
 <li>inStock</li>
 </ul>
 <p>If you want to add more properties, please use the method on your TCProduct instance:</p>
-<div class="codehilite"><pre><span class="n">product</span><span class="o">.</span><span class="na">customProperties</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;Menu&quot;</span><span class="o">,</span> <span class="s">&quot;12&quot;</span><span class="o">);</span>
+<div class="codehilite"><pre><span></span><span class="n">product</span><span class="o">.</span><span class="na">customProperties</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;Menu&quot;</span><span class="o">,</span> <span class="s">&quot;12&quot;</span><span class="o">);</span>
 <span class="n">product</span><span class="o">.</span><span class="na">customProperties</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&quot;TakeOut&quot;</span><span class="o">,</span> <span class="s">&quot;0&quot;</span><span class="o">);</span>
 </pre></div>
 
@@ -259,14 +259,14 @@ anyway for a greater ease of use.</p>
 <h2 id="using-proguard">Using ProGuard</h2>
 <p>If your release build uses ProGuard to strip and obfuscate your code, you will need to add some configuration for the modules to keep working.</p>
 <p>Just add the following line in your proguard-rules.pro.</p>
-<div class="codehilite"><pre><span class="o">-</span><span class="n">keep</span> <span class="k">class</span> <span class="n">com</span><span class="o">.</span><span class="n">tagcommander</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n-Operator">**</span> <span class="p">{</span> <span class="o">*</span><span class="p">;</span> <span class="p">}</span>
+<div class="codehilite"><pre><span></span><span class="o">-</span><span class="n">keep</span> <span class="k">class</span> <span class="n">com</span><span class="o">.</span><span class="n">tagcommander</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n n-Operator">**</span> <span class="p">{</span> <span class="o">*</span><span class="p">;</span> <span class="p">}</span>
 </pre></div>
 
 
 <h2 id="install-referrer">Install Referrer</h2>
 <p>If you want the source channel of your application in Commanders Act, please point the INSTALL_REFERRER broadcast toward our receiver TCReferrerReceiver :</p>
 <p>It's as simple as adding the following lines in the AndroidManifest.xml of your application and inside the "Application" tag.</p>
-<div class="codehilite"><pre><span class="nt">&lt;receiver</span>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;receiver</span>
     <span class="na">android:name=</span><span class="s">&quot;com.tagcommander.lib.TCReferrerReceiver&quot;</span>
     <span class="na">android:exported=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;intent-filter&gt;</span>
@@ -278,7 +278,7 @@ anyway for a greater ease of use.</p>
 
 <p>Once the broadcast is received, TagCommander will store the full string into the #TC_INSTALL_REFERRER# predefined variable.</p>
 <p>Example:</p>
-<div class="codehilite"><pre>utm_source=adMob<span class="err">&amp;</span>utm_medium=banner<span class="err">&amp;</span>utm_term=running+shoes<span class="err">&amp;</span>utm_content=theContent
+<div class="codehilite"><pre><span></span>utm_source=adMob<span class="err">&amp;</span>utm_medium=banner<span class="err">&amp;</span>utm_term=running+shoes<span class="err">&amp;</span>utm_content=theContent
 <span class="err">&amp;</span>utm_campaign=couponReduc<span class="err">&amp;</span>anid=adMob
 </pre></div>
 
@@ -287,7 +287,7 @@ anyway for a greater ease of use.</p>
 <p>The TagCommander SDK also offers methods to help you with the Quality Assessment of the SDK implementation.</p>
 <h2 id="debugging">Debugging</h2>
 <p>We recommend using <code>Log.VERBOSE</code> while developing your application:</p>
-<div class="codehilite"><pre><span class="cm">/*</span>
+<div class="codehilite"><pre><span></span><span class="cm">/*</span>
 <span class="cm"> * Verbose is recommended during test as it prints information</span>
 <span class="cm"> * that helps figuring what is working and what&#39;s not.</span>
 <span class="cm"> */</span>
@@ -373,12 +373,12 @@ anyway for a greater ease of use.</p>
 <h2 id="persisting-variables">Persisting variables</h2>
 <p>The SDK module permits storing of variables that remain the same in the whole application, such as vendors ID, in a TagCommander instance, instead of passing them to the instance each time you want to send data.</p>
 <p>These variables will have a lower priority to the one given by the addData method but will persist for the whole run of the application.</p>
-<div class="codehilite"><pre><span class="n">TCInstance</span><span class="o">.</span><span class="na">addPermanentData</span><span class="o">(</span><span class="s">&quot;#VENDOR_ID#&quot;</span><span class="o">,</span> <span class="s">&quot;UE-55668779-01&quot;</span><span class="o">);</span>
+<div class="codehilite"><pre><span></span><span class="n">TCInstance</span><span class="o">.</span><span class="na">addPermanentData</span><span class="o">(</span><span class="s">&quot;#VENDOR_ID#&quot;</span><span class="o">,</span> <span class="s">&quot;UE-55668779-01&quot;</span><span class="o">);</span>
 </pre></div>
 
 
 <p>They can also be removed if necessary.</p>
-<div class="codehilite"><pre><span class="n">TCInstance</span><span class="o">.</span><span class="na">removePermanentData</span><span class="o">(</span><span class="s">&quot;#VENDOR_ID#&quot;</span><span class="o">);</span>
+<div class="codehilite"><pre><span></span><span class="n">TCInstance</span><span class="o">.</span><span class="na">removePermanentData</span><span class="o">(</span><span class="s">&quot;#VENDOR_ID#&quot;</span><span class="o">);</span>
 </pre></div>
 
 
@@ -386,7 +386,7 @@ anyway for a greater ease of use.</p>
 <p>TagCommander collects a great deal of information to function with accuracy.
 You can ask for any variables computed by TagCommander through a simple getData on TCPredefinedVariables.</p>
 <p>The two following line are doing exactly the same thing, one using the constants declared in the SDK, the second using the name of the variable as defined in PredefinedVariables.xlsx. You can use either one.</p>
-<div class="codehilite"><pre><span class="n">TCPredefinedVariables</span> <span class="n">predefVariables</span> <span class="o">=</span> <span class="n">TCPredefinedVariables</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
+<div class="codehilite"><pre><span></span><span class="n">TCPredefinedVariables</span> <span class="n">predefVariables</span> <span class="o">=</span> <span class="n">TCPredefinedVariables</span><span class="o">.</span><span class="na">getInstance</span><span class="o">();</span>
 <span class="n">String</span> <span class="n">curVisit</span> <span class="o">=</span> <span class="n">predefVariables</span><span class="o">.</span><span class="na">getData</span><span class="o">(</span><span class="n">TCConstants</span><span class="o">.</span><span class="na">kTCPredefinedVariable_CurrentVisitMs</span><span class="o">);</span>
 <span class="n">String</span> <span class="n">curVisit</span> <span class="o">=</span> <span class="n">predefVariables</span><span class="o">.</span><span class="na">getData</span><span class="o">(</span><span class="s">&quot;#TC_CURRENT_VISIT_MS#&quot;</span><span class="o">);</span>
 </pre></div>
@@ -413,6 +413,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 02/05/2017 17:56:09</p>
+<p>This documentation was generated on 10/08/2017 14:44:32</p>
 </body>
 </html>

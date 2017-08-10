@@ -6,6 +6,10 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.1.3 : 03/08 2017*
+
+	+ Added TC_SDK_ID and TC_NORMALIZED_ID
+
 *4.1.2 : 05/02 2017*
 
 	~ Updated modules' manifests to remove useless notions like application->allowrtl
