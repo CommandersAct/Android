@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="core-guide">Core Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>10/08/2017</em><br />
+<p>Last update : <em>10/10/2017</em><br />
 Release version : <em>4.1.3</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -35,6 +35,6 @@ Release version : <em>4.1.3</em></p>
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 10/08/2017 16:49:47</p>
+<p>This documentation was generated on 10/10/2017 16:22:26</p>
 </body>
 </html>

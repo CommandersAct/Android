@@ -6,6 +6,10 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.1.2 : 10/10 2017*
+
+	- removed Location permissions in the SDK manifest since it's not useful if you're not using TCLocation. You will need to add it in your application yourself if it's not already present.
+
 *4.1.1 : 05/02 2017*
 
 	~ Updated modules' manifests to remove useless notions like application->allowrtl

@@ -5,8 +5,8 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>10/08/2017</em><br />
-Release version : <em>4.1.1</em></p>
+<p>Last update : <em>10/10/2017</em><br />
+Release version : <em>4.1.2</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -115,8 +115,6 @@ forget them when setting your dynamic variables.</p>
 <li>android.permission.INTERNET</li>
 <li>android.permission.ACCESS_NETWORK_STATE</li>
 <li>android.permission.ACCESS_WIFI_STATE</li>
-<li>android.permission.ACCESS_FINE_LOCATION</li>
-<li>android.permission.ACCESS_COARSE_LOCATION</li>
 </ul>
 <p>If not already done, you should also add the dependecy to the GMS library:</p>
 <div class="codehilite"><pre><span></span><span class="nt">&lt;meta-data</span> <span class="na">android:name=</span><span class="s">&quot;com.google.android.gms.version&quot;</span>
@@ -124,7 +122,17 @@ forget them when setting your dynamic variables.</p>
 </pre></div>
 
 
+<p>Localisation is a special case, if you want to use localisation, you will need to initialise the TCLocation class after TagCommander.</p>
 <p>As of Android's SDK 23, we are only using the LOCATION group of permissions. In the case you need the latitude or longitude of the user, you will first need to ask your user for the LOCATION permission with "AppCompatActivity.requestPermissions".</p>
+<div class="codehilite"><pre><span></span><span class="n">TCLocation</span><span class="o">.</span><span class="na">getInstance</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
+</pre></div>
+
+
+<p>And you will also need to add the following permission:</p>
+<ul>
+<li>android.permission.ACCESS_FINE_LOCATION</li>
+<li>android.permission.ACCESS_COARSE_LOCATION</li>
+</ul>
 <h2 id="compatibility">Compatibility</h2>
 <ul>
 <li>Minimum Android version is 11.</li>
@@ -413,6 +421,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 10/08/2017 16:49:47</p>
+<p>This documentation was generated on 10/10/2017 16:22:26</p>
 </body>
 </html>
