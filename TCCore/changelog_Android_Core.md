@@ -6,7 +6,11 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
-*4.1.3 : 03/08 2017*
+*4.1.4 : 11/10 2017*
+
+	+ Better synchronisation around the DynamicStore to prevent issues with late AAID.
+
+*4.1.3 : 08/03 2017*
 
 	+ Added TC_SDK_ID and TC_NORMALIZED_ID
 

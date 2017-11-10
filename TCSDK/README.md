@@ -5,7 +5,7 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>10/10/2017</em><br />
+<p>Last update : <em>10/11/2017</em><br />
 Release version : <em>4.1.2</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -354,6 +354,7 @@ anyway for a greater ease of use.</p>
 <li>By going to your vendor's platform and check that the hits are displayed and that the data is correct. Please be aware that hits may not display immediately in the vendor account. This delay differs widely between vendors and may also vary for the type of hit under the same vendor.</li>
 <li>You can also use a network monitor like Wireshark or Charles to check directly what is being sent on the wire to your vendors.</li>
 </ul>
+<p>!INCLUDE "Android/UsingTheSDK_Charles.mdpp"</p>
 <h2 id="common-errors">Common errors</h2>
 <div class="warning"></div>
 
@@ -421,6 +422,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 10/10/2017 17:00:39</p>
+<p>This documentation was generated on 10/11/2017 12:13:52</p>
 </body>
 </html>
