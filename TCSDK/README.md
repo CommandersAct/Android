@@ -38,6 +38,7 @@ Release version : <em>4.1.2</em></p>
 <li><a href="#troubleshooting">Troubleshooting</a><ul>
 <li><a href="#debugging">Debugging</a></li>
 <li><a href="#testing">Testing</a></li>
+<li><a href="#network-monitor">Network monitor</a></li>
 <li><a href="#common-errors">Common errors</a></li>
 <li><a href="#common-errors-with-the-tagging-plan">Common errors with the tagging plan</a></li>
 </ul>
@@ -354,7 +355,26 @@ anyway for a greater ease of use.</p>
 <li>By going to your vendor's platform and check that the hits are displayed and that the data is correct. Please be aware that hits may not display immediately in the vendor account. This delay differs widely between vendors and may also vary for the type of hit under the same vendor.</li>
 <li>You can also use a network monitor like Wireshark or Charles to check directly what is being sent on the wire to your vendors.</li>
 </ul>
-<p>!INCLUDE "Android/UsingTheSDK_Charles.mdpp"</p>
+<h2 id="network-monitor">Network monitor</h2>
+<p>Starting Android 7 (Nougat) you will have a bit more troubles while trying to profile your applications with tools like Charles. Google introduced <a href="https://android-developers.googleblog.com/2016/07/changes-to-trusted-certificate.html">changes to trusted certificates</a>.</p>
+<p>Basically what is needed in order to see https hits in Charles and alike is a bit more configuration than just adding SSL certificate to the phone. You will need to add in your manifest application:</p>
+<div class="codehilite"><pre><span></span><span class="nl">android:</span><span class="n">networkSecurityConfig</span><span class="o">=</span><span class="s">&quot;@xml/network_security_config&quot;</span>
+</pre></div>
+
+
+<p>And create a file named network_security_config.xml under the res/xml folder which should contain:</p>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;network-security-config&gt;</span>    
+    <span class="nt">&lt;base-config&gt;</span>  
+      <span class="nt">&lt;trust-anchors&gt;</span>
+          <span class="nt">&lt;certificates</span> <span class="na">src=</span><span class="s">&quot;system&quot;</span> <span class="nt">/&gt;</span>
+          <span class="nt">&lt;certificates</span> <span class="na">src=</span><span class="s">&quot;user&quot;</span> <span class="nt">/&gt;</span>
+      <span class="nt">&lt;/trust-anchors&gt;</span>
+    <span class="nt">&lt;/base-config&gt;</span>
+<span class="nt">&lt;/network-security-config&gt;</span>
+</pre></div>
+
+
+<p>With this, you should be set!</p>
 <h2 id="common-errors">Common errors</h2>
 <div class="warning"></div>
 
@@ -422,6 +442,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 10/11/2017 12:13:52</p>
+<p>This documentation was generated on 10/11/2017 15:25:19</p>
 </body>
 </html>
