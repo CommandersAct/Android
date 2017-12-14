@@ -6,6 +6,17 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+
+*4.1.6 : 12/01 2017*
+
+	+ You can now disable the SDK by calling disableSDK() nothing will be treated by the SDK after this.
+
+*4.1.5 : 11/27 2017*
+
+	+ Added Background Mode, a way to force the SDK to work when the application is in background.
+	- Removed the ways to directly touch the DynamicStores used by the system classes.
+	~ Better synchronisation for the DynamicStores
+
 *4.1.4 : 11/10 2017*
 
 	+ Better synchronisation around the DynamicStore to prevent issues with late AAID.

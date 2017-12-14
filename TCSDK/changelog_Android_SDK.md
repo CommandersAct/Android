@@ -6,6 +6,17 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+
+*4.1.4 : 12/01 2017*
+
+	+ You can now disable the SDK by calling disableSDK() nothing will be treated by the SDK after this.
+
+*4.1.3 : 11/27 2017*
+
+	+ Added Background Mode, a way to force the SDK to work when the application is in background.
+	- Removed the ways to directly touch the DynamicStores used by the system classes.
+	~ Better synchronisation for the DynamicStores
+
 *4.1.2 : 10/10 2017*
 
 	- removed Location permissions in the SDK manifest since it's not useful if you're not using TCLocation. You will need to add it in your application yourself if it's not already present.
