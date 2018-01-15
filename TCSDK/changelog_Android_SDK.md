@@ -6,6 +6,9 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.1.5 : 01/15 2018*
+
+	~ Forcing the calls to Commanders Act server-side to be https. Please read the documentation at "Network monitor" as this is impacted.
 
 *4.1.4 : 12/01 2017*
 
