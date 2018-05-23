@@ -96,6 +96,6 @@ Release version : <em>4.1.1</em></p>
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 23/05/2018 14:51:01</p>
+<p>This documentation was generated on 23/05/2018 14:55:12</p>
 </body>
 </html>
