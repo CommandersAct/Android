@@ -458,6 +458,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 23/05/2018 14:49:56</p>
+<p>This documentation was generated on 23/05/2018 14:51:01</p>
 </body>
 </html>
