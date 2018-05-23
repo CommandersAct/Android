@@ -5,7 +5,7 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>15/01/2018</em><br />
+<p>Last update : <em>23/05/2018</em><br />
 Release version : <em>4.1.5</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -149,7 +149,7 @@ forget them when setting your dynamic variables.</p>
 <code>TC_SITE_ID</code> and <code>TC_CONTAINER_ID</code> are integers provided by Commanders Act.
 You need to pass your application context while instantiating TagCommander. The <code>context</code> is usually simply your activity from which we will be sure to get the application context.</p>
 <p>A single line of code is required to properly initialize an instance of TagCommander:</p>
-<div class="codehilite"><pre><span></span><span class="c1">//!\\ VERY IMPORTANT WHILE INTEGRATING TagCommander</span>
+<div class="codehilite"><pre><span></span><span class="c1">//!\\ Very important while integrating TagCommander</span>
 <span class="n">TCDebug</span><span class="o">.</span><span class="na">setDebugLevel</span><span class="o">(</span><span class="n">Log</span><span class="o">.</span><span class="na">VERBOSE</span><span class="o">);</span>
 
 <span class="n">TagCommander</span> <span class="n">TCInstance</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TagCommander</span><span class="o">(</span><span class="n">TC_SITE_ID</span><span class="o">,</span> <span class="n">TC_CONTAINER_ID</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
@@ -358,15 +358,12 @@ anyway for a greater ease of use.</p>
 <td><code>Log.ASSERT</code></td>
 <td>Assertions only (not used).</td>
 </tr>
-<tr>
-<td><code>Log.NONE</code></td>
-<td>No print at all.</td>
-</tr>
 </tbody>
 </table>
 <ul>
 <li>The internal architecture is working with internal notifications. You can ask the Logger to display all the internal notifications with TCDebug.setNotificationLog(true);.</li>
 </ul>
+<p>If you don't call TCDebug.setDebugLevel, not log will be printed at all.</p>
 <h2 id="testing">Testing</h2>
 <p>There are three ways to verify that the module executes the tags in your application:</p>
 <ul>
@@ -461,6 +458,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 15/01/2018 16:17:07</p>
+<p>This documentation was generated on 23/05/2018 11:45:53</p>
 </body>
 </html>

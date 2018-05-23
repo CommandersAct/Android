@@ -7,6 +7,14 @@ Changelog Android
 [Previous changelist](../res/changelog_Android_3.md)
 
 
+*4.1.8 : 05/23 2018*
+
+    ~ Default logging to nothing. Please call setDebugLevel only if you want logs.
+
+*4.1.7 : 03/27 2018*
+
+	~ Better synchronisation for the DynamicStores
+
 *4.1.6 : 12/01 2017*
 
 	+ You can now disable the SDK by calling disableSDK() nothing will be treated by the SDK after this.
