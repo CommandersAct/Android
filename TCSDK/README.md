@@ -5,7 +5,7 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>23/05/2018</em><br />
+<p>Last update : <em>24/05/2018</em><br />
 Release version : <em>4.1.5</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -102,14 +102,14 @@ forget them when setting your dynamic variables.</p>
 <p><a href="../README.md">Please check the Developers Implementation Guide to chose the best way to implement this module in your project.</a></p>
 <h2 id="gradle-additions">Gradle additions</h2>
 <p>You need to add some dependencies in your build.gradle file for the SDK to work properly. You will need a tiny bit of google play services which is location.</p>
-<div class="codehilite"><pre><span></span><span class="n">compile</span> <span class="s1">&#39;com.google.android.gms:play-services-location:9.8.0&#39;</span>
-<span class="n">compile</span> <span class="s1">&#39;com.android.support:appcompat-v7:25.1.1&#39;</span>
+<div class="codehilite"><pre><span></span><span class="n">implementation</span> <span class="s1">&#39;com.google.android.gms:play-services-location:15.0.1&#39;</span>
+<span class="n">implementation</span> <span class="s1">&#39;com.android.support:appcompat-v7:27.1.1&#39;</span>
 </pre></div>
 
 
 <p>The SDK module is compiled with the following dependencies :</p>
-<div class="codehilite"><pre><span></span><span class="n">compile</span> <span class="n">project</span><span class="p">(</span><span class="s1">&#39;:core&#39;</span><span class="p">)</span>
-<span class="n">compile</span> <span class="s1">&#39;com.android.support:appcompat-v7:25.1.1&#39;</span>
+<div class="codehilite"><pre><span></span><span class="n">implementation</span> <span class="n">project</span><span class="p">(</span><span class="s1">&#39;:core&#39;</span><span class="p">)</span>
+<span class="n">implementation</span> <span class="s1">&#39;com.android.support:appcompat-v7:27.1.1&#39;</span>
 </pre></div>
 
 
@@ -139,9 +139,9 @@ forget them when setting your dynamic variables.</p>
 </ul>
 <h2 id="compatibility">Compatibility</h2>
 <ul>
-<li>Minimum Android version is 11.</li>
-<li>Build Target version is 25.</li>
-<li>Build Tools Version : 24.0.3.</li>
+<li>Minimum Android version is 15.</li>
+<li>Build Target version is 27.</li>
+<li>Build Tools Version : 27.0.3.</li>
 </ul>
 <h1 id="using-the-sdk">Using the SDK</h1>
 <h2 id="initialisation">Initialisation</h2>
@@ -458,6 +458,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 23/05/2018 15:39:22</p>
+<p>This documentation was generated on 24/05/2018 17:09:24</p>
 </body>
 </html>
