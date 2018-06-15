@@ -5,7 +5,7 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>24/05/2018</em><br />
+<p>Last update : <em>15/06/2018</em><br />
 Release version : <em>4.1.5</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -50,6 +50,7 @@ Release version : <em>4.1.5</em></p>
 <li><a href="#tcpredefinedvariables">TCPredefinedVariables</a></li>
 </ul>
 </li>
+<li><a href="#kotlin">Kotlin</a></li>
 <li><a href="#example-tcdemo">Example: TCDemo</a></li>
 <li><a href="#migration-from-v2-and-v3-to-v4">Migration from v2 and v3 to v4</a></li>
 <li><a href="#support-and-contacts">Support and contacts</a></li>
@@ -439,6 +440,9 @@ You can ask for any variables computed by TagCommander through a simple getData 
 
 <p>You can find a full list of variables computed by the SDK, explanations and examples here: </p>
 <p><a href="PredefinedVariables.md">TCPredefinedVariables</a></p>
+<h1 id="kotlin">Kotlin</h1>
+<p>If you want to use Kotlin as your main language, there is absolutely nothing special to do.
+Compile with the latest versions and call our SDK as usual.</p>
 <h1 id="example-tcdemo">Example: TCDemo</h1>
 <p>To check an example of how to use this module, please check: </p>
 <p><a href="https://github.com/TagCommander/Tag-Demo/tree/master/Android">Tag Demo</a></p>
@@ -458,6 +462,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 24/05/2018 17:09:24</p>
+<p>This documentation was generated on 15/06/2018 17:53:16</p>
 </body>
 </html>
