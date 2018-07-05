@@ -6,6 +6,13 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.2.0 : 06/22 2018*
+
+	+ Privacy notifications.
+
+*4.1.9 : 05/25 2018*
+
+    ~ Changed list types and synchronisation methods for the DynamicStores
 
 *4.1.8 : 05/23 2018*
 
