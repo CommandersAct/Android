@@ -6,6 +6,10 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.2.1 : 08/01 2018*
+
+	+ Protecting the addition of data in the datalayer when the SDK is disabled.
+
 *4.2.0 : 06/22 2018*
 
 	~ Cleaning on android > 15 which is now always true.

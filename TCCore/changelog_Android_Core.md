@@ -6,6 +6,10 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.2.1 : 08/01 2018*
+
+	+ We can now modify a TCHTTPOperation to put additional post data.
+
 *4.2.0 : 06/22 2018*
 
 	+ Privacy notifications.
