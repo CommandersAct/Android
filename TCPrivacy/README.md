@@ -92,6 +92,6 @@ This allow you to proove that a user has indeed been shown the consent screen ev
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 03/08/2018 16:46:00</p>
+<p>This documentation was generated on 03/08/2018 16:54:10</p>
 </body>
 </html>
