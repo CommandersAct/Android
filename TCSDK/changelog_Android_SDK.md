@@ -6,6 +6,10 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.2.2 : 08/06 2018*
+
+	~ Refactoring on consent hits to give them a proper route.
+
 *4.2.1 : 08/01 2018*
 
 	+ Protecting the addition of data in the datalayer when the SDK is disabled.
