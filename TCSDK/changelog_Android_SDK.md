@@ -6,6 +6,12 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+
+*4.3.0 : 12/05 2018*
+
+	- Moved TCUser_agent in Core
+	- Moved TCNetworkManager and TCWaitingQueue which are now part of Core./Users/jeanjulien/Sources/Mobile/Docs/changelogs/changelog_iOS_SDK.md
+
 *4.2.2 : 08/06 2018*
 
 	~ Refactoring on consent hits to give them a proper route.
