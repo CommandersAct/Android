@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>03/01/2019</em><br />
-Release version : <em>4.3.0</em></p>
+<p>Last update : <em>04/01/2019</em><br />
+Release version : <em>4.3.1</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -146,7 +146,8 @@ This is the function where you would tell your ad partner "the user don't wan't 
 </pre></div>
 
 
-<p>We have a Map which is the same as the one given to our SDK with keys PRIVACY_CAT_n and value "0" or "1".</p>
+<p>We have a Map which is the same as the one given to our SDK with keys PRIVACY_CAT_n and value "0" or "1".
+In the case nothing was consented to, you might also have an empty map (but not null).</p>
 <div class="codehilite"><pre><span></span><span class="kt">void</span> <span class="nf">consentOutdated</span><span class="o">();</span>
 </pre></div>
 
@@ -214,6 +215,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 03/01/2019 09:50:41</p>
+<p>This documentation was generated on 04/01/2019 14:17:13</p>
 </body>
 </html>

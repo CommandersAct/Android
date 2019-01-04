@@ -1,6 +1,11 @@
 Changelog Android
 =================
 
+*4.3.1 : 01/04 2019*
+
+	~ Corrected callback not called when saving consent standalone.
+
+
 *4.3.0 : 12/05 2018*
 
 	+ Privacy Center to display the privacy inside the app.
