@@ -6,9 +6,9 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
-*4.3.1 : 01/22 2018*
+*4.3.1 : 01/18 2019*
 
-	+ TCSSLSocketFactory to force the right TLS/Cipher combination for old Androids <= 19 to match server sercurity updates.
+    + Modified call for android SDK <= 19 to force TLSv1.2 to match server updates.
 
 *4.3.0 : 12/05 2018*
 

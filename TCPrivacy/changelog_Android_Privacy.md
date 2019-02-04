@@ -1,6 +1,7 @@
 Changelog Android
 =================
 
+
 *4.3.1 : 01/04 2019*
 
 	~ Corrected callback not called when saving consent standalone.
