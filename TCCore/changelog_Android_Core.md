@@ -6,6 +6,10 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.3.2 : 03/12 2019*
+
+    + Added route for Partners hits
+
 *4.3.1 : 01/18 2019*
 
     + Modified call for android SDK <= 19 to force TLSv1.2 to match server updates.
