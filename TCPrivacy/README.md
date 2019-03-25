@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>21/03/2019</em><br />
-Release version : <em>4.3.3</em></p>
+<p>Last update : <em>25/03/2019</em><br />
+Release version : <em>4.3.4</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -111,15 +111,20 @@ Join those IDs with a "consent version". Default is 001, but if you change the i
 <p>If you're using the SDK, this will propagate the information to the SDK and manage its state.</p>
 <h2 id="saving-consent">Saving consent</h2>
 <p>The saving of the consent on our servers is done automatically.</p>
-<p>But since we are saving the consent in our servers, we need to identify the user one way or another. By default the variable used to identify the user consenting is #TC_NORMALIZED_ID#, but you can change it to anything you'd like.
-If you want to use an ID already inside the SDK:</p>
-<div class="codehilite"><pre><span></span><span class="n">TCPrivacy</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">setUserID</span><span class="o">(</span><span class="n">TCCoreConstants</span><span class="o">.</span><span class="na">kTCPredefinedVariable_SDKID</span><span class="o">);</span>
+<p>But since we are saving the consent in our servers, we need to identify the user one way or another. By default the variable used to identify the user consenting is #TC_SDK_ID#, but you can change it to anything you'd like.</p>
+<p>If you want to use an ID already inside the SDK:</p>
+<div class="codehilite"><pre><span></span><span class="n">TCPrivacy</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">setUserID</span><span class="o">(</span><span class="n">TCCoreConstants</span><span class="o">.</span><span class="na">kTCPredefinedVariable_NormalizedID</span><span class="o">);</span>
 </pre></div>
 
 
 <p>If you want to use an ID from your data layer, please first add it to the permanent store:</p>
 <div class="codehilite"><pre><span></span><span class="n">TC</span><span class="o">.</span><span class="na">addPermanentData</span><span class="o">(</span><span class="s">&quot;MY_ID&quot;</span><span class="o">,</span> <span class="s">&quot;12345&quot;</span><span class="o">);</span>
 <span class="n">TCPrivacy</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">setUserID</span><span class="o">(</span><span class="s">&quot;MY_ID&quot;</span><span class="o">);</span>
+</pre></div>
+
+
+<p>and if you simply want to simply pass the information:</p>
+<div class="codehilite"><pre><span></span><span class="n">TCPrivacy</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">setUserID</span><span class="o">(</span><span class="s">&quot;123456765432&quot;</span><span class="o">);</span>
 </pre></div>
 
 
@@ -241,6 +246,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 21/03/2019 14:09:53</p>
+<p>This documentation was generated on 25/03/2019 09:56:35</p>
 </body>
 </html>

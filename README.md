@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="res/ca_logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>21/03/2019</em><br />
+<p>Last update : <em>25/03/2019</em><br />
 Release version : <em>4</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -76,7 +76,7 @@ The modules are the following :</p>
 <span class="n">compile</span> <span class="nf">files</span><span class="o">(</span><span class="err">&#39;</span><span class="n">libs</span><span class="o">/</span><span class="n">TCCore</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.3.2</span><span class="o">.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
 <span class="n">compile</span> <span class="nf">files</span><span class="o">(</span><span class="err">&#39;</span><span class="n">libs</span><span class="o">/</span><span class="n">TCSDK</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.3.1</span><span class="o">.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
 <span class="n">compile</span> <span class="nf">files</span><span class="o">(</span><span class="err">&#39;</span><span class="n">libs</span><span class="o">/</span><span class="n">TCSegment</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.1.1</span><span class="o">.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
-<span class="n">compile</span> <span class="nf">files</span><span class="o">(</span><span class="err">&#39;</span><span class="n">libs</span><span class="o">/</span><span class="n">TCPrivacy</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.3.3</span><span class="o">.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
+<span class="n">compile</span> <span class="nf">files</span><span class="o">(</span><span class="err">&#39;</span><span class="n">libs</span><span class="o">/</span><span class="n">TCPrivacy</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.3.4</span><span class="o">.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
 </pre></div>
 
 
@@ -104,7 +104,7 @@ The modules are the following :</p>
 <div class="codehilite"><pre><span></span><span class="n">compile</span> <span class="o">(</span><span class="n">name</span><span class="o">:</span><span class="err">&#39;</span><span class="n">TCCore</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.3.2</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">ext</span><span class="o">:</span><span class="err">&#39;</span><span class="n">aar</span><span class="err">&#39;</span><span class="o">)</span>
 <span class="n">compile</span> <span class="o">(</span><span class="n">name</span><span class="o">:</span><span class="err">&#39;</span><span class="n">TCSDK</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.3.1</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">ext</span><span class="o">:</span><span class="err">&#39;</span><span class="n">aar</span><span class="err">&#39;</span><span class="o">)</span>
 <span class="n">compile</span> <span class="o">(</span><span class="n">name</span><span class="o">:</span><span class="err">&#39;</span><span class="n">TCSegment</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.1.1</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">ext</span><span class="o">:</span><span class="err">&#39;</span><span class="n">aar</span><span class="err">&#39;</span><span class="o">)</span>
-<span class="n">compile</span> <span class="o">(</span><span class="n">name</span><span class="o">:</span><span class="err">&#39;</span><span class="n">TCPrivacy</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.3.3</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">ext</span><span class="o">:</span><span class="err">&#39;</span><span class="n">aar</span><span class="err">&#39;</span><span class="o">)</span>
+<span class="n">compile</span> <span class="o">(</span><span class="n">name</span><span class="o">:</span><span class="err">&#39;</span><span class="n">TCPrivacy</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.3.4</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">ext</span><span class="o">:</span><span class="err">&#39;</span><span class="n">aar</span><span class="err">&#39;</span><span class="o">)</span>
 </pre></div>
 
 
@@ -116,6 +116,6 @@ The modules are the following :</p>
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 21/03/2019 14:09:53</p>
+<p>This documentation was generated on 25/03/2019 09:56:35</p>
 </body>
 </html>
