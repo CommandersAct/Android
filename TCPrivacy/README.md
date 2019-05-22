@@ -117,7 +117,7 @@ Join those IDs with a "consent version". Default is 001, but if you change the i
 <h2 id="using-iab-consent-string">Using IAB Consent String</h2>
 <p>For now we can create a consent string, but we can't display the privacy center with information from the vendor list. We're creating a first release with only the consent string before so that all our client that don't use the Privacy Center can use IAB.</p>
 <p>First you will need to add the consent library to your project. You will find it in the same repository.</p>
-<p>This library is named TC_IAB.aar and is present in this github folder.</p>
+<p>This library is named TC_IAB.aar and is present in this TCIAB folder.</p>
 <p>When you init the Privacy module it will check if this library is present in your project. If so, it will save in the phone that a CMP is present.</p>
 <p>Then later, when you save the consent, the consent string will automatically be created and saved.</p>
 <p>Everything saved is saved with keys defined under the IAB standards. We use mainly IABConsent_CMPPresent and IABConsent_ConsentString.</p>
@@ -280,6 +280,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 22/05/2019 11:28:43</p>
+<p>This documentation was generated on 22/05/2019 11:29:23</p>
 </body>
 </html>
