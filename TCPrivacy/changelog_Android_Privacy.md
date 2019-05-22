@@ -1,6 +1,11 @@
 Changelog Android
 =================
 
+*4.3.6 : 05/15 2019*
+
+	+ Generating consent string for IAB version 1.
+
+
 *4.3.5 : 04/11 2019*
 
 	~ Privacy Policy: Don't take into account the /n into the link zone.
