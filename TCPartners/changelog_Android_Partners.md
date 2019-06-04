@@ -2,6 +2,10 @@ Changelog Android
 =================
 
 
+*4.3.3 : 06/04 2019*
+
+    ~ Re-checking the initialisation of Adobe Audience Manager each hit to prevent a fail in it's initialisation.
+
 
 *4.3.2 : 05/09 2019*
 
