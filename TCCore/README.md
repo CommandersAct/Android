@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="core-guide">Core Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>04/06/2019</em><br />
+<p>Last update : <em>07/06/2019</em><br />
 Release version : <em>4.3.2</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -22,12 +22,11 @@ Release version : <em>4.3.2</em></p>
 <h1 id="dependencies">Dependencies</h1>
 <p>The Core module is mandatory if you are using Commanders Act's mobile solution so we simply put the dependencies needed for the Core module directly in the documentations of the other modules.</p>
 <p>Core is building with the following dependencies :</p>
-<div class="codehilite"><pre><span></span><span class="n">implementation</span> <span class="s1">&#39;com.google.android.gms:play-services-base:15.0.1&#39;</span>
-<span class="n">implementation</span> <span class="s1">&#39;com.google.android.gms:play-services-ads:15.0.1&#39;</span>
-<span class="n">implementation</span> <span class="s1">&#39;com.android.support:appcompat-v7:27.1.1&#39;</span>
-</pre></div>
-
-
+<pre><code>:::ruby
+implementation 'com.google.android.gms:play-services-base:15.0.1'
+implementation 'com.google.android.gms:play-services-ads:15.0.1'
+implementation 'com.android.support:appcompat-v7:27.1.1'
+</code></pre>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
@@ -36,6 +35,6 @@ Release version : <em>4.3.2</em></p>
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 04/06/2019 10:02:31</p>
+<p>This documentation was generated on 07/06/2019 14:46:34</p>
 </body>
 </html>

@@ -1,6 +1,11 @@
 Changelog Android
 =================
 
+*4.3.7 : 06/07 2019*
+
+	+ Adding a way to prevent back button 
+
+
 *4.3.6 : 05/15 2019*
 
 	+ Generating consent string for IAB version 1.

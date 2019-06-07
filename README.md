@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="res/ca_logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>04/06/2019</em><br />
+<p>Last update : <em>07/06/2019</em><br />
 Release version : <em>4</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -31,37 +31,32 @@ The modules are the following :</p>
 <p>For each of those modules, please check their respective documentation for more information.</p>
 <h1 id="adding-a-module-to-your-project">Adding a module to your project</h1>
 <p>If you want to add a module to your android project, you have several possibilities.</p>
-<div class="codehilite"><pre><span></span>- Using jcenter to manage the dependency.
+<pre><code>- Using jcenter to manage the dependency.
 - Using directly the jar in your project.
 - Using the aar file in yout project.
-</pre></div>
-
-
+</code></pre>
 <p>All of them will require you to modify a bit your build.gradle.</p>
 <h2 id="jcenter">JCenter</h2>
 <p>The easiest way is to go with JCenter. It will help you get updates on the module on a regular basis without doing much work.</p>
 <p>If it's not present in your project's build.gradle add jcenter() in the repository list for the dependency management. It will look something like that:</p>
-<div class="codehilite"><pre><span></span><span class="n">allprojects</span> <span class="o">{</span>
-    <span class="n">repositories</span> <span class="o">{</span>
-        <span class="n">jcenter</span><span class="o">()</span>
-        <span class="n">mavenCentral</span><span class="o">()</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</pre></div>
-
-
+<pre><code>:::java
+allprojects {
+    repositories {
+        jcenter()
+        mavenCentral()
+    }
+}
+</code></pre>
 <p>Then in your application's build.gradle always add the core module:</p>
-<div class="codehilite"><pre><span></span><span class="n">implementation</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">tagcommander</span><span class="o">.</span><span class="na">lib</span><span class="o">:</span><span class="n">core</span><span class="o">:</span><span class="mf">4.3.2</span><span class="err">&#39;</span>
-</pre></div>
-
-
+<pre><code>:::java
+implementation 'com.tagcommander.lib:core:4.3.2'
+</code></pre>
 <p>And in addition to the core module you can add the other modules you need the same way. See each module's documentation for more specific information.</p>
 <p>For example:</p>
-<div class="codehilite"><pre><span></span><span class="n">implementation</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">tagcommander</span><span class="o">.</span><span class="na">lib</span><span class="o">:</span><span class="n">SDK</span><span class="o">:</span><span class="mf">4.3.1</span><span class="err">&#39;</span>
-<span class="n">implementation</span> <span class="err">&#39;</span><span class="n">com</span><span class="o">.</span><span class="na">tagcommander</span><span class="o">.</span><span class="na">lib</span><span class="o">:</span><span class="n">segment</span><span class="o">:</span><span class="mf">4.1.1</span><span class="err">&#39;</span>
-</pre></div>
-
-
+<pre><code>:::java
+implementation 'com.tagcommander.lib:SDK:4.3.1'
+implementation 'com.tagcommander.lib:segment:4.1.1'
+</code></pre>
 <h2 id="jar-file">Jar file</h2>
 <p>If you'd rather use the jar files directly in your project, you can get them from our github account: https://github.com/TagCommander/Android</p>
 <div class="warning"></div>
@@ -70,16 +65,15 @@ The modules are the following :</p>
 <p>You will always need to at least add the Core module to your project.</p>
 </blockquote>
 <p>After you downloaded the modules you need, add them to your libs folder and either ask gradle to compile with all the jars in your lib directory or directly with the chosen files.</p>
-<div class="codehilite"><pre><span></span><span class="c1">// All the jars.</span>
-<span class="n">compile</span> <span class="nf">fileTree</span><span class="o">(</span><span class="n">dir</span><span class="o">:</span> <span class="err">&#39;</span><span class="n">libs</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">include</span><span class="o">:</span> <span class="err">&#39;</span><span class="o">*.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
-<span class="c1">// Specific files</span>
-<span class="n">compile</span> <span class="nf">files</span><span class="o">(</span><span class="err">&#39;</span><span class="n">libs</span><span class="o">/</span><span class="n">TCCore</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.3.2</span><span class="o">.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
-<span class="n">compile</span> <span class="nf">files</span><span class="o">(</span><span class="err">&#39;</span><span class="n">libs</span><span class="o">/</span><span class="n">TCSDK</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.3.1</span><span class="o">.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
-<span class="n">compile</span> <span class="nf">files</span><span class="o">(</span><span class="err">&#39;</span><span class="n">libs</span><span class="o">/</span><span class="n">TCSegment</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.1.1</span><span class="o">.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
-<span class="n">compile</span> <span class="nf">files</span><span class="o">(</span><span class="err">&#39;</span><span class="n">libs</span><span class="o">/</span><span class="n">TCPrivacy</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.3.6</span><span class="o">.</span><span class="na">jar</span><span class="err">&#39;</span><span class="o">)</span>
-</pre></div>
-
-
+<pre><code>:::java
+// All the jars.
+compile fileTree(dir: 'libs', include: '*.jar')
+// Specific files
+compile files('libs/TCCore-release-4.3.2.jar')
+compile files('libs/TCSDK-release-4.3.1.jar')
+compile files('libs/TCSegment-release-4.1.1.jar')
+compile files('libs/TCPrivacy-release-4.3.7.jar')
+</code></pre>
 <h2 id="aar-file">Aar file</h2>
 <p>If you'd rather use the aar files directly in your project, you can get them from our github account: https://github.com/TagCommander/Android</p>
 <div class="warning"></div>
@@ -88,26 +82,24 @@ The modules are the following :</p>
 <p>You will always need to at least add the Core module to your project.</p>
 </blockquote>
 <p>To be able to compile with the aar files, you will first need to tell gradle how to use them properly. In your project's build.gradle complete your repository list with 'flatDir' list in the following exemple:</p>
-<div class="codehilite"><pre><span></span><span class="n">allprojects</span> <span class="o">{</span>
-    <span class="n">repositories</span> <span class="o">{</span>
-        <span class="n">mavenCentral</span><span class="o">()</span>
-        <span class="n">jcenter</span><span class="o">()</span>
-        <span class="n">flatDir</span> <span class="o">{</span>
-            <span class="n">dirs</span> <span class="err">&#39;</span><span class="n">libs</span><span class="err">&#39;</span>
-        <span class="o">}</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</pre></div>
-
-
+<pre><code>:::java
+allprojects {
+    repositories {
+        mavenCentral()
+        jcenter()
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+</code></pre>
 <p>After you downloaded the modules you need, add them to your libs folder and ask gradle to compile with them.</p>
-<div class="codehilite"><pre><span></span><span class="n">compile</span> <span class="o">(</span><span class="n">name</span><span class="o">:</span><span class="err">&#39;</span><span class="n">TCCore</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.3.2</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">ext</span><span class="o">:</span><span class="err">&#39;</span><span class="n">aar</span><span class="err">&#39;</span><span class="o">)</span>
-<span class="n">compile</span> <span class="o">(</span><span class="n">name</span><span class="o">:</span><span class="err">&#39;</span><span class="n">TCSDK</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.3.1</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">ext</span><span class="o">:</span><span class="err">&#39;</span><span class="n">aar</span><span class="err">&#39;</span><span class="o">)</span>
-<span class="n">compile</span> <span class="o">(</span><span class="n">name</span><span class="o">:</span><span class="err">&#39;</span><span class="n">TCSegment</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.1.1</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">ext</span><span class="o">:</span><span class="err">&#39;</span><span class="n">aar</span><span class="err">&#39;</span><span class="o">)</span>
-<span class="n">compile</span> <span class="o">(</span><span class="n">name</span><span class="o">:</span><span class="err">&#39;</span><span class="n">TCPrivacy</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">4.3.6</span><span class="err">&#39;</span><span class="o">,</span> <span class="n">ext</span><span class="o">:</span><span class="err">&#39;</span><span class="n">aar</span><span class="err">&#39;</span><span class="o">)</span>
-</pre></div>
-
-
+<pre><code>:::java
+compile (name:'TCCore-release-4.3.2', ext:'aar')
+compile (name:'TCSDK-release-4.3.1', ext:'aar')
+compile (name:'TCSegment-release-4.1.1', ext:'aar')
+compile (name:'TCPrivacy-release-4.3.7', ext:'aar')
+</code></pre>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
@@ -116,6 +108,6 @@ The modules are the following :</p>
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 04/06/2019 10:02:31</p>
+<p>This documentation was generated on 07/06/2019 14:46:34</p>
 </body>
 </html>

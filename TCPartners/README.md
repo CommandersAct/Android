@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="partners-implementation-guide">Partners' Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>04/06/2019</em><br />
+<p>Last update : <em>07/06/2019</em><br />
 Release version : <em>4.3.3</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -28,34 +28,32 @@ Release version : <em>4.3.3</em></p>
 <p>TCPartners or TCMobilePartners is the class used as the super-type of all partners.</p>
 <p>A TCPartner is by default a partner that will listen to all hits you're passing to the SDK so he can work on them.
 You can change this activation by using on of the 3 following functions:</p>
-<div class="codehilite"><pre><span></span><span class="cm">/**</span>
-<span class="cm"> * This function tells the partner to activate on all hits.</span>
-<span class="cm"> */</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">activateOnAllHits</span><span class="o">();</span>
+<pre><code>:::java
+/**
+ * This function tells the partner to activate on all hits.
+ */
+public void activateOnAllHits();
 
-<span class="cm">/**</span>
-<span class="cm"> * This function tells the partner to only treat hit when the specified key is in the datalayer.</span>
-<span class="cm"> * @param key the key to activate the treatment.</span>
-<span class="cm"> */</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">activateOnKey</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">);</span>
+/**
+ * This function tells the partner to only treat hit when the specified key is in the datalayer.
+ * @param key the key to activate the treatment.
+ */
+public void activateOnKey(String key);
 
-<span class="cm">/**</span>
-<span class="cm"> * This function tells the partner to only treat hit when the specified key/value pair is in the datalayer.</span>
-<span class="cm"> * @param key the specific key.</span>
-<span class="cm"> * @param value the specific value.</span>
-<span class="cm"> */</span>
-<span class="kd">public</span> <span class="kt">void</span> <span class="nf">activateOnKeyValue</span><span class="o">(</span><span class="n">String</span> <span class="n">key</span><span class="o">,</span> <span class="n">String</span> <span class="n">value</span><span class="o">);</span>
-</pre></div>
-
-
+/**
+ * This function tells the partner to only treat hit when the specified key/value pair is in the datalayer.
+ * @param key the specific key.
+ * @param value the specific value.
+ */
+public void activateOnKeyValue(String key, String value);
+</code></pre>
 <p>So think carefully about which activation method you want for your partners.</p>
 <h1 id="adobe-audience-manager-aam">Adobe Audience Manager (AAM)</h1>
 <p>The point of this connector is the send information to Adobe Audience Manager and get back the segments corresponding to the app user.</p>
-<div class="codehilite"><pre><span></span><span class="n">TCPartners_AdobeAudienceManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">setContext</span><span class="o">(</span><span class="n">context</span><span class="o">);</span>
-<span class="n">TCPartners_AdobeAudienceManager</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">initWith</span><span class="o">(</span><span class="mi">81811</span><span class="o">,</span> <span class="mi">20201</span><span class="o">);</span>
-</pre></div>
-
-
+<pre><code>:::java
+TCPartners_AdobeAudienceManager.getInstance().setContext(context);
+TCPartners_AdobeAudienceManager.getInstance().initWith(81811, 20201);
+</code></pre>
 <p>This connector only works if we have and IDFA or AAID.</p>
 <h2 id="hit">Hit</h2>
 <p>Since we're potentially sending information to several partners we need to differentiate the data for AAM.
@@ -68,28 +66,25 @@ We're basing ourselves on the datalayer and are taking all the keys prefixed "c_
 <p>The second is the domain which correspond to the application. This is needed because AAM can send information from several different app domains when you have several configured.</p>
 <p>You will have to register to a callback to receive the content of the segments.</p>
 <p>And will receive a response of the format:</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
-    <span class="err">aam_fr=sid=81025,</span>
-    <span class="err">aam_oas=PYT_63359=Y,</span>
-    <span class="err">aam_fw=PYT_63359=Y&amp;PYT_619=Y&amp;PYT_7398=Y&amp;PYT_94221</span>
-<span class="p">}</span>
-</pre></div>
-
-
+<pre><code>:::JSON
+{
+    aam_fr=sid=81025,
+    aam_oas=PYT_63359=Y,
+    aam_fw=PYT_63359=Y&amp;PYT_619=Y&amp;PYT_7398=Y&amp;PYT_94221
+}
+</code></pre>
 <p>To initialize Freewheel:</p>
-<div class="codehilite"><pre><span></span><span class="n">TCPartners_Freewheel</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">setSegmentDomain</span><span class="o">(</span><span class="s">&quot;.tf1.fr&quot;</span><span class="o">);</span>
-<span class="n">TCPartners_Freewheel</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">callback</span> <span class="o">=</span> <span class="k">this</span><span class="o">;</span>
-</pre></div>
-
-
+<pre><code>:::java
+TCPartners_Freewheel.getInstance().setSegmentDomain(".tf1.fr");
+TCPartners_Freewheel.getInstance().callback = this;
+</code></pre>
 <p>And to recover the segments:</p>
-<div class="codehilite"><pre><span></span><span class="kd">public</span> <span class="kt">void</span> <span class="nf">onSegmentReceived</span><span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">String</span><span class="o">&gt;</span> <span class="n">segments</span><span class="o">)</span>
-<span class="o">{</span>
-    <span class="n">TCLogger</span><span class="o">.</span><span class="na">getInstance</span><span class="o">().</span><span class="na">logMessage</span><span class="o">(</span><span class="s">&quot;Segments:&quot;</span> <span class="o">+</span> <span class="n">segments</span><span class="o">,</span> <span class="n">Log</span><span class="o">.</span><span class="na">ERROR</span><span class="o">);</span>
-<span class="o">}</span>
-</pre></div>
-
-
+<pre><code>:::java
+public void onSegmentReceived(Map&lt;String, String&gt; segments)
+{
+    TCLogger.getInstance().logMessage("Segments:" + segments, Log.ERROR);
+}
+</code></pre>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
@@ -98,6 +93,6 @@ We're basing ourselves on the datalayer and are taking all the keys prefixed "c_
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 04/06/2019 10:02:31</p>
+<p>This documentation was generated on 07/06/2019 14:46:34</p>
 </body>
 </html>
