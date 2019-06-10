@@ -1,9 +1,15 @@
 Changelog Android
 =================
 
+
+*4.3.8 : 06/10 2019*
+
+	~ Correction on back button behavior when a consent has already been given
+
+
 *4.3.7 : 06/07 2019*
 
-	+ Adding a way to prevent back button 
+	+ Adding a way to prevent back button
 
 
 *4.3.6 : 05/15 2019*
