@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="res/ca_logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>10/06/2019</em><br />
+<p>Last update : <em>12/06/2019</em><br />
 Release version : <em>4</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -72,7 +72,7 @@ compile fileTree(dir: 'libs', include: '*.jar')
 compile files('libs/TCCore-release-4.3.2.jar')
 compile files('libs/TCSDK-release-4.3.1.jar')
 compile files('libs/TCSegment-release-4.1.1.jar')
-compile files('libs/TCPrivacy-release-4.3.8.jar')
+compile files('libs/TCPrivacy-release-4.3.9.jar')
 </code></pre>
 <h2 id="aar-file">Aar file</h2>
 <p>If you'd rather use the aar files directly in your project, you can get them from our github account: https://github.com/TagCommander/Android</p>
@@ -98,7 +98,7 @@ allprojects {
 compile (name:'TCCore-release-4.3.2', ext:'aar')
 compile (name:'TCSDK-release-4.3.1', ext:'aar')
 compile (name:'TCSegment-release-4.1.1', ext:'aar')
-compile (name:'TCPrivacy-release-4.3.8', ext:'aar')
+compile (name:'TCPrivacy-release-4.3.9', ext:'aar')
 </code></pre>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
@@ -108,6 +108,6 @@ compile (name:'TCPrivacy-release-4.3.8', ext:'aar')
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 10/06/2019 11:55:30</p>
+<p>This documentation was generated on 12/06/2019 14:43:05</p>
 </body>
 </html>

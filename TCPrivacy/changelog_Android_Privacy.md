@@ -2,6 +2,11 @@ Changelog Android
 =================
 
 
+*4.3.9 : 06/12 2019*
+
+	~ Correction on subCategories switch issues.
+
+
 *4.3.8 : 06/10 2019*
 
 	~ Correction on back button behavior when a consent has already been given
