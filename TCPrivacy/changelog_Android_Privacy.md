@@ -2,6 +2,11 @@ Changelog Android
 =================
 
 
+*4.3.10 : 08/02 2019*
+
+    ~ Only passing categories ID related IAB for Consent String generation.
+
+
 *4.3.9 : 06/12 2019*
 
 	~ Correction on subCategories switch issues.
