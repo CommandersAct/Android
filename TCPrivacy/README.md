@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>05/08/2019</em><br />
-Release version : <em>4.3.10</em></p>
+<p>Last update : <em>20/09/2019</em><br />
+Release version : <em>4.4.1</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -73,20 +73,20 @@ To prevent having to manually save the consent asked to the user and manually us
 Join those IDs with a "consent version". Default is 001, but if you change the implementation, it's better to increment this version.</p>
 <p>/!\ This will be very simplified as we will generate a JSON from the Tag Commander interface describing your privacy and categories. (2nd Quarter 2019)</p>
 <p>The setup is really simple, pass to the TCPrivacy object your site ID, application context and a pointer to your TagCommanders' SDK instance. If you want to add your consent version, you can add it to the parameters as a String.</p>
-<pre><code>:::java
-TCPrivacy.getInstance().setSiteIDAppContextAndTCInstance(site_id, context, TC);
+<pre><code>TCPrivacy.getInstance().setSiteIDPrivacyIDAppContextTCInstance(site_id, privacy_id, context, TC);
+</code></pre>
+<p>If you're using you're own Privacy Center, use the following function instead:</p>
+<pre><code>TCPrivacy.getInstance().initWithCustomPCMAndTCInstance(site_id, privacy_id, context, TC);
 </code></pre>
 <p>This call will check the saved consent, putting the SDK on hold if nothing is found, and start/stop the SDK if something is saved.</p>
 <h3 id="standalone">Standalone</h3>
 <p>Modules: Core, Privacy</p>
 <p>You won't need the SDK module, and will need to implement a callback to manage your solutions when consent is given or re-loaded.</p>
 <p>The setup is really simple, pass to the TCPrivacy object your site ID  application context. If you want to add your consent version, you can add it to the parameters as a String.</p>
-<pre><code>:::java
-TCPrivacy.getInstance().setSiteIDPrivacyIDAndAppContext(site_id, privacy_id, appContext);
+<pre><code>TCPrivacy.getInstance().setSiteIDPrivacyIDAppContext(site_id, privacy_id, appContext);
 </code></pre>
-<p>Behind this call:</p>
-<pre><code>- we will check saved consent
-- we try to update and replace the JSON configuration (if none is fount, nothing is done)
+<p>If you're using you're own Privacy Center, use the following function instead:</p>
+<pre><code>TCPrivacy.getInstance().initWithCustomPCM(site_id, privacy_id, context);
 </code></pre>
 <h2 id="saving-consent">Saving consent</h2>
 <p>Here is where the IDs of the categories matters.</p>
@@ -115,14 +115,12 @@ TCPrivacy.getInstance().saveConsent(consent);
 <h3 id="iab-with-privacy-center">IAB with Privacy Center</h3>
 <p>As explained above IAB is not made to work with the privacy center for now, so if you still want to use the privacy center, please do it like this:</p>
 <p>You first need to remove the automatic link between the module and IAB by disabling IAB:</p>
-<pre><code>:::java
-TCPrivacy.getInstance().enableIAB = false;
+<pre><code>TCPrivacy.getInstance().enableIAB = false;
 TCPrivacy.getInstance().vendorListVersion = 146;
 </code></pre>
 <p>You need to manually set the vendorListVersion also as this is required during the creation of the consent string (we default at 146 which is the version )</p>
 <p>Then when you want to save the consent you will need to manually send information:</p>
-<pre><code>:::java
-Map&lt;String, String&gt; consent = new HashMap&lt;&gt;();
+<pre><code>Map&lt;String, String&gt; consent = new HashMap&lt;&gt;();
 consent.put("PRIVACY_CAT_1", "1");
 consent.put("PRIVACY_CAT_2", "1");
 consent.put("PRIVACY_CAT_3", "1");
@@ -164,8 +162,7 @@ This allow you to prove that a user has indeed been shown the consent screen eve
 <p>In some cases, client also use this to infer user consent since he continued using the application after he was shown the consent screen.
 We don't recommend this behaviour, please discuss it with your setup team first.</p>
 <p>Either way it's interesting to be able to log the fact that the consent screen has been viewed. If you're not using the Privacy Center, please call:</p>
-<pre><code>:::java
-TCPrivacy.getInstance().viewConsent();
+<pre><code>TCPrivacy.getInstance().viewConsent();
 </code></pre>
 <h3 id="global-consent">Global consent</h3>
 <p>We integrated an On/Off switch so that the user can consent to all categories at the same time.
@@ -175,8 +172,7 @@ It's not mandatory yet, but recommended.</p>
 <p>Currently we have a callback function that lets you get back the categories and setup your other partners accordingly.
 This is the function where you would tell your ad partner "the user don't wan't to receive personalized ads" for example.</p>
 <p>/!\ Don't forget to register to the callbacks <em>before</em> the initialisation of the Privacy Module since the module will check consent at init and use the callback at this step.</p>
-<pre><code>:::java
-void consentUpdated(Map&lt;String, String&gt; categories);
+<pre><code>void consentUpdated(Map&lt;String, String&gt; categories);
 </code></pre>
 <p>Called when either:</p>
 <pre><code>- We load the saved consent
@@ -185,12 +181,10 @@ void consentUpdated(Map&lt;String, String&gt; categories);
 </code></pre>
 <p>We have a Map which is the same as the one given to our SDK with keys PRIVACY_CAT_n and PRIVACY_VEN_n and value "0" or "1".
 In the case nothing was consented to, you might also have an empty map (but not null).</p>
-<pre><code>:::java
-void consentOutdated();
+<pre><code>void consentOutdated();
 </code></pre>
 <p>This is called after 13 months without change in the user consent. This can allow you to force displaying the consent the same way you would on first launch.</p>
-<pre><code>:::java
-void consentCategoryChanged();
+<pre><code>void consentCategoryChanged();
 </code></pre>
 <p>When you make a change in the JSON, there is nothing special to do.
 But when this change is adding or removing a category, or changing an ID, we should re-display the Privacy Center.</p>
@@ -203,8 +197,7 @@ But when this change is adding or removing a category, or changing an ID, we sho
 <p>In the Android SDK we create an Activity which is an easy way to display a "page" without have to create a specific fragment space for it.
 Offline JSON has to be saved in the src/main/assets folder.</p>
 <p>To start the Privacy Center, you have to launch the corresponding activity.</p>
-<pre><code>:::java
-Intent PCM = new Intent(getContext(), com.tagcommander.lib.privacy.TCPrivacyCenter.class);
+<pre><code>Intent PCM = new Intent(getContext(), com.tagcommander.lib.privacy.TCPrivacyCenter.class);
 startActivity(PCM);
 </code></pre>
 <p>For now this JSON has to be created and managed manually. But soon, this will be created by our interfaces. And the SDK will check for updates of the file automatically.
@@ -258,6 +251,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 05/08/2019 10:42:18</p>
+<p>This documentation was generated on 20/09/2019 15:43:50</p>
 </body>
 </html>

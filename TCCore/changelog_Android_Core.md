@@ -6,6 +6,10 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.4.1 : 11/20 2019*
+
+    + Refactoring on configuration files which now are in the priority queue.
+
 *4.3.2 : 03/12 2019*
 
     + Added route for Partners hits

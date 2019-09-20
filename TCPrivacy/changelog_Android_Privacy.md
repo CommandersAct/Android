@@ -1,6 +1,13 @@
 Changelog Android
 =================
 
+*4.4.1 : 11/20 2019*
+
+    ~ /!\ Function to initialize Privacy have changed
+    ~ /!\ Update Core module alongside this module.
+    ~ Refactoring on file configurations
+    + We now have a class to manage distant configuration and privacy versions are taken from the configuration. 
+
 
 *4.3.10 : 08/02 2019*
 

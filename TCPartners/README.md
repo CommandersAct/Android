@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="partners-implementation-guide">Partners' Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>05/08/2019</em><br />
-Release version : <em>4.3.3</em></p>
+<p>Last update : <em>20/09/2019</em><br />
+Release version : <em>4.4.1</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -46,13 +46,21 @@ public void activateOnKey(String key);
  * @param value the specific value.
  */
 public void activateOnKeyValue(String key, String value);
+
+/**
+ * This function tells the partner to only treat hit when the specified key is NOT in the datalayer.
+ * * @param key the key to prevent the activation.
+ */
+public void activateOnAllHitsButKey(String key)
 </code></pre>
 <p>So think carefully about which activation method you want for your partners.</p>
 <h1 id="adobe-audience-manager-aam">Adobe Audience Manager (AAM)</h1>
 <p>The point of this connector is the send information to Adobe Audience Manager and get back the segments corresponding to the app user.</p>
-<pre><code>:::java
-TCPartners_AdobeAudienceManager.getInstance().setContext(context);
+<pre><code>TCPartners_AdobeAudienceManager.getInstance().setContext(context);
 TCPartners_AdobeAudienceManager.getInstance().initWith(81811, 20201);
+</code></pre>
+<p>If you want to use your custom configuration to use offline segments ID, please also add this line.</p>
+<pre><code>TCPartners_AdobeAudienceManager.getInstance().addOfflineConfiguration(3311, 1);
 </code></pre>
 <p>This connector only works if we have and IDFA or AAID.</p>
 <h2 id="hit">Hit</h2>
@@ -93,6 +101,6 @@ public void onSegmentReceived(Map&lt;String, String&gt; segments)
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 05/08/2019 10:42:18</p>
+<p>This documentation was generated on 20/09/2019 15:43:50</p>
 </body>
 </html>
