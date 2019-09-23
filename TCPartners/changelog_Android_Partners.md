@@ -1,6 +1,10 @@
 Changelog Android
 =================
 
+*4.4.2 : 11/23 2019*
+
+	+ Protection when segment list is empty.
+
 *4.4.1 : 11/20 2019*
 
     ~ /!\ Update Core module alongside this module.
