@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="partners-implementation-guide">Partners' Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>23/09/2019</em><br />
-Release version : <em>4.4.2</em></p>
+<p>Last update : <em>25/09/2019</em><br />
+Release version : <em>4.4.3</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -52,6 +52,13 @@ public void activateOnKeyValue(String key, String value);
  * * @param key the key to prevent the activation.
  */
 public void activateOnAllHitsButKey(String key)
+
+/**
+ * This function tells the partner to only treat hit when the specified key and value are NOT in the datalayer.
+ * @param key the specific key.
+ * @param value the specific value.
+ */
+public void activateOnAllHitsButKeyValue(String key, String value)
 </code></pre>
 <p>So think carefully about which activation method you want for your partners.</p>
 <h1 id="adobe-audience-manager-aam">Adobe Audience Manager (AAM)</h1>
@@ -101,6 +108,6 @@ public void onSegmentReceived(Map&lt;String, String&gt; segments)
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 23/09/2019 16:45:01</p>
+<p>This documentation was generated on 25/09/2019 14:54:01</p>
 </body>
 </html>
