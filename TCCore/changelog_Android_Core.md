@@ -6,7 +6,12 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
-*4.4.1 : 11/20 2019*
+
+*4.4.2 : 10/14 2019*
+
+	+ Removed the need to have the offline counterpart of configuration files.
+
+*4.4.1 : 09/20 2019*
 
     + Refactoring on configuration files which now are in the priority queue.
 

@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="res/ca_logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>25/09/2019</em><br />
+<p>Last update : <em>14/10/2019</em><br />
 Release version : <em>4</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -49,7 +49,7 @@ allprojects {
 </code></pre>
 <p>Then in your application's build.gradle always add the core module:</p>
 <pre><code>:::java
-implementation 'com.tagcommander.lib:core:4.4.1'
+implementation 'com.tagcommander.lib:core:4.4.2'
 </code></pre>
 <p>And in addition to the core module you can add the other modules you need the same way. See each module's documentation for more specific information.</p>
 <p>For example:</p>
@@ -69,7 +69,7 @@ implementation 'com.tagcommander.lib:segment:4.1.1'
 // All the jars.
 compile fileTree(dir: 'libs', include: '*.jar')
 // Specific files
-compile files('libs/TCCore-release-4.4.1.jar')
+compile files('libs/TCCore-release-4.4.2.jar')
 compile files('libs/TCSDK-release-4.3.1.jar')
 compile files('libs/TCSegment-release-4.1.1.jar')
 compile files('libs/TCPrivacy-release-4.4.2.jar')
@@ -95,7 +95,7 @@ allprojects {
 </code></pre>
 <p>After you downloaded the modules you need, add them to your libs folder and ask gradle to compile with them.</p>
 <pre><code>:::java
-compile (name:'TCCore-release-4.4.1', ext:'aar')
+compile (name:'TCCore-release-4.4.2', ext:'aar')
 compile (name:'TCSDK-release-4.3.1', ext:'aar')
 compile (name:'TCSegment-release-4.1.1', ext:'aar')
 compile (name:'TCPrivacy-release-4.4.2', ext:'aar')
@@ -108,6 +108,6 @@ compile (name:'TCPrivacy-release-4.4.2', ext:'aar')
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 25/09/2019 14:54:01</p>
+<p>This documentation was generated on 14/10/2019 15:43:42</p>
 </body>
 </html>
