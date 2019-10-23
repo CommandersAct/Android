@@ -6,6 +6,9 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.4.3 : 10/23 2019*
+
+	~ Correction for 4.4.2 where no offline configuration would still cause a crash in preSaveOfflineJSON.
 
 *4.4.2 : 10/14 2019*
 
