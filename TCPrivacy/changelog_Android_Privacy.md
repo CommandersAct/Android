@@ -1,6 +1,10 @@
 Changelog Android
 =================
 
+*4.4.3 : 10/29 2019*
+
+	+ All the switch positions of the Privacy Center can now default to the off position by using : TCPrivacy.getInstance().switchDefaultState = false;
+
 *4.4.2 : 09/25 2019*
 
     ~ Correction on TCConfigurationFactory initialisation when not using CMP

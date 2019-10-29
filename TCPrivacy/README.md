@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>23/10/2019</em><br />
-Release version : <em>4.4.2</em></p>
+<p>Last update : <em>29/10/2019</em><br />
+Release version : <em>4.4.3</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -39,7 +39,11 @@ Release version : <em>4.4.2</em></p>
 </li>
 <li><a href="#reacting-to-consent">Reacting to consent</a></li>
 <li><a href="#tcdemo">TCDemo</a></li>
-<li><a href="#privacy-center">Privacy Center</a></li>
+<li><a href="#privacy-center">Privacy Center</a><ul>
+<li><a href="#change-the-default-state-of-the-switch-button-to-disabled">Change the default state of the switch button to disabled:</a></li>
+<li><a href="#deactivate-the-back-button-to-force-the-consent">Deactivate the back button to force the consent:</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#support-and-contacts">Support and contacts</a></li>
@@ -92,6 +96,7 @@ Join those IDs with a "consent version". Default is 001, but if you change the i
 <p>Here is where the IDs of the categories matters.</p>
 <h3 id="with-the-privacy-center">With the Privacy Center</h3>
 <p>If you're using the Privacy Center, nothing has to be done here, it will automatically propagate the consent to all other systems. And the ID will be the one used in the configuration file. Please check the Privacy Center part for more information.</p>
+<p>Please keep your category IDs between 1 and 999.</p>
 <h3 id="manually-displayed-consent">Manually displayed consent</h3>
 <p>Once the user validated his consent, you can the send the information to the Privacy module as follow:</p>
 <pre><code>:::java
@@ -201,6 +206,13 @@ Offline JSON has to be saved in the src/main/assets folder.</p>
 <pre><code>Intent PCM = new Intent(getContext(), com.tagcommander.lib.privacy.TCPrivacyCenter.class);
 startActivity(PCM);
 </code></pre>
+<p>Some part of the Privacy Center can be customised with your code.</p>
+<h3 id="change-the-default-state-of-the-switch-button-to-disabled">Change the default state of the switch button to disabled:</h3>
+<pre><code>TCPrivacy.getInstance().switchDefaultState = false;
+</code></pre>
+<h3 id="deactivate-the-back-button-to-force-the-consent">Deactivate the back button to force the consent:</h3>
+<pre><code>TCPrivacy.getInstance().deactivateBackButton = true;
+</code></pre>
 <p>For now this JSON has to be created and managed manually. But soon, this will be created by our interfaces. And the SDK will check for updates of the file automatically.
 Meanwhile the configuration has to be done manually and you can find the definition of the file here.</p>
 <pre><code>:::json
@@ -252,6 +264,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 23/10/2019 15:31:20</p>
+<p>This documentation was generated on 29/10/2019 09:32:38</p>
 </body>
 </html>
