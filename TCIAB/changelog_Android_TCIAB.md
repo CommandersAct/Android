@@ -1,6 +1,10 @@
 Changelog iOS
 =============
 
+*4.3.2 : 10/31 2019*
+
+    ~ Corrected the key IABConsent_SubjectToGDPR which was not saved as a string.
+
 *4.3.1 : 10/24 2019*
 
 	+ Added several new keys to the user defaults.
