@@ -6,6 +6,11 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.4.0 : 12/18 2019*
+
+	/!\ With this update you need to also update the core module to 4.5.0+
+	- Removed battery monitoring.
+
 *4.3.1 : 02/04 2019*
 
 	~ Put back function to deactivate the SDK manually in the case we don't need the full privacy module and still want to deactivate the SDK.

@@ -1,13 +1,20 @@
 Changelog Android
 =================
 
+*4.5.0 : 12/18 2019*
+
+	+ Added an API class to check the content or status of the consent. Please check the TCPrivacy documentation on github.
+
+
 *4.4.3 : 10/29 2019*
 
 	+ All the switch positions of the Privacy Center can now default to the off position by using : TCPrivacy.getInstance().switchDefaultState = false;
 
+
 *4.4.2 : 09/25 2019*
 
     ~ Correction on TCConfigurationFactory initialisation when not using CMP
+
 
 *4.4.1 : 09/20 2019*
 

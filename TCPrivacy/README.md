@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>29/10/2019</em><br />
-Release version : <em>4.4.3</em></p>
+<p>Last update : <em>18/12/2019</em><br />
+Release version : <em>4.5.0</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -38,6 +38,7 @@ Release version : <em>4.4.3</em></p>
 </ul>
 </li>
 <li><a href="#reacting-to-consent">Reacting to consent</a></li>
+<li><a href="#consent-internal-api">Consent internal API</a></li>
 <li><a href="#tcdemo">TCDemo</a></li>
 <li><a href="#privacy-center">Privacy Center</a><ul>
 <li><a href="#change-the-default-state-of-the-switch-button-to-disabled">Change the default state of the switch button to disabled:</a></li>
@@ -195,6 +196,75 @@ In the case nothing was consented to, you might also have an empty map (but not 
 <p>When you make a change in the JSON, there is nothing special to do.
 But when this change is adding or removing a category, or changing an ID, we should re-display the Privacy Center.</p>
 <p>Please also note that the events "starting the SDK" and "stopping the SDK" have a notification sent with them, you can listen to them if needed: TCCoreConstants.kTCNotification_StartingTheSDK and TCCoreConstants.kTCNotification_StoppingTheSDK.</p>
+<h2 id="consent-internal-api">Consent internal API</h2>
+<p>We created several methods to check given consent. They are simple, but make it easier to work with consent information at any given time.</p>
+<pre><code>/**
+ * Checks if consent has already been given by checking if consent information is saved.
+ * @param appContext the application context.
+ * @return true if the consent was already given, false otherwise.
+ */
+public static boolean isConsentAlreadyGiven(Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * Return the epochformatted timestamp of the last time the consent was saved.
+ * @param appContext the application context.
+ * @return epochformatted timestamp or 0.
+ */
+public static Long getLastTimeConsentWasSaved(Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * Check if a Category has been accepted.
+ * @param ID the category ID.
+ * @param appContext the application context.
+ * @return true or false.
+ */
+public static boolean isCategoryAccepted(int ID, Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * Check if a vendor has been accepted.
+ * @param ID the vendor ID.
+ * @param appContext the application context.
+ * @return true or false.
+ */
+public static boolean isVendorAccepted(int ID, Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * Get the list of all accepted categories.
+ * @param appContext the application context.
+ * @return a List of PRIVACY_CAT_IDs.
+ */
+public static List&lt;String&gt; getAcceptedCategories(Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * Get the list of all accepted vendors.
+ * @param appContext the application context.
+ * @return a List of PRIVACY_VEN_IDs.
+ */
+public static List&lt;String&gt; getAcceptedVendors(Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * Get the list of everything that was accepted.
+ * @param appContext the application context.
+ * @return a List of PRIVACY_VEN_IDs and PRIVACY_CAT_IDs.
+ */
+public static List&lt;String&gt; getAllAcceptedConsent(Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * /!\ Only if you're using the IAB module.
+ * Get the generated consent string.
+ * @param appContext the application context.
+ * @return the generated consent string. Ex. BOrufEYOrufEYBaABLFRCSuAAAA-eADAFEABIAHo
+ */
+public static String getIABConsentString(Context appContext);
+</code></pre>
+<p>&nbsp;</p>
 <h2 id="tcdemo">TCDemo</h2>
 <p>You can, of course, check our demo project for a simple implementation example.</p>
 <p><a href="https://github.com/TagCommander/Privacy-Demo/tree/master/Android">Privacy Demo</a></p>
@@ -264,6 +334,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 29/10/2019 09:32:38</p>
+<p>This documentation was generated on 18/12/2019 15:27:40</p>
 </body>
 </html>

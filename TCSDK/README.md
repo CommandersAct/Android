@@ -5,8 +5,8 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>29/10/2019</em><br />
-Release version : <em>4.3.1</em></p>
+<p>Last update : <em>18/12/2019</em><br />
+Release version : <em>4.4.0</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -65,7 +65,6 @@ Release version : <em>4.3.1</em></p>
 <ul>
 <li>Weight about 40 ko in your application.</li>
 <li>Fully threaded and asynchronous.</li>
-<li>Automatic enabling / disabling depending on the Internet reachability or battery level.</li>
 <li>Offline mode (the hits are stored in the phone to be replayed at the next launch.)</li>
 <li>Very low CPU and memory usage.</li>
 <li>Dynamic variable storage. If a value never changes, it's possible to set it only once.</li>
@@ -289,7 +288,7 @@ utm_source=adMob&amp;utm_medium=banner&amp;utm_term=running+shoes&amp;utm_conten
 <pre><code>:::java
 TC.enableRunningInBackground();
 </code></pre>
-<p>One drawback is that we're not able to ascertain when the application will really be killed. In normal mode, we're saving all hits not sent when going in the background, which is not possible here anymore. To be sure to not loose any hits in background mode, we will save much more often the offline hits. This only applies if the SDK is offline, meaning that you don't have internet or don't have enough battery.</p>
+<p>One drawback is that we're not able to ascertain when the application will really be killed. In normal mode, we're saving all hits not sent when going in the background, which is not possible here anymore. To be sure to not loose any hits in background mode, we will save much more often the offline hits. This only applies if the SDK is offline, meaning that you don't have internet.</p>
 <h2 id="deactivating-the-sdk">Deactivating the SDK</h2>
 <p>If you want to show a privacy message to your users allowing them to stop the tracking, you might want to use the following function to stop it if they refuse to be tracked.</p>
 <pre><code>:::java
@@ -444,6 +443,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 29/10/2019 09:32:38</p>
+<p>This documentation was generated on 18/12/2019 15:27:40</p>
 </body>
 </html>

@@ -6,6 +6,11 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.5.0 : 12/18 2019*
+
+	/!\ With this update you need to also update the SDK module to 4.4.0+
+	- Removed battery monitoring.
+
 *4.4.3 : 10/23 2019*
 
 	~ Correction for 4.4.2 where no offline configuration would still cause a crash in preSaveOfflineJSON.
