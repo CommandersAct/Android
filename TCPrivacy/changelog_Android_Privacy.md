@@ -1,6 +1,11 @@
 Changelog Android
 =================
 
+*4.5.1 : 01/20 2020*
+
+	+ Added a way to customise privacy title by adding PCM.putExtra(TCPrivacyConstants.kTCIntentExtraCustomTitle, "My Title");
+
+
 *4.5.0 : 12/18 2019*
 
 	+ Added an API class to check the content or status of the consent. Please check the TCPrivacy documentation on github.
