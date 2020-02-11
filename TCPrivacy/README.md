@@ -76,7 +76,6 @@ To prevent having to manually save the consent asked to the user and manually us
 <p>Modules: Core, Privacy, SDK</p>
 <p>This module can use the same model you are using on the web, if you do so, please start by getting the IDs of the categories you are going to use.
 Join those IDs with a "consent version". Default is 001, but if you change the implementation, it's better to increment this version.</p>
-<p>/!\ This will be very simplified as we will generate a JSON from the Tag Commander interface describing your privacy and categories. (2nd Quarter 2019)</p>
 <p>The setup is really simple, pass to the TCPrivacy object your site ID, application context and a pointer to your TagCommanders' SDK instance. If you want to add your consent version, you can add it to the parameters as a String.</p>
 <pre><code>TCPrivacy.getInstance().setSiteIDPrivacyIDAppContextTCInstance(site_id, privacy_id, context, TC);
 </code></pre>
