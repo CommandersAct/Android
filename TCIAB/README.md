@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="tciabs-implementation-guide">TCIAB's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>29/01/2020</em><br />
+<p>Last update : <em>30/03/2020</em><br />
 Release version : <em>4.3.2</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -29,6 +29,6 @@ Release version : <em>4.3.2</em></p>
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 29/01/2020 15:06:19</p>
+<p>This documentation was generated on 30/03/2020 09:48:29</p>
 </body>
 </html>

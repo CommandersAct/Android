@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>29/01/2020</em><br />
-Release version : <em>4.5.1</em></p>
+<p>Last update : <em>30/03/2020</em><br />
+Release version : <em>4.5.2</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -76,6 +76,7 @@ To prevent having to manually save the consent asked to the user and manually us
 <p>Modules: Core, Privacy, SDK</p>
 <p>This module can use the same model you are using on the web, if you do so, please start by getting the IDs of the categories you are going to use.
 Join those IDs with a "consent version". Default is 001, but if you change the implementation, it's better to increment this version.</p>
+<p>/!\ This will be very simplified as we will generate a JSON from the Tag Commander interface describing your privacy and categories. (2nd Quarter 2019)</p>
 <p>The setup is really simple, pass to the TCPrivacy object your site ID, application context and a pointer to your TagCommanders' SDK instance. If you want to add your consent version, you can add it to the parameters as a String.</p>
 <pre><code>TCPrivacy.getInstance().setSiteIDPrivacyIDAppContextTCInstance(site_id, privacy_id, context, TC);
 </code></pre>
@@ -333,6 +334,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 29/01/2020 15:06:19</p>
+<p>This documentation was generated on 30/03/2020 09:48:29</p>
 </body>
 </html>

@@ -1,6 +1,12 @@
 Changelog Android
 =================
 
+*4.5.2 : 03/30 2020*
+
+	~ Modified the IAB consentScreenID to 1 during consentString creation.
+	~ Corrected the consent Time_created and Time_updated which were inverted.
+
+
 *4.5.1 : 01/20 2020*
 
 	+ Added a way to customise privacy title by adding PCM.putExtra(TCPrivacyConstants.kTCIntentExtraCustomTitle, "My Title");
