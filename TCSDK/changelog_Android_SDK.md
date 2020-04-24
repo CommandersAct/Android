@@ -6,6 +6,10 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.4.1 : 04/24 2020*
+
+	~ Modified TagCommander's activateSDK and deactivateSDK to throw the corresponding notification to propagate it to the whole system.
+
 *4.4.0 : 12/18 2019*
 
 	/!\ With this update you need to also update the core module to 4.5.0+
