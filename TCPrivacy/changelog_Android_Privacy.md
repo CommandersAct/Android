@@ -1,6 +1,11 @@
 Changelog Android
 =================
 
+*4.5.3 : 04/29 2020*
+
+	~ Added margin inside the privacy center view. (still can't be customised for now)
+
+
 *4.5.2 : 03/30 2020*
 
 	~ Modified the IAB consentScreenID to 1 during consentString creation.
