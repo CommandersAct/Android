@@ -1,6 +1,11 @@
 Changelog Android
 =================
 
+*.4.5.4 : 04/30 2020*
+
+	~ resetSavedConsent is now a public function as some clients might want to force it. Especially usefull with for testing or when Auto Backup is on.
+
+
 *4.5.3 : 04/29 2020*
 
 	~ Added margin inside the privacy center view. (still can't be customised for now)
