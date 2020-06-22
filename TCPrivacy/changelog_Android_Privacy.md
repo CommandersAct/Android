@@ -1,12 +1,17 @@
 Changelog Android
 =================
 
-*.4.5.5 : 05/11 2020*
+*4.5.6 : 06/22 2020*
+
+	~ /!\ IAB v1 ONLY: Modified the saving of the consent string from single entry ranges to bitfield. This should make consent string much smaller when you have a lot of vendors.
+
+
+*4.5.5 : 05/11 2020*
 
 	~ Corrected TCPrivacyAPI getAcceptedCategories and getAcceptedVendors which tested presence in sharedPref and not values.
 
 
-*.4.5.4 : 04/30 2020*
+*4.5.4 : 04/30 2020*
 
 	~ resetSavedConsent is now a public function as some clients might want to force it. Especially usefull with for testing or when Auto Backup is on.
 
