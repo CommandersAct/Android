@@ -6,6 +6,10 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.4.2 : 07/30 2020*
+
+	~ Consent hits used for statistics are now by-passing disabled SDK.
+
 *4.4.1 : 04/24 2020*
 
 	~ Modified TagCommander's activateSDK and deactivateSDK to throw the corresponding notification to propagate it to the whole system.

@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>22/06/2020</em><br />
-Release version : <em>4.5.6</em></p>
+<p>Last update : <em>31/07/2020</em><br />
+Release version : <em>4.6.0</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -21,10 +21,6 @@ Release version : <em>4.5.6</em></p>
 <li><a href="#saving-consent">Saving consent</a><ul>
 <li><a href="#with-the-privacy-center">With the Privacy Center</a></li>
 <li><a href="#manually-displayed-consent">Manually displayed consent</a></li>
-</ul>
-</li>
-<li><a href="#using-iab-consent-string">Using IAB Consent String</a><ul>
-<li><a href="#iab-with-privacy-center">IAB with Privacy Center</a></li>
 </ul>
 </li>
 <li><a href="#retaining-consent">Retaining consent</a><ul>
@@ -51,32 +47,37 @@ Release version : <em>4.5.6</em></p>
 </ul>
 </div>
 <h1 id="introduction">Introduction</h1>
-<p>Having the user consent is essential to send sensible information like the IDFA/AAID.
-To prevent having to manually save the consent asked to the user and manually using it with our SDKs, we created a module helping you do it automatically.</p>
-<p>This module will gather the consent and will:</p>
+<p>The privacy module can be used in a lot of different ways, after this short introduction, you will find links to each of the different ways and their specific documentations.</p>
+<p>Having the user consent is essential to send sensible information like the IDFA/AAID or using any personal information to serve advertising.</p>
+<p>We created this module to simplify the management of you user's privacy and the way to use it.</p>
+<p>This module can:</p>
 <pre><code>- Display a consent page (if needed)
-- Save consent and reload it every time the application is launched.
-- Save and check the validity of the consent. The validity duration is set to 13 months.
-- Send a hit to our servers to record the consent.
+- Save consent inside the phone and reload it every time the application is launched.
+- Check the validity of the consent. The validity duration is set to 13 months.
+- Send a hit to our servers to record the consent. For statisical purposes.
+- Save the consent String (if used alongside IAB)
 - Enable or disable the SDK. (if used alongside the SDK)
 - Add the categories automatically to the hits the SDK sends. (if used alongside the SDK)
+- Forward the consent to the developpers if they need it outside of the module.
 </code></pre>
 <h2 id="choose-your-privacy">Choose your privacy</h2>
-<p>Privacy come with 2 major flavors:</p>
+<p>Privacy comes with two major flavors:</p>
 <pre><code>- With Tag Management (With SDK)
 - Standalone
 </code></pre>
-<p>And 2 ways to display it inside your app:</p>
-<pre><code>- Manually and send us the information
-- Using our Privacy Center
+<p>And 3 different ways to display it:</p>
+<pre><code>- Manually and then forwarding us the information
+- Using our Privacy Center for IAB version 2
+- Using our Privacy Center for simple Privacy
 </code></pre>
+<p>If you're unsure of which one you should use, please contact the person in charge of your account.</p>
+<p><a href="../TCIAB/README.md">To use IAB V2 please see here</a></p>
 <h2 id="setup">Setup</h2>
 <p>After initialisation the Privacy module will check the consent validity. If the consent is too old a callback will be called. Please check the Callback part.</p>
 <h3 id="with-the-sdk">With the SDK</h3>
 <p>Modules: Core, Privacy, SDK</p>
 <p>This module can use the same model you are using on the web, if you do so, please start by getting the IDs of the categories you are going to use.
 Join those IDs with a "consent version". Default is 001, but if you change the implementation, it's better to increment this version.</p>
-<p>/!\ This will be very simplified as we will generate a JSON from the Tag Commander interface describing your privacy and categories. (2nd Quarter 2019)</p>
 <p>The setup is really simple, pass to the TCPrivacy object your site ID, application context and a pointer to your TagCommanders' SDK instance. If you want to add your consent version, you can add it to the parameters as a String.</p>
 <pre><code>TCPrivacy.getInstance().setSiteIDPrivacyIDAppContextTCInstance(site_id, privacy_id, context, TC);
 </code></pre>
@@ -109,34 +110,7 @@ consent.put("PRIVACY_VEN_61", "1");
 TCPrivacy.getInstance().saveConsent(consent);
 </code></pre>
 <p>Please prefix your category IDs with "PRIVACY_CAT_" and your vendor IDs with "PRIVACY_VEN_. 1 mean accepting this category or vendor, 0 is refusing.</p>
-<p>Passing vendor information is crucial for IAB.</p>
 <p>If you're using the SDK, this will propagate the information to the SDK and manage its state.</p>
-<h2 id="using-iab-consent-string">Using IAB Consent String</h2>
-<p>For now we can create a consent string, but we can't display the privacy center with information from the vendor list. We're creating a first release with only the consent string before so that all our client that don't use the Privacy Center can use IAB.</p>
-<p>If you want to have an offline version of the official vendor list, please add it to your project named "vendorlist.json" at the same place as you would with the privacy.json of the PCM (please check the PCM part).</p>
-<p>First you will need to add the consent library to your project. You will find it in the same repository.</p>
-<p>This library is named TC_IAB.aar and is present in this TCIAB folder.</p>
-<p>When you init the Privacy module it will check if this library is present in your project. If so, it will save in the phone that a CMP is present.</p>
-<p>Then later, when you save the consent, the consent string will automatically be created and saved.</p>
-<p>Everything saved is saved with keys defined under the IAB standards. We use mainly IABConsent_CMPPresent and IABConsent_ConsentString.</p>
-<h3 id="iab-with-privacy-center">IAB with Privacy Center</h3>
-<p>As explained above IAB is not made to work with the privacy center for now, so if you still want to use the privacy center, please do it like this:</p>
-<p>You first need to remove the automatic link between the module and IAB by disabling IAB:</p>
-<pre><code>TCPrivacy.getInstance().enableIAB = false;
-TCPrivacy.getInstance().vendorListVersion = 146;
-</code></pre>
-<p>You need to manually set the vendorListVersion also as this is required during the creation of the consent string (we default at 146 which is the version )</p>
-<p>Then when you want to save the consent you will need to manually send information:</p>
-<pre><code>Map&lt;String, String&gt; consent = new HashMap&lt;&gt;();
-consent.put("PRIVACY_CAT_1", "1");
-consent.put("PRIVACY_CAT_2", "1");
-consent.put("PRIVACY_CAT_3", "1");
-consent.put("PRIVACY_VEN_41", "1");
-consent.put("PRIVACY_VEN_89", "1");
-TCPrivacy.getInstance().saveConsentString(consent);
-</code></pre>
-<p>You can put this inside the "consentUpdated" callback and you need to map the ID you're using inside the privacy center to either a purpose id or a vendor id.
-For now we can't do better since we're not distinguishing vendors and category inside the privacy center. An evolution will be done after the support of IAB v2.</p>
 <h2 id="retaining-consent">Retaining consent</h2>
 <p>The saving of the consent on our servers is done automatically.</p>
 <p>But since we are saving the consent in our servers, we need to identify the user one way or another. By default the variable used to identify the user consenting is #TC_SDK_ID#, but you can change it to anything you'd like.</p>
@@ -182,10 +156,11 @@ This is the function where you would tell your ad partner "the user don't wan't 
 <pre><code>void consentUpdated(Map&lt;String, String&gt; categories);
 </code></pre>
 <p>Called when either:</p>
-<pre><code>- We load the saved consent
-- consent is given inside the privacy center
-- you manually give us the user selected consents
-</code></pre>
+<ul>
+<li>We load the saved consent</li>
+<li>consent is given inside the privacy center</li>
+<li>you manually give us the user selected consents</li>
+</ul>
 <p>We have a Map which is the same as the one given to our SDK with keys PRIVACY_CAT_n and PRIVACY_VEN_n and value "0" or "1".
 In the case nothing was consented to, you might also have an empty map (but not null).</p>
 <pre><code>void consentOutdated();
@@ -195,6 +170,9 @@ In the case nothing was consented to, you might also have an empty map (but not 
 </code></pre>
 <p>When you make a change in the JSON, there is nothing special to do.
 But when this change is adding or removing a category, or changing an ID, we should re-display the Privacy Center.</p>
+<pre><code>void significantChangesInPrivacy();
+</code></pre>
+<p>This one is slightly different from the last one, it was created for IAB and will not be sent automatically. It is conditionned by the field "significantChanges" in the privacy.json so that it will only launch when you need it to.</p>
 <p>Please also note that the events "starting the SDK" and "stopping the SDK" have a notification sent with them, you can listen to them if needed: TCCoreConstants.kTCNotification_StartingTheSDK and TCCoreConstants.kTCNotification_StoppingTheSDK.</p>
 <h2 id="consent-internal-api">Consent internal API</h2>
 <p>We created several methods to check given consent. They are simple, but make it easier to work with consent information at any given time.</p>
@@ -334,6 +312,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 22/06/2020 14:23:30</p>
+<p>This documentation was generated on 31/07/2020 16:07:26</p>
 </body>
 </html>

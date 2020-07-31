@@ -1,6 +1,12 @@
 Changelog iOS
 =============
 
+*4.4.0 : 07/30 2020*
+
+	/!\ Requires Privacy 4.6.0+, Core 4.5.1+
+	+ IAB's consentString is now in version 2.
+	+ Saving information in TCData.
+
 *4.3.2 : 10/31 2019*
 
     ~ Corrected the key IABConsent_SubjectToGDPR which was not saved as a string.
