@@ -1,7 +1,7 @@
 Changelog iOS
 =============
 
-*4.4.0 : 07/30 2020*
+*4.5.0 : 07/30 2020*
 
 	/!\ Requires Privacy 4.6.0+, Core 4.5.1+
 	+ IAB's consentString is now in version 2.

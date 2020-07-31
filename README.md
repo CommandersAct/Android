@@ -34,7 +34,7 @@ The modules are the following :</p>
 <p>Core : <em>4.5.1</em></p>
 <p>SDK : <em>4.4.2</em></p>
 <p>Privacy : <em>4.6.0</em></p>
-<p>IAB : <em>4.4.0</em></p>
+<p>IAB : <em>4.5.0</em></p>
 <p>Partners : <em>4.4.4</em></p>
 <p>Segment : <em>4.1.1</em></p>
 <h1 id="adding-a-module-to-your-project">Adding a module to your project</h1>
@@ -116,6 +116,6 @@ compile (name:'TCPrivacy-release-4.6.0', ext:'aar')
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 31/07/2020 16:07:26</p>
+<p>This documentation was generated on 31/07/2020 16:21:32</p>
 </body>
 </html>
