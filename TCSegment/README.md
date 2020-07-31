@@ -90,6 +90,6 @@ List&lt;String&gt; segments = TCSegment.getInstance().getSegmentList();
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 31/07/2020 16:21:32</p>
+<p>This documentation was generated on 31/07/2020 16:22:23</p>
 </body>
 </html>
