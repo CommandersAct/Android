@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>31/07/2020</em><br />
+<p>Last update : <em>06/08/2020</em><br />
 Release version : <em>4.6.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -234,15 +234,6 @@ public static List&lt;String&gt; getAcceptedVendors(Context appContext);
 public static List&lt;String&gt; getAllAcceptedConsent(Context appContext);
 </code></pre>
 <p>&nbsp;</p>
-<pre><code>/**
- * /!\ Only if you're using the IAB module.
- * Get the generated consent string.
- * @param appContext the application context.
- * @return the generated consent string. Ex. BOrufEYOrufEYBaABLFRCSuAAAA-eADAFEABIAHo
- */
-public static String getIABConsentString(Context appContext);
-</code></pre>
-<p>&nbsp;</p>
 <h2 id="tcdemo">TCDemo</h2>
 <p>You can, of course, check our demo project for a simple implementation example.</p>
 <p><a href="https://github.com/TagCommander/Privacy-Demo/tree/master/Android">Privacy Demo</a></p>
@@ -312,6 +303,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 31/07/2020 16:34:37</p>
+<p>This documentation was generated on 06/08/2020 16:13:42</p>
 </body>
 </html>

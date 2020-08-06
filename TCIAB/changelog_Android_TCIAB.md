@@ -1,6 +1,11 @@
 Changelog iOS
 =============
 
+*4.5.1 : 08/07 2020*
+
+    ~ Corrected IABTCF_gdprApplies which wasn't saved correctly.
+    ~ Corrected TCData which didn't record properly legitimate interests
+
 *4.5.0 : 07/30 2020*
 
 	/!\ Requires Privacy 4.6.0+, Core 4.5.1+
