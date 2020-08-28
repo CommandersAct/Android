@@ -1,6 +1,13 @@
 Changelog Android
 =================
 
+*4.6.1 : 08/27 2020*
+
+	+ Disabling back button for IAB interface
+	- Removing the save of the privacy when pressing the back button (when not disabled)
+	+ New method in TCPrivacyAPI : TCShouldDisplayPrivacyCenter. /!\ Beware that if you need to use this method, you might need to re-display the first time.
+	~ Corrected issue with accept all and Refuse all buttons staying disabled on tablets.
+
 *4.6.0 : 07/30 2020*
 
 	+ Interface based on IAB TCF v2 framework can now be used alongside TCIAB's module.

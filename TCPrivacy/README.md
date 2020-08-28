@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>06/08/2020</em><br />
-Release version : <em>4.6.0</em></p>
+<p>Last update : <em>28/08/2020</em><br />
+Release version : <em>4.6.1</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -14,6 +14,7 @@ Release version : <em>4.6.0</em></p>
 <li><a href="#introduction">Introduction</a><ul>
 <li><a href="#choose-your-privacy">Choose your privacy</a></li>
 <li><a href="#setup">Setup</a><ul>
+<li><a href="#minimum-requirements">Minimum Requirements</a></li>
 <li><a href="#with-the-sdk">With the SDK</a></li>
 <li><a href="#standalone">Standalone</a></li>
 </ul>
@@ -74,6 +75,8 @@ Release version : <em>4.6.0</em></p>
 <p><a href="../TCIAB/README.md">To use IAB V2 please see here</a></p>
 <h2 id="setup">Setup</h2>
 <p>After initialisation the Privacy module will check the consent validity. If the consent is too old a callback will be called. Please check the Callback part.</p>
+<h3 id="minimum-requirements">Minimum Requirements</h3>
+<p>Privacy module requires a minimum SDK version of 17.</p>
 <h3 id="with-the-sdk">With the SDK</h3>
 <p>Modules: Core, Privacy, SDK</p>
 <p>This module can use the same model you are using on the web, if you do so, please start by getting the IDs of the categories you are going to use.
@@ -177,6 +180,14 @@ But when this change is adding or removing a category, or changing an ID, we sho
 <h2 id="consent-internal-api">Consent internal API</h2>
 <p>We created several methods to check given consent. They are simple, but make it easier to work with consent information at any given time.</p>
 <pre><code>/**
+ * Checks if we should display privacy center for any reason.
+ * @param appContext the application context.
+ * @return True or False.
+ */
+public static boolean shouldDisplayPrivacyCenter(Context context)
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
  * Checks if consent has already been given by checking if consent information is saved.
  * @param appContext the application context.
  * @return true if the consent was already given, false otherwise.
@@ -250,6 +261,7 @@ startActivity(PCM);
 <pre><code>TCPrivacy.getInstance().switchDefaultState = false;
 </code></pre>
 <h3 id="deactivate-the-back-button-to-force-the-consent">Deactivate the back button to force the consent:</h3>
+<p>Going back without consenting will result in a user not consenting at all. This means that no privacy will be saved, no tag can be called and no consent-string will be created if you use IAB.</p>
 <pre><code>TCPrivacy.getInstance().deactivateBackButton = true;
 </code></pre>
 <p>For now this JSON has to be created and managed manually. But soon, this will be created by our interfaces. And the SDK will check for updates of the file automatically.
@@ -303,6 +315,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 06/08/2020 16:13:42</p>
+<p>This documentation was generated on 28/08/2020 11:06:07</p>
 </body>
 </html>
