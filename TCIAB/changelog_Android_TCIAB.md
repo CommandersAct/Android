@@ -3,6 +3,7 @@ Changelog iOS
 
 *4.5.2 : 08/27 2020*
 
+    /!\ Requires Core 4.5.2+
 	~ Corrected the sharedPreferences used for IAB keys, now correctly saving in default shared preferences.
 
 *4.5.1 : 08/07 2020*

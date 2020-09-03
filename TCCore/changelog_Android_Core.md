@@ -6,6 +6,10 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.5.2 : 08/09/2020*
+
+	~ Modified the sharedPreferences functions to allow fetching data either in default storage or in the TC storage.
+
 *4.5.1 : 07/30/2020*
 
 	~ Configuration files updates are now raising a notification.
