@@ -1,5 +1,11 @@
-Changelog iOS
-=============
+Changelog Android
+=================
+
+*4.5.3 : 09/07 2020*
+
+    /!\ Requires Core 4.5.3+
+	~ Corrected the type of some of the key stored for IAB.
+	+ Adding the possibility to save the PublisherTC part of the consent string. Please check the documentation.
 
 *4.5.2 : 08/27 2020*
 
