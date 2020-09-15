@@ -8,7 +8,7 @@ Changelog Android
 
 *4.5.3 : 09/07/2020*
 
-    ~ Modified the sharedPreferences functions to allow fetching daor setting data in integer format.
+    ~ Modified the sharedPreferences functions to allow fetching for data in integer format.
 
 *4.5.2 : 08/09/2020*
 

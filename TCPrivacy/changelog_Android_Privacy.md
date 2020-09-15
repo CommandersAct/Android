@@ -1,6 +1,12 @@
 Changelog Android
 =================
 
+
+*4.6.3 : 09/15 2020*
+
+	~ Corrected an issue in the parsing of the field used for button selection in IAB.
+	- /!\ Removed TCIAB as a mandatory dependencies for this module.
+
 *4.6.2 : 09/07 2020*
 
 	+ Added a way to choose which buttons to have on first and second layer (IAB interface). Please check TCIAB documentation for further details.
