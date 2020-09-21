@@ -1,6 +1,10 @@
 Changelog Android
 =================
 
+*4.6.4 : 09/21 2020*
+
+	+ Adding methods to enter the IAB Privacy center directly on the purpose screen or on the vendor screen. Please check documentation.
+	+ Functions used to accept or refuse all consent without entering the Privacy Center.
 
 *4.6.3 : 09/15 2020*
 

@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="tciabs-implementation-guide">TCIAB's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>15/09/2020</em><br />
+<p>Last update : <em>21/09/2020</em><br />
 Release version : <em>4.5.3</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -32,6 +32,7 @@ Release version : <em>4.5.3</em></p>
 </li>
 <li><a href="#reacting-to-consent">Reacting to consent</a></li>
 <li><a href="#generating-publisher-tc-in-consent-string">Generating publisher TC in consent String</a></li>
+<li><a href="#loading-a-specific-screen-directly">Loading a specific screen directly</a></li>
 </ul>
 </li>
 <li><a href="#support-and-contacts">Support and contacts</a></li>
@@ -163,6 +164,17 @@ But when this change is adding or removing a category, or changing an ID, we sho
 <h2 id="generating-publisher-tc-in-consent-string">Generating publisher TC in consent String</h2>
 <p>By default, as some clients asked, the publisher TC part of the consent string is not generated.
 But you a simple boolean in TCPrivacy/TCMobilePrivacy which is named generatePublisherTC.</p>
+<h2 id="loading-a-specific-screen-directly">Loading a specific screen directly</h2>
+<p>By default, the screen loaded is what we call the first layer screen (or pop-up screen). Then from this screen you'll be able to go to the purpose screen and from the purpose screen to the vendor screen. Both of which are called the second layer.</p>
+<p>if you want to have your own first layer, you'll want to be able to open from this page either of our second layer pages.</p>
+<p>To do this, we created other ways to open the privacy center as follow:</p>
+<pre><code>Intent PCM = new Intent(getContext(), com.tagcommander.lib.privacy.TCPrivacyCenter.class);
+PCM.putExtra(com.tagcommander.lib.privacy.TCPrivacyConstants.kTCPC_START_SCREEN, com.tagcommander.lib.privacy.TCPrivacyConstants.kTCStartWithPurposeScreen);
+startActivity(PCM);
+</code></pre>
+<p>or for the vendor screen:</p>
+<pre><code>PCM.putExtra(com.tagcommander.lib.privacy.TCPrivacyConstants.kTCPC_START_SCREEN, com.tagcommander.lib.privacy.TCPrivacyConstants.kTCStartWithVendorScreen);
+</code></pre>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
@@ -171,6 +183,6 @@ But you a simple boolean in TCPrivacy/TCMobilePrivacy which is named generatePub
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 15/09/2020 10:51:45</p>
+<p>This documentation was generated on 21/09/2020 16:42:39</p>
 </body>
 </html>
