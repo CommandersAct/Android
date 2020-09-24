@@ -1,6 +1,10 @@
 Changelog Android
 =================
 
+*4.6.5 : 09/24 2020*
+
+	~ Corrected language issue displaying only English.
+
 *4.6.4 : 09/21 2020*
 
 	+ Adding methods to enter the IAB Privacy center directly on the purpose screen or on the vendor screen. Please check documentation.
