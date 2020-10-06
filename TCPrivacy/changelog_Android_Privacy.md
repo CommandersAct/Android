@@ -4,6 +4,7 @@ Changelog Android
 *4.6.6 : 10/06 2020*
 
 	~ Correcting first IAB purpose which was saved as consent and legitimate interest. The first purpose can't have legitimate interest.
+	~ Correcting landscape issue.
 
 *4.6.5 : 09/24 2020*
 
