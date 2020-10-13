@@ -1,6 +1,11 @@
 Changelog Android
 =================
 
+*4.6.7 : 10/13 2020*
+
+	~ Correcting IAB v2 layout issue to separate "view partners" and "Legal information"
+	~ IAB v2: Diminishing size of vendor/puporse button.
+
 *4.6.6 : 10/06 2020*
 
 	~ Correcting first IAB purpose which was saved as consent and legitimate interest. The first purpose can't have legitimate interest.
