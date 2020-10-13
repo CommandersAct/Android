@@ -28,7 +28,7 @@ Release version : <em>4.4.4</em></p>
 <p>TCPartners or TCMobilePartners is the class used as the super-type of all partners.</p>
 <p>A TCPartner is by default a partner that will listen to all hits you're passing to the SDK so he can work on them.
 You can change this activation by using on of the 3 following functions:</p>
-<pre><code>:::java
+<code><pre>
 /**
  * This function tells the partner to activate on all hits.
  */
@@ -94,7 +94,7 @@ TCPartners_Freewheel.getInstance().setSegmentDomain(".tf1.fr");
 TCPartners_Freewheel.getInstance().callback = this;
 </code></pre>
 <p>And to recover the segments:</p>
-<pre><code>:::java
+<pre><code>
 public void onSegmentReceived(Map&lt;String, String&gt; segments)
 {
     TCLogger.getInstance().logMessage("Segments:" + segments, Log.ERROR);
