@@ -1,6 +1,11 @@
 Changelog Android
 =================
 
+*4.6.8 : 11/16 2020*
+
+	+ [iAB] We now validate vendors corresponding to selected purposes.
+	~ Corrected occasional crash with privacy configuration.
+
 *4.6.7 : 10/13 2020*
 
 	~ Correcting IAB v2 layout issue to separate "view partners" and "Legal information"

@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="partners-implementation-guide">Partners' Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>06/10/2020</em><br />
+<p>Last update : <em>19/11/2020</em><br />
 Release version : <em>4.4.4</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -28,7 +28,7 @@ Release version : <em>4.4.4</em></p>
 <p>TCPartners or TCMobilePartners is the class used as the super-type of all partners.</p>
 <p>A TCPartner is by default a partner that will listen to all hits you're passing to the SDK so he can work on them.
 You can change this activation by using on of the 3 following functions:</p>
-<code><pre>
+<pre><code>:::java
 /**
  * This function tells the partner to activate on all hits.
  */
@@ -94,7 +94,7 @@ TCPartners_Freewheel.getInstance().setSegmentDomain(".tf1.fr");
 TCPartners_Freewheel.getInstance().callback = this;
 </code></pre>
 <p>And to recover the segments:</p>
-<pre><code>
+<pre><code>:::java
 public void onSegmentReceived(Map&lt;String, String&gt; segments)
 {
     TCLogger.getInstance().logMessage("Segments:" + segments, Log.ERROR);
@@ -108,6 +108,6 @@ public void onSegmentReceived(Map&lt;String, String&gt; segments)
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 06/10/2020 10:39:08</p>
+<p>This documentation was generated on 19/11/2020 12:04:03</p>
 </body>
 </html>
