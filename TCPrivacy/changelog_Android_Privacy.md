@@ -1,6 +1,11 @@
 Changelog Android
 =================
 
+*4.6.9 : 12/14 2020*
+
+    + Added getConsentAsJson method to help forward consent information to the WebView.
+    + Added a way to change consent validity duration inside privacy.json.
+
 *4.6.8 : 11/16 2020*
 
 	+ [iAB] We now validate vendors corresponding to selected purposes.

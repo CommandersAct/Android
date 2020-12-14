@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="segments-implementation-guide">Segment's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>19/11/2020</em><br />
+<p>Last update : <em>14/12/2020</em><br />
 Release version : <em>4.1.1</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -90,6 +90,6 @@ List&lt;String&gt; segments = TCSegment.getInstance().getSegmentList();
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 19/11/2020 12:04:03</p>
+<p>This documentation was generated on 14/12/2020 10:57:16</p>
 </body>
 </html>
