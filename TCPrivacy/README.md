@@ -76,10 +76,15 @@ Release version : <em>4.6.9</em></p>
 <p>If you're unsure of which one you should use, please contact the person in charge of your account.</p>
 <p><a href="../TCIAB/README.md">To use IAB V2 please see here</a></p>
 <h2 id="setup">Setup</h2>
-<p>After initialisation the Privacy module will check the consent validity. If the consent is too old a callback will be called. Please check the Callback part.</p>
-<p>If you're using our interface, and thus our privacy.json, you can change the duration on this validity.
-To do this, add "consentDurationInMonths": "6" inside the "information" bloc.
+<p>After initialisation the Privacy module will check the consent validity. If the consent is too old a callback will be called. Please check the Callback part.
 The default value is 13 months.</p>
+<p>If you're using our interface, and thus our privacy.json, you can change the duration on this validity.
+To do this, add "consentDurationInMonths": "6" inside the "information" bloc.</p>
+<p>If you're not using our interface, you'll have to manually change it in the code.
+We express this duration in months. The duration of a month is calculated by 365/12 days.
+Please first call the following method before initializing the Privacy module else:</p>
+<pre><code>TCPrivacy.getInstance().setConsentDuration(6);
+</code></pre>
 <h3 id="minimum-requirements">Minimum Requirements</h3>
 <p>Privacy module requires a minimum SDK version of 17.</p>
 <h3 id="with-the-sdk">With the SDK</h3>
@@ -331,6 +336,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 14/12/2020 10:58:34</p>
+<p>This documentation was generated on 14/12/2020 10:59:16</p>
 </body>
 </html>

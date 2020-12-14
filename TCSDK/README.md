@@ -443,6 +443,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 14/12/2020 10:58:34</p>
+<p>This documentation was generated on 14/12/2020 10:59:16</p>
 </body>
 </html>
