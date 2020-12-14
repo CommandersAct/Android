@@ -331,6 +331,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 14/12/2020 10:57:16</p>
+<p>This documentation was generated on 14/12/2020 10:58:34</p>
 </body>
 </html>
