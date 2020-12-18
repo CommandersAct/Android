@@ -1,6 +1,10 @@
 Changelog Android
 =================
 
+*4.6.10 : 12/18 2020*
+
+	~ Updated special features offsets to match web format.
+
 *4.6.9 : 12/14 2020*
 
     + Added getConsentAsJson method to help forward consent information to the WebView.
