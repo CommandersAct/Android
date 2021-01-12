@@ -1,6 +1,11 @@
 Changelog Android
 =================
 
+*4.6.11 : 01/12 2021*
+
+	~ [IAB] Modified CMP version as IAB can only encore it on 12 bits
+	~ Modified consent duration to float so we can test it with verrrrry small values.
+
 *4.6.10 : 12/18 2020*
 
 	~ Updated special features offsets to match web format.
