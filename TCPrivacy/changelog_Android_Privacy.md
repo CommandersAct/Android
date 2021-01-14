@@ -1,6 +1,10 @@
 Changelog Android
 =================
 
+*4.6.12 : 01/14 2021*
+
+	~ Fixing timeofconsent which was called everytime we would activate the SDK.
+
 *4.6.11 : 01/12 2021*
 
 	~ [IAB] Modified CMP version as IAB can only encore it on 12 bits
