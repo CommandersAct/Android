@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="tciabs-implementation-guide">TCIAB's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>14/01/2021</em><br />
+<p>Last update : <em>28/01/2021</em><br />
 Release version : <em>4.5.3</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -12,7 +12,8 @@ Release version : <em>4.5.3</em></p>
 <ul>
 <li><a href="#tciabs-implementation-guide">TCIAB's Implementation Guide</a></li>
 <li><a href="#introduction">Introduction</a></li>
-<li><a href="#setup">Setup</a><ul>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#iab-21">IAB 2.1</a><ul>
 <li><a href="#json-configurations">JSON Configurations</a><ul>
 <li><a href="#vendor-listjson">Vendor-list.json</a></li>
 <li><a href="#purposes-xxjson">purposes-xx.json</a></li>
@@ -45,6 +46,24 @@ Release version : <em>4.5.3</em></p>
 <p>You need to have this module alongside the Privacy Module in your project.</p>
 <p>You will need several configuration files to use this module.
 All of those configurations will update automatically but having an offline version will prevent any hasardeous behaviour over bad internet connection.</p>
+<h1 id="iab-21">IAB 2.1</h1>
+<p>We suport IAB 2.1 but you will need to add some translation in your privacy.json file. Hereafter are the lines you need to add in order to display the new informations properly.</p>
+<pre><code>:::json
+ "texts": {
+  "generic": {
+        "month": "months",
+        "day": "days",
+        "seconds": "seconds",
+        "hours": "hours"
+  },
+
+  "vendors": {
+        "deviceStorageTitle": "Storage Type:",
+        "deviceStorageCookieLifetime": "Cookie lifetime: ",
+        "deviceStorageOther": "Others",
+        "deviceStorageCookies": "Cookies"
+  },
+</code></pre>
 <h2 id="json-configurations">JSON Configurations</h2>
 <h3 id="vendor-listjson">Vendor-list.json</h3>
 <p>This file contains all vendors that have a partnership with IAB. It also contains the definition (in English only) for all purposes, special purposes, features, special features and what the vendors are using.
@@ -183,6 +202,6 @@ startActivity(PCM);
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 14/01/2021 14:33:09</p>
+<p>This documentation was generated on 28/01/2021 14:33:24</p>
 </body>
 </html>

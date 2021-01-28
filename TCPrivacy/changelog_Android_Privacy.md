@@ -1,6 +1,10 @@
 Changelog Android
 =================
 
+*4.6.13 : 01/29 2021*
+	
+	+ [IAB] Adding support for IAB 2.1. Please read the documentation as you will need to update your privacy.json
+
 *4.6.12 : 01/14 2021*
 
 	~ Fixing timeofconsent which was called everytime we would activate the SDK.
