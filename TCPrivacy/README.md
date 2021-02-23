@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>28/01/2021</em><br />
-Release version : <em>4.6.13</em></p>
+<p>Last update : <em>23/02/2021</em><br />
+Release version : <em>4.7.0</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -267,6 +267,33 @@ public static List&lt;String&gt; getAcceptedVendors(Context appContext);
 public static List&lt;String&gt; getAllAcceptedConsent(Context appContext);
 </code></pre>
 <p>&nbsp;</p>
+<pre><code>/**
+ * Check if a purpose has been accepted.
+ * @param ID the purpose ID.
+ * @param appContext the application context.
+ * @return true or false.
+ */
+public static boolean isIABPurposeAccepted(int ID, Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * Check if a vendor has been accepted.
+ * @param ID the vendor ID.
+ * @param appContext the application context.
+ * @return true or false.
+ */
+public static boolean isIABVendorAccepted(int ID, Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+ * Check if a special feature has been accepted.
+ * @param ID the vendor ID.
+ * @param appContext the application context.
+ * @return true or false.
+ */
+public static boolean isIABSpecialFeatureAccepted(int ID, Context appContext);
+</code></pre>
+<p>&nbsp;</p>
 <h2 id="tcdemo">TCDemo</h2>
 <p>You can, of course, check our demo project for a simple implementation example.</p>
 <p><a href="https://github.com/TagCommander/Privacy-Demo/tree/master/Android">Privacy Demo</a></p>
@@ -337,6 +364,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 28/01/2021 14:33:24</p>
+<p>This documentation was generated on 23/02/2021 14:27:53</p>
 </body>
 </html>

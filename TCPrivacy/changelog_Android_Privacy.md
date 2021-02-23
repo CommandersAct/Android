@@ -1,13 +1,18 @@
 Changelog Android
 =================
 
+*4.7.0 : 02/23*
+    + [IAB] Added functions in TCPrivacyAPI to query IAB consent without manually offsetting the IDs.
+    + [IAB] Allowing to use custom purposes and vendors alongside IAB
+    ~ Fixing purposes validating vendors but not the one who have it in legitimate interest.
+
 *4.6.13 : 01/29 2021*
 	
 	+ [IAB] Adding support for IAB 2.1. Please read the documentation as you will need to update your privacy.json
 
 *4.6.12 : 01/14 2021*
 
-	~ Fixing timeofconsent which was called everytime we would activate the SDK.
+	~ Fixing timeofconsent which was called every time we would activate the SDK.
 
 *4.6.11 : 01/12 2021*
 

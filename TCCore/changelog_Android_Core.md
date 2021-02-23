@@ -6,6 +6,10 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.5.4 : 02/23 2020*
+
+	~ Modified configuration retrieval to add if-modified-since in the header.
+
 *4.5.3 : 09/07/2020*
 
     ~ Modified the sharedPreferences functions to allow fetching for data in integer format.
