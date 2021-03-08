@@ -1,9 +1,15 @@
 Changelog Android
 =================
 
+*4.7.1 : 03/08*
+
+	+ [IAB] managing changes in vendor-list.json format. We can now have null values for cookieMaxAgeSeconds.
+	~ Fixing a bug where legitimate interest was sometimes added for purpose 1.
+	~ [customPC] fixing a crash when using your custom Privacy Center which happen when checking for consent validity.
+
 *4.7.0 : 02/23*
     + [IAB] Added functions in TCPrivacyAPI to query IAB consent without manually offsetting the IDs.
-    + [IAB] Allowing to use custom purposes and vendors alongside IAB
+    + [IAB] Allowing to use custom purposes and vendors alongside IAB.
     ~ Fixing purposes validating vendors but not the one who have it in legitimate interest.
 
 *4.6.13 : 01/29 2021*
