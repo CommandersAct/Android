@@ -35,6 +35,6 @@ implementation 'com.android.support:appcompat-v7:27.1.1'
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 08/03/2021 15:53:29</p>
+<p>This documentation was generated on 08/03/2021 15:55:30</p>
 </body>
 </html>
