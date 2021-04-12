@@ -1,6 +1,10 @@
 Changelog Android
 =================
 
+*4.5.4 : 04/12 2021*
+
+    ~ Forcing uppercase language name for consent string standards.
+
 *4.5.3 : 09/07 2020*
 
     /!\ Requires Core 4.5.3+

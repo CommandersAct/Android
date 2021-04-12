@@ -1,18 +1,22 @@
 Changelog Android
 =================
 
-*4.7.2 : 03/23*
+*4.7.3 : 04/12 2021*
+
+	~ [IAB] Fixing an issue with some purposes not showing properly in interface.
+
+*4.7.2 : 03/23 2021*
 
     ~ [IAB] Fixing a regression where you could not rename the title anymore.
     ~ [IAB] Fixing an issue with the wrong text being used for the "detail" button on the vendor screen.
 
-*4.7.1 : 03/08*
+*4.7.1 : 03/08 2021*
 
 	+ [IAB] managing changes in vendor-list.json format. We can now have null values for cookieMaxAgeSeconds.
 	~ Fixing a bug where legitimate interest was sometimes added for purpose 1.
 	~ [customPC] fixing a crash when using your custom Privacy Center which happen when checking for consent validity.
 
-*4.7.0 : 02/23*
+*4.7.0 : 02/23 2021*
 
     + [IAB] Added functions in TCPrivacyAPI to query IAB consent without manually offsetting the IDs.
     + [IAB] Allowing to use custom purposes and vendors alongside IAB.

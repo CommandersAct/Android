@@ -6,6 +6,10 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.5.0 : 04/12 2021*
+
+	- /!\ Removed the automatic collection of Google Advertising ID to be RGPD compliant. If you need it, you'll need to collect it and add it to the datalayer.
+
 *4.4.2 : 07/30 2020*
 
 	~ Consent hits used for statistics are now by-passing disabled SDK.
