@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="partners-implementation-guide">Partners' Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>23/03/2021</em><br />
-Release version : <em>4.4.4</em></p>
+<p>Last update : <em>30/04/2021</em><br />
+Release version : <em>4.4.5</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -108,6 +108,6 @@ public void onSegmentReceived(Map&lt;String, String&gt; segments)
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 23/03/2021 09:06:22</p>
+<p>This documentation was generated on 30/04/2021 11:54:03</p>
 </body>
 </html>

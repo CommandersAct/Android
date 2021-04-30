@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="res/ca_logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>12/04/2021</em><br />
+<p>Last update : <em>30/04/2021</em><br />
 Release version : <em>4</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -14,7 +14,7 @@ Release version : <em>4</em></p>
 <li><a href="#introduction">Introduction</a></li>
 <li><a href="#latest-available-versions">Latest available versions</a></li>
 <li><a href="#adding-a-module-to-your-project">Adding a module to your project</a><ul>
-<li><a href="#jcenter">JCenter</a></li>
+<li><a href="#mavencentral">mavenCentral</a></li>
 <li><a href="#jar-file">Jar file</a></li>
 <li><a href="#aar-file">Aar file</a></li>
 </ul>
@@ -39,18 +39,18 @@ The modules are the following :</p>
 <p>Segment : <em>4.1.2</em></p>
 <h1 id="adding-a-module-to-your-project">Adding a module to your project</h1>
 <p>If you want to add a module to your android project, you have several possibilities.</p>
-<pre><code>- Using jcenter to manage the dependency.
+<pre><code>- Using mavenCentral to manage the dependency.
 - Using directly the jar in your project.
-- Using the aar file in yout project.
+- Using the aar file in your project.
 </code></pre>
 <p>All of them will require you to modify a bit your build.gradle.</p>
-<h2 id="jcenter">JCenter</h2>
-<p>The easiest way is to go with JCenter. It will help you get updates on the module on a regular basis without doing much work.</p>
-<p>If it's not present in your project's build.gradle add jcenter() in the repository list for the dependency management. It will look something like that:</p>
+<h2 id="mavencentral">mavenCentral</h2>
+<p>The easiest way is to go with mavenCentral. It will help you get updates on the module on a regular basis without doing much work.</p>
+<p>/!\ The IAB module is not on mavenCentral yet, so it will need to be added manually with the aar or jar.</p>
+<p>If it's not present in your project's build.gradle add mavenCentral() in the repository list for the dependency management. It will look something like that:</p>
 <pre><code>:::java
 allprojects {
     repositories {
-        jcenter()
         mavenCentral()
     }
 }
@@ -94,7 +94,6 @@ compile files('libs/TCPrivacy-release-4.7.3.jar')
 allprojects {
     repositories {
         mavenCentral()
-        jcenter()
         flatDir {
             dirs 'libs'
         }
@@ -116,6 +115,6 @@ compile (name:'TCPrivacy-release-4.7.3', ext:'aar')
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 12/04/2021 14:59:19</p>
+<p>This documentation was generated on 30/04/2021 11:54:03</p>
 </body>
 </html>

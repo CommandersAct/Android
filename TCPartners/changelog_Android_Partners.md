@@ -1,6 +1,10 @@
 Changelog Android
 =================
 
+*4.4.5 : 04/12/2021*
+
+	~ Removed GAID collection
+
 *4.4.4 : 10/21 2019*
 
 	+ Adding a way to create offline segments for faster customisation.
