@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>30/04/2021</em><br />
-Release version : <em>4.7.3</em></p>
+<p>Last update : <em>06/05/2021</em><br />
+Release version : <em>4.7.4</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -39,12 +39,13 @@ Release version : <em>4.7.3</em></p>
 <li><a href="#forwarding-consent-to-webviews">Forwarding consent to webViews</a></li>
 <li><a href="#changing-consent-versiob">Changing consent versiob</a></li>
 <li><a href="#consent-internal-api">Consent internal API</a></li>
-<li><a href="#tcdemo">TCDemo</a></li>
 <li><a href="#privacy-center">Privacy Center</a><ul>
 <li><a href="#change-the-default-state-of-the-switch-button-to-disabled">Change the default state of the switch button to disabled:</a></li>
 <li><a href="#deactivate-the-back-button-to-force-the-consent">Deactivate the back button to force the consent:</a></li>
 </ul>
 </li>
+<li><a href="#privacy-statistics">Privacy statistics</a></li>
+<li><a href="#tcdemo">TCDemo</a></li>
 </ul>
 </li>
 <li><a href="#support-and-contacts">Support and contacts</a></li>
@@ -302,9 +303,6 @@ public static boolean isIABVendorAccepted(int ID, Context appContext);
 public static boolean isIABSpecialFeatureAccepted(int ID, Context appContext);
 </code></pre>
 <p>&nbsp;</p>
-<h2 id="tcdemo">TCDemo</h2>
-<p>You can, of course, check our demo project for a simple implementation example.</p>
-<p><a href="https://github.com/TagCommander/Privacy-Demo/tree/master/Android">Privacy Demo</a></p>
 <h2 id="privacy-center">Privacy Center</h2>
 <p>The Privacy Center is represented by a JSON file that describes the interfaces that will be created by native code inside the application.</p>
 <p>In the Android SDK we create an Activity which is an easy way to display a "page" without have to create a specific fragment space for it.
@@ -364,6 +362,26 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>If you want to display a link to you privacy policies (or anything else in fact), you can add together "privacy_policy_url" and "privacy_policy_text" that will form a linkable text the line after the description.</p>
 <p>Example:</p>
 <p><img alt="alt tag" src="../res/privacy_example.png" /></p>
+<h2 id="privacy-statistics">Privacy statistics</h2>
+<p>We have dashboards that allow to have detailed statistics on the choices your users are making.
+Depending on your app privacy configuration you might have to call some additional functions.</p>
+<ul>
+<li>Custom « banner/popup » -&gt; our privacy center</li>
+<li>
+<p>Custom « banner/popup » -&gt; Custom privacy center</p>
+</li>
+<li>
+<p>Directly to our privacy center</p>
+</li>
+<li>Custom privacy center</li>
+</ul>
+<p><img alt="alt tag" src="../res/TCPC_customBanner.jpeg" />
+<img alt="alt tag" src="../res/TCPC_PC.jpeg" />
+<img alt="alt tag" src="../res/CustomBanner.jpeg" />
+<img alt="alt tag" src="../res/CustomPC.jpeg" /></p>
+<h2 id="tcdemo">TCDemo</h2>
+<p>You can, of course, check our demo project for a simple implementation example.</p>
+<p><a href="https://github.com/TagCommander/Privacy-Demo/tree/master/Android">Privacy Demo</a></p>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
@@ -372,6 +390,6 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 30/04/2021 11:54:03</p>
+<p>This documentation was generated on 06/05/2021 16:45:26</p>
 </body>
 </html>

@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="core-guide">Core Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>30/04/2021</em><br />
+<p>Last update : <em>06/05/2021</em><br />
 Release version : <em>4.6.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -35,6 +35,6 @@ implementation 'com.android.support:appcompat-v7:27.1.1'
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 30/04/2021 11:54:03</p>
+<p>This documentation was generated on 06/05/2021 16:45:26</p>
 </body>
 </html>

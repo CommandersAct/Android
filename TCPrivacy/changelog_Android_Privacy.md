@@ -1,6 +1,11 @@
 Changelog Android
 =================
 
+*4.7.4 : 05/06 2021*
+
+	+ New statistics functions. Please check TCPrivacy documentation on github.
+	~ [IAB] Fixing button design inconsistencies.
+
 *4.7.3 : 04/12 2021*
 
 	~ [IAB] Fixing an issue with some purposes not showing properly in interface.
