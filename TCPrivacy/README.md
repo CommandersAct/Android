@@ -365,16 +365,13 @@ Meanwhile the configuration has to be done manually and you can find the definit
 <h2 id="privacy-statistics">Privacy statistics</h2>
 <p>We have dashboards that allow to have detailed statistics on the choices your users are making.
 Depending on your app privacy configuration you might have to call some additional functions.</p>
-<ul>
-<li>Custom « banner/popup » -&gt; our privacy center</li>
-<li>
-<p>Custom « banner/popup » -&gt; Custom privacy center</p>
-</li>
-<li>
-<p>Directly to our privacy center</p>
-</li>
-<li>Custom privacy center</li>
-</ul>
+<pre><code>- Custom « banner/popup » -&gt; our privacy center
+- Custom « banner/popup » -&gt; Custom privacy center
+- Directly to our privacy center
+- Custom privacy center
+</code></pre>
+<p>Whenever saveConsent* is called you will need to provide the list of purposes and vendors that have been consented to.</p>
+<p>Also please note that you will need to call statViewBanner when you display your custom banner.</p>
 <p><img alt="alt tag" src="../res/TCPC_customBanner.jpeg" />
 <img alt="alt tag" src="../res/TCPC_PC.jpeg" />
 <img alt="alt tag" src="../res/CustomBanner.jpeg" />
@@ -390,6 +387,6 @@ Depending on your app privacy configuration you might have to call some addition
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 06/05/2021 16:45:26</p>
+<p>This documentation was generated on 06/05/2021 17:01:10</p>
 </body>
 </html>
