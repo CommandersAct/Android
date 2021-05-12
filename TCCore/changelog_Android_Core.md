@@ -6,6 +6,9 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.6.1 : 05/12 2021*
+	+ functions to manipulate the operation queue's state from the SDK.
+
 *4.6.0 : 04/12 2021*
 
 	- /!\ Removed the automatic collection of Google Advertising ID to be RGPD compliant. If you need it, you'll need to collect it and add it to the datalayer.
