@@ -1,6 +1,11 @@
 Changelog Android
 =================
 
+*4.6.0 : 05/18 2021*
+
+	/!\ Requires TCPrivacy 4.8.0+
+	~ Refactored the project namespace to be able to push it to Maven Central.
+
 *4.5.4 : 04/12 2021*
 
     ~ Forcing uppercase language name for consent string standards.

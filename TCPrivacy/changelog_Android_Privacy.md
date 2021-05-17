@@ -1,6 +1,11 @@
 Changelog Android
 =================
 
+*4.8.0 : 05/18 2021*
+
+	/!\ Requires TCIAB 4.6.0+
+	~ Refactored TCIAB's namespace to be able to push it to Maven Central.
+
 *4.7.4 : 05/06 2021*
 
 	+ New statistics functions. Please check TCPrivacy documentation on github.
