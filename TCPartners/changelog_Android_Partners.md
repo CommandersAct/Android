@@ -1,9 +1,13 @@
 Changelog Android
 =================
 
+*4.5.0 : 05/20/2021*
+
+	+ Added a way to manually provide the key used by Adobe to provide segments.
+
 *4.4.5 : 04/12/2021*
 
-	~ Removed GAID collection
+	~ Removed GAID collection.
 
 *4.4.4 : 10/21 2019*
 

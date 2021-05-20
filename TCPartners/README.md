@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="partners-implementation-guide">Partners' Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>17/05/2021</em><br />
-Release version : <em>4.4.5</em></p>
+<p>Last update : <em>20/05/2021</em><br />
+Release version : <em>4.5.0</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -65,6 +65,7 @@ public void activateOnAllHitsButKeyValue(String key, String value)
 <p>The point of this connector is the send information to Adobe Audience Manager and get back the segments corresponding to the app user.</p>
 <pre><code>TCPartners_AdobeAudienceManager.getInstance().setContext(context);
 TCPartners_AdobeAudienceManager.getInstance().initWith(81811, 20201);
+TCPartners_AdobeAudienceManager.getInstance().setUniqueIdentifier("3385ACC1-D465-2D13-A4E3-9A5A865A232C")
 </code></pre>
 <p>If you want to use your custom configuration to use offline segments ID, please also add this line.</p>
 <pre><code>TCPartners_AdobeAudienceManager.getInstance().addOfflineConfiguration(3311, 1);
@@ -108,6 +109,6 @@ public void onSegmentReceived(Map&lt;String, String&gt; segments)
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 17/05/2021 16:07:35</p>
+<p>This documentation was generated on 20/05/2021 15:59:23</p>
 </body>
 </html>
