@@ -1,6 +1,10 @@
 Changelog Android
 =================
 
+*4.8.1 : 06/18 2021*
+
+    ~ Fixing function called on "save" button which would only add/remove legitimate interest for purpose 1 instead of only adding/removing consent for purpose 1.
+
 *4.8.0 : 05/18 2021*
 
 	/!\ Requires TCIAB 4.6.0+

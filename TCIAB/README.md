@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="tciabs-implementation-guide">TCIAB's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>20/05/2021</em><br />
+<p>Last update : <em>18/06/2021</em><br />
 Release version : <em>4.6.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -159,6 +159,7 @@ If you're looking for a way to prove consent or reset saved information, you'll 
 <p>Currently we have a callback function that lets you get back the categories and setup your other partners accordingly.
 This is the function where you would tell your ad partner (not included in IAB) "the user don't wan't to receive personalized ads" for example.</p>
 <p>/!\ Don't forget to register to the callbacks <em>before</em> the initialisation of the Privacy Module since the module will check consent at init and use the callback at this step.</p>
+<p>Implement TCPrivacyCallbacks to get access to those callbacks:</p>
 <pre><code>void consentUpdated(Map&lt;String, String&gt; categories);
 </code></pre>
 <p>Called when either:</p>
@@ -202,6 +203,6 @@ startActivity(PCM);
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 20/05/2021 15:59:23</p>
+<p>This documentation was generated on 18/06/2021 14:14:51</p>
 </body>
 </html>
