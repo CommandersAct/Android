@@ -1,6 +1,12 @@
 Changelog Android
 =================
 
+*4.9.0 : 20/08 2021*
+
+	+ Privacy Center unified for IAB and Non-IAB users.
+    + We can now build Google AC-String.
+    ~ Fixing accept all which always sent stats from "privacy center"
+  
 *4.8.1 : 06/18 2021*
 
     ~ Fixing function called on "save" button which would only add/remove legitimate interest for purpose 1 instead of only adding/removing consent for purpose 1.
@@ -37,7 +43,7 @@ Changelog Android
     ~ Fixing purposes validating vendors but not the one who have it in legitimate interest.
 
 *4.6.13 : 01/29 2021*
-	
+
 	+ [IAB] Adding support for IAB 2.1. Please read the documentation as you will need to update your privacy.json
 
 *4.6.12 : 01/14 2021*
@@ -154,7 +160,7 @@ Changelog Android
     ~ /!\ Function to initialize Privacy have changed
     ~ /!\ Update Core module alongside this module.
     ~ Refactoring on file configurations
-    + We now have a class to manage distant configuration and privacy versions are taken from the configuration. 
+    + We now have a class to manage distant configuration and privacy versions are taken from the configuration.
 
 
 *4.3.10 : 08/02 2019*

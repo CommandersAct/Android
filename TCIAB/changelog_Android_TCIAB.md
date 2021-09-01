@@ -1,6 +1,15 @@
 Changelog Android
 =================
 
+*4.7.0 : 09/01 2021*
+
+    /!\ Requires TCPrivacy 4.9.0+
+    + We can now build Google AC-String.
+
+*4.6.1 : 07/19 2021*
+
+    ~ Fixing publisher TC Builder so that it will be possible to work with custom categories later on.
+
 *4.6.0 : 05/18 2021*
 
 	/!\ Requires TCPrivacy 4.8.0+
@@ -40,7 +49,7 @@ Changelog Android
 
 	+ Added several new keys to the user defaults.
 	+ IABConsent_SubjectToGDPR which defaults to "1"
-	+ IABConsent_ParsedVendorConsents String of “0”s and “1”s, where the character at position N indicates the consent status to vendorID N as defined in the Global Vendor List. 
+	+ IABConsent_ParsedVendorConsents String of “0”s and “1”s, where the character at position N indicates the consent status to vendorID N as defined in the Global Vendor List.
 	+ IABConsent_ParsedPurposeConsents String of “0”s and “1”s, where the character at position N indicates the consent status to purposeID N as defined in the Global Vendor List.
 
 *4.3.0 : 05/15 2019*

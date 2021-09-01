@@ -6,7 +6,12 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.6.2 : 09/01 2021*
+
+	~ [Privacy] Fixing configuration parsing which would lead to a privacy version at 0 in some rare cases.
+
 *4.6.1 : 05/12 2021*
+
 	+ functions to manipulate the operation queue's state from the SDK.
 
 *4.6.0 : 04/12 2021*
