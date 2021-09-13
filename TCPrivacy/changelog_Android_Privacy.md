@@ -1,6 +1,10 @@
 Changelog Android
 =================
 
+*4.9.1 : 13/09 2021*
+
+	+ New function to easily get the ID used to save privacy.
+
 *4.9.0 : 20/08 2021*
 
 	+ Privacy Center unified for IAB and Non-IAB users.

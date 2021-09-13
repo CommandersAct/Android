@@ -3,8 +3,8 @@
 <body>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="tciabs-implementation-guide">TCIAB's Implementation Guide</h1>
-<p><strong>${platform}</strong></p>
-<p>Last update : <em>01/09/2021</em><br />
+<p><strong>Android</strong></p>
+<p>Last update : <em>13/09/2021</em><br />
 Release version : <em>4.7.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -75,6 +75,9 @@ Keeping the same name.</p>
 <p>If you are using more than one language in your application you will need to also have a copy of those files. Those files are created and supported by IAB.
 For example, our IAB demo is using purposes-fr.json.</p>
 <p>If you need translation files, download them from https://register.consensu.org/translation under "List of translations for purpose descriptions v2.0". Also keeping the same file name.</p>
+<p>Call this line right after the initialisation of the TCPrivacy module:</p>
+<pre><code>TCPrivacy.getInstance().setLanguage("fr");
+</code></pre>
 <h3 id="privacyjson">privacy.json</h3>
 <p>This file declares information used to save the privacy in our dashboards as well as texts present in the interface that are not declared officially by IAB.</p>
 <p>/!\ This file should be provided by one of our consultant.</p>
@@ -83,12 +86,16 @@ For example, our IAB demo is using purposes-fr.json.</p>
 <p>/!\ This file is a bit more specific and not mandatory.</p>
 <p>It is here to represent the restrictions a publisher (your company) is applying its partners.</p>
 <p>If you have a file, you need to put it with the other json configurations and add a small line later in the code.</p>
+<p>Call this line right after the initialisation of the TCPrivacy module:</p>
+<pre><code>TCPrivacy.getInstance().useCustomPublisherRestrictions();
+</code></pre>
 <p>/!\ This should normally decided by your project manager and the file should be created by your Commanders Act contact.</p>
 <h3 id="google-atp-listjson">google-atp-list.json</h3>
 <p>/!\ This file is a bit more specific and not mandatory.</p>
 <p>Only use this file if you are using Google AC-String.</p>
 <p>If you have a file, you need to put it with the other json configurations.
-To init it, you will have to call the following ling BEFORE the initilisation of the Privacy module:</p>
+To init it, you will have to call the following ling BEFORE the initilisation of the Privacy module:
+TCPrivacy.getInstance().useAcString(true);</p>
 <p>If you are using AC-String please verify that you have a list of google vendors inside your privacy.json as well.</p>
 <p>This file can only be provided by your consultant and will be updated by the SDK automatically.</p>
 <h2 id="filtering-vendors">Filtering vendors</h2>
@@ -112,6 +119,17 @@ Starting September 2020 the CNIL asks that if you have a "Accept all" button, yo
 </code></pre>
 <p>You can add those lines and select the needing ones. For example, if you don't want a refuse all button, just remove "RefuseAll".</p>
 <h2 id="initialisation">Initialisation</h2>
+<pre><code>// If you need to use callbacks.
+TCPrivacy.getInstance().registerCallback(this);
+
+// a. This is for the stand-alone version
+TCPrivacy.getInstance().setSiteIDPrivacyIDAppContext(TC_SITE_ID, TC_PRIVACY_ID, context);
+// b. Instead use this line if you're using the SDK at the same time.
+TCPrivacy.getInstance().setSiteIDPrivacyIDAppContextTCInstance(TC_SITE_ID, TC_CONTAINER_ID, TC_PRIVACY_ID, context, TC);
+
+// Use this if you need to use a specific language
+TCPrivacy.getInstance().setLanguage("fr");
+</code></pre>
 <h2 id="with-the-sdk">With the SDK</h2>
 <p>You can use classic Tag Management with IAB if needed. Doing this is really simple as all saved information used for IAB configuration will be forwarded to each server-side call.
 This mean that you can use any IAB purpose as a category and create rules in your container accordingly.</p>
@@ -119,6 +137,15 @@ This mean that you can use any IAB purpose as a category and create rules in you
 <p>The saving of the consent on our servers is done automatically.</p>
 <p>But since we are saving the consent in our servers, we need to identify the user one way or another. By default the variable used to identify the user consenting is #TC_SDK_ID#, but you can change it to anything you'd like.</p>
 <p>If you want to use an ID already inside the SDK:</p>
+<pre><code>TCPrivacy.getInstance().setUserID(TCCoreConstants.kTCPredefinedVariable_NormalizedID);
+</code></pre>
+<p>If you want to use an ID from your data layer, please first add it to the permanent store:</p>
+<pre><code>TC.addPermanentData("MY_ID", "12345");
+TCPrivacy.getInstance().setUserID("MY_ID");
+</code></pre>
+<p>and if you simply want to simply pass the information:</p>
+<pre><code>TCPrivacy.getInstance().setUserID("123456765432");
+</code></pre>
 <p>This can be used to save the display of the consent, and giving the consent.</p>
 <p>This ID is very important because it will be the basic information used to get back the consent when you need a proof.</p>
 <h3 id="using-user-id">Using user ID</h3>
@@ -135,6 +162,28 @@ If you're looking for a way to prove consent or reset saved information, you'll 
 <p>Currently we have a callback function that lets you get back the categories and setup your other partners accordingly.
 This is the function where you would tell your ad partner (not included in IAB) "the user don't wan't to receive personalized ads" for example.</p>
 <p>/!\ Don't forget to register to the callbacks <em>before</em> the initialisation of the Privacy Module since the module will check consent at init and use the callback at this step.</p>
+<p>Implement TCPrivacyCallbacks to get access to those callbacks:</p>
+<pre><code>void consentUpdated(Map&lt;String, String&gt; categories);
+</code></pre>
+<p>Called when either:</p>
+<ul>
+<li>We load the saved consent</li>
+<li>consent is given inside the privacy center</li>
+<li>you manually give us the user selected consents</li>
+</ul>
+<p>We have a Map which is the same as the one given to our SDK with keys PRIVACY_CAT_n and PRIVACY_VEN_n and value "0" or "1".
+In the case nothing was consented to, you might also have an empty map (but not null).</p>
+<pre><code>void consentOutdated();
+</code></pre>
+<p>This is called after 13 months without change in the user consent. This can allow you to force displaying the consent the same way you would on first launch.</p>
+<pre><code>void consentCategoryChanged();
+</code></pre>
+<p>When you make a change in the JSON, there is nothing special to do.
+But when this change is adding or removing a category, or changing an ID, we should re-display the Privacy Center.</p>
+<pre><code>void significantChangesInPrivacy();
+</code></pre>
+<p>This one is slightly different from the last one, it was created for IAB and will not be sent automatically. It is conditionned by the field "significantChanges" in the privacy.json so that it will only launch when you need it to.</p>
+<p>Please also note that the events "starting the SDK" and "stopping the SDK" have a notification sent with them, you can listen to them if needed: TCCoreConstants.kTCNotification_StartingTheSDK and TCCoreConstants.kTCNotification_StoppingTheSDK.</p>
 <h2 id="generating-publisher-tc-in-consent-string">Generating publisher TC in consent String</h2>
 <p>By default, as some clients asked, the publisher TC part of the consent string is not generated.
 But you a simple boolean in TCPrivacy/TCMobilePrivacy which is named generatePublisherTC.</p>
@@ -142,6 +191,13 @@ But you a simple boolean in TCPrivacy/TCMobilePrivacy which is named generatePub
 <p>By default, the screen loaded is what we call the first layer screen (or pop-up screen). Then from this screen you'll be able to go to the purpose screen and from the purpose screen to the vendor screen. Both of which are called the second layer.</p>
 <p>if you want to have your own first layer, you'll want to be able to open from this page either of our second layer pages.</p>
 <p>To do this, we created other ways to open the privacy center as follow:</p>
+<pre><code>Intent PCM = new Intent(getContext(), com.tagcommander.lib.privacy.TCPrivacyCenter.class);
+PCM.putExtra(com.tagcommander.lib.privacy.TCPrivacyConstants.kTCPC_START_SCREEN, com.tagcommander.lib.privacy.TCPrivacyConstants.kTCStartWithPurposeScreen);
+startActivity(PCM);
+</code></pre>
+<p>or for the vendor screen:</p>
+<pre><code>PCM.putExtra(com.tagcommander.lib.privacy.TCPrivacyConstants.kTCPC_START_SCREEN, com.tagcommander.lib.privacy.TCPrivacyConstants.kTCStartWithVendorScreen);
+</code></pre>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
@@ -150,6 +206,6 @@ But you a simple boolean in TCPrivacy/TCMobilePrivacy which is named generatePub
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 01/09/2021 14:34:37</p>
+<p>This documentation was generated on 13/09/2021 15:16:58</p>
 </body>
 </html>

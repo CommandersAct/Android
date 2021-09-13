@@ -3,8 +3,8 @@
 <body>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="partners-implementation-guide">Partners' Implementation Guide</h1>
-<p><strong>${platform}</strong></p>
-<p>Last update : <em>01/09/2021</em><br />
+<p><strong>Android</strong></p>
+<p>Last update : <em>13/09/2021</em><br />
 Release version : <em>4.5.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -28,9 +28,47 @@ Release version : <em>4.5.0</em></p>
 <p>TCPartners or TCMobilePartners is the class used as the super-type of all partners.</p>
 <p>A TCPartner is by default a partner that will listen to all hits you're passing to the SDK so he can work on them.
 You can change this activation by using on of the 3 following functions:</p>
+<pre><code>/**
+ * This function tells the partner to activate on all hits.
+ */
+public void activateOnAllHits();
+
+/**
+ * This function tells the partner to only treat hit when the specified key is in the datalayer.
+ * @param key the key to activate the treatment.
+ */
+public void activateOnKey(String key);
+
+/**
+ * This function tells the partner to only treat hit when the specified key/value pair is in the datalayer.
+ * @param key the specific key.
+ * @param value the specific value.
+ */
+public void activateOnKeyValue(String key, String value);
+
+/**
+ * This function tells the partner to only treat hit when the specified key is NOT in the datalayer.
+ * * @param key the key to prevent the activation.
+ */
+public void activateOnAllHitsButKey(String key)
+
+/**
+ * This function tells the partner to only treat hit when the specified key and value are NOT in the datalayer.
+ * @param key the specific key.
+ * @param value the specific value.
+ */
+public void activateOnAllHitsButKeyValue(String key, String value)
+</code></pre>
 <p>So think carefully about which activation method you want for your partners.</p>
 <h1 id="adobe-audience-manager-aam">Adobe Audience Manager (AAM)</h1>
 <p>The point of this connector is the send information to Adobe Audience Manager and get back the segments corresponding to the app user.</p>
+<pre><code>TCPartners_AdobeAudienceManager.getInstance().setContext(context);
+TCPartners_AdobeAudienceManager.getInstance().initWith(81811, 20201);
+TCPartners_AdobeAudienceManager.getInstance().setUniqueIdentifier("3385ACC1-D465-2D13-A4E3-9A5A865A232C")
+</code></pre>
+<p>If you want to use your custom configuration to use offline segments ID, please also add this line.</p>
+<pre><code>TCPartners_AdobeAudienceManager.getInstance().addOfflineConfiguration(3311, 1);
+</code></pre>
 <p>This connector only works if we have and IDFA or AAID.</p>
 <h2 id="hit">Hit</h2>
 <p>Since we're potentially sending information to several partners we need to differentiate the data for AAM.
@@ -50,6 +88,15 @@ We're basing ourselves on the datalayer and are taking all the keys prefixed "c_
 }
 </code></pre>
 <p>To initialize Freewheel:</p>
+<pre><code>TCPartners_Freewheel.getInstance().setSegmentDomain(".tf1.fr");
+TCPartners_Freewheel.getInstance().callback = this;
+</code></pre>
+<p>And to recover the segments:</p>
+<pre><code>public void onSegmentReceived(Map&lt;String, String&gt; segments)
+{
+    TCLogger.getInstance().logMessage("Segments:" + segments, Log.ERROR);
+}
+</code></pre>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
@@ -58,6 +105,6 @@ We're basing ourselves on the datalayer and are taking all the keys prefixed "c_
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 01/09/2021 14:34:37</p>
+<p>This documentation was generated on 13/09/2021 15:16:58</p>
 </body>
 </html>

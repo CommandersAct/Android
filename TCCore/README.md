@@ -3,9 +3,9 @@
 <body>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="core-guide">Core Guide</h1>
-<p><strong>${platform}</strong></p>
-<p>Last update : <em>01/09/2021</em><br />
-Release version : <em>4.6.2</em></p>
+<p><strong>Android</strong></p>
+<p>Last update : <em>13/09/2021</em><br />
+Release version : <em>4.6.3</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -21,6 +21,11 @@ Release version : <em>4.6.2</em></p>
 <p>But even with that said, a part of our code is pretty useful in several of our modules, so we created a Core module to prevent code repetition and thus also bigger applications if you need several modules.</p>
 <h1 id="dependencies">Dependencies</h1>
 <p>The Core module is mandatory if you are using Commanders Act's mobile solution so we simply put the dependencies needed for the Core module directly in the documentations of the other modules.</p>
+<p>Core is building with the following dependencies :</p>
+<pre><code>implementation 'com.google.android.gms:play-services-base:15.0.1'
+implementation 'com.google.android.gms:play-services-ads:15.0.1'
+implementation 'com.android.support:appcompat-v7:27.1.1'
+</code></pre>
 <h1 id="support-and-contacts">Support and contacts</h1>
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <hr />
@@ -29,6 +34,6 @@ Release version : <em>4.6.2</em></p>
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 01/09/2021 14:34:37</p>
+<p>This documentation was generated on 13/09/2021 15:16:58</p>
 </body>
 </html>

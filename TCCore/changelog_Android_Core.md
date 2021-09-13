@@ -6,6 +6,10 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.6.3 : 09/12 2021*
+
+	~ Fixing network callbacks which were lost sometimes.
+
 *4.6.2 : 09/01 2021*
 
 	~ [Privacy] Fixing configuration parsing which would lead to a privacy version at 0 in some rare cases.
