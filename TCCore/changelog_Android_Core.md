@@ -6,6 +6,10 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.6.4 : 09/28 2021*
+
+	~ Hot fix for network callbacks which were badly unregistered.
+
 *4.6.3 : 09/12 2021*
 
 	~ Fixing network callbacks which were lost sometimes.
