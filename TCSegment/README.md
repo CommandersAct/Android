@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="segments-implementation-guide">Segment's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>28/09/2021</em><br />
+<p>Last update : <em>18/10/2021</em><br />
 Release version : <em>4.1.2</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -84,6 +84,6 @@ public void onReceive(Context context, Intent intent)
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 28/09/2021 15:55:04</p>
+<p>This documentation was generated on 18/10/2021 14:25:16</p>
 </body>
 </html>

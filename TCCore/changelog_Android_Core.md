@@ -6,6 +6,11 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+
+*4.6.5 : 10/18 2021*
+
+	~ fix for network receiver's crash on Android 11 and re-registering after a disable SDK in the same session.
+
 *4.6.4 : 09/28 2021*
 
 	~ Hot fix for network callbacks which were badly unregistered.
