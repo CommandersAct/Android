@@ -6,6 +6,9 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.6.6 : 11/10 2021*
+
+	~ fix for ConnectivityManager sometimes unable to register connection.
 
 *4.6.5 : 10/18 2021*
 
