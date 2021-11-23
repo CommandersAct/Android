@@ -1,6 +1,10 @@
 Changelog Android
 =================
 
+*4.7.1 : 11/23 2021*
+
+	~ Fix on resetSave for AC-String.
+
 *4.7.0 : 09/01 2021*
 
     /!\ Requires TCPrivacy 4.9.0+

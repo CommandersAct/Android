@@ -6,6 +6,7 @@ Changelog Android
 	+ You can now have mandatory categories in your privacy. Please check with your consultant and the online documentation.
 	~ Updated the full library for AndroidX
 	- Removing all LocalBroadcasts
+	~ Fix on resetSave for ACString
 
 *4.9.1 : 09/13 2021*
 

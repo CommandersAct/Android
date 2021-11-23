@@ -5,7 +5,7 @@
 <h1 id="tciabs-implementation-guide">TCIAB's Implementation Guide</h1>
 <p><strong>Android</strong></p>
 <p>Last update : <em>23/11/2021</em><br />
-Release version : <em>4.7.0</em></p>
+Release version : <em>4.7.1</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -206,6 +206,6 @@ startActivity(PCM);
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 23/11/2021 10:59:03</p>
+<p>This documentation was generated on 23/11/2021 11:23:20</p>
 </body>
 </html>
