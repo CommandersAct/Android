@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="tciabs-implementation-guide">TCIAB's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>10/11/2021</em><br />
+<p>Last update : <em>23/11/2021</em><br />
 Release version : <em>4.7.0</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -183,7 +183,7 @@ But when this change is adding or removing a category, or changing an ID, we sho
 <pre><code>void significantChangesInPrivacy();
 </code></pre>
 <p>This one is slightly different from the last one, it was created for IAB and will not be sent automatically. It is conditionned by the field "significantChanges" in the privacy.json so that it will only launch when you need it to.</p>
-<p>Please also note that the events "starting the SDK" and "stopping the SDK" have a notification sent with them, you can listen to them if needed: TCCoreConstants.kTCNotification_StartingTheSDK and TCCoreConstants.kTCNotification_StoppingTheSDK.</p>
+<p>Please also note that you can listen to starting and stopping the SDK events, you'll need to register your Observer that implements 'TCEventManager.TCLifecycleListener' interface via 'TCEventManager.registerLifecycleListener()' method.</p>
 <h2 id="generating-publisher-tc-in-consent-string">Generating publisher TC in consent String</h2>
 <p>By default, as some clients asked, the publisher TC part of the consent string is not generated.
 But you a simple boolean in TCPrivacy/TCMobilePrivacy which is named generatePublisherTC.</p>
@@ -206,6 +206,6 @@ startActivity(PCM);
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 10/11/2021 16:23:28</p>
+<p>This documentation was generated on 23/11/2021 10:57:44</p>
 </body>
 </html>

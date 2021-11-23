@@ -6,6 +6,11 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.2.0 : 11/23 2021*
+
+	~ Updated the full library for AndroidX
+	- Removing all LocalBroadcasts
+
 *4.1.2 : 04/12/2021*
 
 	~ Removed GAID collection

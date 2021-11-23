@@ -1,16 +1,22 @@
 Changelog Android
 =================
 
-*4.9.1 : 13/09 2021*
+*4.10.0 : 11/23 2021*
+
+	+ You can now have mandatory categories in your privacy. Please check with your consultant and the online documentation.
+	~ Updated the full library for AndroidX
+	- Removing all LocalBroadcasts
+
+*4.9.1 : 09/13 2021*
 
 	+ New function to easily get the ID used to save privacy.
 
-*4.9.0 : 20/08 2021*
+*4.9.0 : 08/20 2021*
 
 	+ Privacy Center unified for IAB and Non-IAB users.
     + We can now build Google AC-String.
     ~ Fixing accept all which always sent stats from "privacy center"
-  
+
 *4.8.1 : 06/18 2021*
 
     ~ Fixing function called on "save" button which would only add/remove legitimate interest for purpose 1 instead of only adding/removing consent for purpose 1.

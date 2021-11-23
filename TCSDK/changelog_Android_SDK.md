@@ -6,6 +6,12 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.6.0 : 11/23 2021*
+
+	~ Updated the full library for AndroidX
+	- Removing all LocalBroadcasts
+
+
 *4.5.1 : 05/17 2021*
 	/!\ Requires TCCore 4.6.1
 	+ new way to change the SDK default beheviour depending on the privacy you are using. Please check the 'Privacy' part in the SDK's README.

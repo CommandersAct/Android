@@ -5,8 +5,8 @@
 <p><img alt="alt tag" src="../res/Tag_Commander.jpg" /></p>
 <h1 id="sdks-implementation-guide">SDK's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>10/11/2021</em><br />
-Release version : <em>4.5.1</em></p>
+<p>Last update : <em>23/11/2021</em><br />
+Release version : <em>4.6.0</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -204,6 +204,10 @@ For now we have 3 behaviours:</p>
 <p>To initialise the SDK with another behaviour, please call the following function:</p>
 <pre><code>TC = new TagCommander(TC_SITE_ID, TC_CONTAINER_ID, context, ETCPrivacyBehaviour.PB_DISABLED_BY_DEFAULT);
 </code></pre>
+<p>You can set the behaviour of the SDK using ETCPrivacyBehaviour enum wich holds three values :</p>
+<p><strong>PB_DEFAULT_BEHAVIOUR</strong> : Use this value for normal SDK behaviour, the sdk will wait for consent to be given and only then react according to that.</p>
+<p><strong>PB_DISABLED_BY_DEFAULT</strong> : Use this value to if you want the sdk storing the hits untill a consent is given to fire them.</p>
+<p><strong>PB_ALWAYS_ENABLED</strong> : Use this to force sending hits without consent if your solution doesn't require that.</p>
 <h2 id="product-tags">Product tags</h2>
 <p>There are some tags that need to be passed a list of dictionaries, usually representing products. By passing complex information, we are able to create and send complex hits or many hits at the same time.</p>
 <p>Tags that needs to be passed a list of dictionaries are easy to spot in the configuration. They have appended to the name of the dynamic variable the name of the key that is retrieved from the dictionary.</p>
@@ -435,6 +439,6 @@ What needs to be changed is the container in your TagCommander interface, please
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 10/11/2021 16:23:28</p>
+<p>This documentation was generated on 23/11/2021 10:57:44</p>
 </body>
 </html>

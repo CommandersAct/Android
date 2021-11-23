@@ -1,6 +1,11 @@
 Changelog Android
 =================
 
+*4.6.0 : 11/23 2021*
+
+	~ Updated the full library for AndroidX
+	- Removing all LocalBroadcasts
+
 *4.5.0 : 05/20/2021*
 
 	+ Added a way to manually provide the key used by Adobe to provide segments.

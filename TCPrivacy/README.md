@@ -4,8 +4,8 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>10/11/2021</em><br />
-Release version : <em>4.9.1</em></p>
+<p>Last update : <em>23/11/2021</em><br />
+Release version : <em>4.10.0</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -31,13 +31,10 @@ Release version : <em>4.9.1</em></p>
 <li><a href="#displaying-chosen-id">Displaying chosen ID</a></li>
 </ul>
 </li>
-<li><a href="#displaying-consent">Displaying consent</a><ul>
-<li><a href="#global-consent">Global consent</a></li>
-</ul>
-</li>
+<li><a href="#displaying-consent">Displaying consent</a></li>
 <li><a href="#reacting-to-consent">Reacting to consent</a></li>
 <li><a href="#forwarding-consent-to-webviews">Forwarding consent to webViews</a></li>
-<li><a href="#changing-consent-versiob">Changing consent versiob</a></li>
+<li><a href="#changing-consent-version">Changing consent version</a></li>
 <li><a href="#consent-internal-api">Consent internal API</a></li>
 <li><a href="#privacy-center">Privacy Center</a><ul>
 <li><a href="#change-the-default-state-of-the-switch-button-to-disabled">Change the default state of the switch button to disabled:</a></li>
@@ -123,9 +120,9 @@ consent.put("PRIVACY_CAT_1", "1");
 consent.put("PRIVACY_CAT_2", "0");
 consent.put("PRIVACY_CAT_3", "1");
 consent.put("PRIVACY_VEN_61", "1");
-TCPrivacy.getInstance().saveConsent(consent);
+TCPrivacy.getInstance().saveConsentFromConsentSourceWithPrivacyAction(consent, PrivacyCenter, Save);
 </code></pre>
-<p>Please prefix your category IDs with "PRIVACY_CAT_" and your vendor IDs with "PRIVACY_VEN_. 1 mean accepting this category or vendor, 0 is refusing.</p>
+<p>Please prefix your category IDs with "PRIVACY_CAT_" and your vendor IDs with "PRIVACY_VEN_. 1 means accepting this category or vendor, 2 is for mandatory vendors or categorues, 0 is refusing.</p>
 <p>If you're using the SDK, this will propagate the information to the SDK and manage its state.</p>
 <h3 id="acceptall-refuseall">AcceptAll / RefuseAll</h3>
 <p>/!\ Those methods only work if you are using our interface and thus have a privacy.json in your project (and maybe IAB's JSON as well).</p>
@@ -163,12 +160,6 @@ TCPrivacy.getInstance().setUserID("MY_ID");
 This allow you to prove that a user has indeed been shown the consent screen even if he somehow left without accepting/refusing to give his consent.</p>
 <p>In some cases, client also use this to infer user consent since he continued using the application after he was shown the consent screen.
 We don't recommend this behaviour, please discuss it with your setup team first.</p>
-<p>Either way it's interesting to be able to log the fact that the consent screen has been viewed. If you're not using the Privacy Center, please call:</p>
-<pre><code>TCPrivacy.getInstance().viewConsent();
-</code></pre>
-<h3 id="global-consent">Global consent</h3>
-<p>We integrated an On/Off switch so that the user can consent to all categories at the same time.
-It's not mandatory yet, but recommended.</p>
 <h2 id="reacting-to-consent">Reacting to consent</h2>
 <p>Some of the event happening in the SDK have callbacks associated with them in the case you need to do specific actions at this specific moment.</p>
 <p>Currently we have a callback function that lets you get back the categories and setup your other partners accordingly.
@@ -195,93 +186,125 @@ But when this change is adding or removing a category, or changing an ID, we sho
 <pre><code>void significantChangesInPrivacy();
 </code></pre>
 <p>This one is slightly different from the last one, it was created for IAB and will not be sent automatically. It is conditionned by the field "significantChanges" in the privacy.json so that it will only launch when you need it to.</p>
-<p>Please also note that the events "starting the SDK" and "stopping the SDK" have a notification sent with them, you can listen to them if needed: TCCoreConstants.kTCNotification_StartingTheSDK and TCCoreConstants.kTCNotification_StoppingTheSDK.</p>
+<p>Please also note that you can listen to starting and stopping the SDK events, you'll need to register your Observer that implements 'TCEventManager.TCLifecycleListener' interface via 'TCEventManager.registerLifecycleListener()' method.</p>
 <h2 id="forwarding-consent-to-webviews">Forwarding consent to webViews</h2>
 <p>Some clients need to have the consent forwarded in their webViews to manage a web container inside it.
 We created a function to get the privacy as a JSON string so you can save it inside the webView's local storage.
 /!\ This function only help saving it to the local storage by giving the required format, you will still need to have JS code in the web container to use it. Please ask your consultant for this part.</p>
 <pre><code>public String getConsentAsJson()
 </code></pre>
-<h2 id="changing-consent-versiob">Changing consent versiob</h2>
-<p>If the case you need to manually change the consent duration (if you're using your own privacy center for example), you can use the following:</p>
+<h2 id="changing-consent-version">Changing consent version</h2>
+<p>If the case you need to manually change the consent version (if you're using your own privacy center for example), you can use the following:</p>
 <pre><code>TCPrivacy.getInstance().consentVersion = "132";
 </code></pre>
 <h2 id="consent-internal-api">Consent internal API</h2>
 <p>We created several methods to check given consent. They are simple, but make it easier to work with consent information at any given time.
 You'll find those in the class TCPrivacyAPI:</p>
-<p>/*<em>
-   * Checks if we should display privacy center for any reason.
-   * @param appContext the application context.
-   * @return True or False.
-   </em>/
-  public static boolean shouldDisplayPrivacyCenter(Context context)</p>
-<p>/*<em>
-   * Checks if consent has already been given by checking if consent information is saved.
-   * @param appContext the application context.
-   * @return true if the consent was already given, false otherwise.
-   </em>/
-  public static boolean isConsentAlreadyGiven(Context appContext);</p>
-<p>/*<em>
-   * Return the epochformatted timestamp of the last time the consent was saved.
-   * @param appContext the application context.
-   * @return epochformatted timestamp or 0.
-   </em>/
-  public static Long getLastTimeConsentWasSaved(Context appContext);</p>
-<p>/*<em>
-   * Check if a Category has been accepted.
-   * @param ID the category ID.
-   * @param appContext the application context.
-   * @return true or false.
-   </em>/
-  public static boolean isCategoryAccepted(int ID, Context appContext);</p>
-<p>/*<em>
-   * Check if a vendor has been accepted.
-   * @param ID the vendor ID.
-   * @param appContext the application context.
-   * @return true or false.
-   </em>/
-  public static boolean isVendorAccepted(int ID, Context appContext);</p>
-<p>/*<em>
-   * Get the list of all accepted categories.
-   * @param appContext the application context.
-   * @return a List of PRIVACY_CAT_IDs.
-   </em>/
-  public static List<String> getAcceptedCategories(Context appContext);</p>
-<p>/*<em>
-   * Get the list of all accepted vendors.
-   * @param appContext the application context.
-   * @return a List of PRIVACY_VEN_IDs.
-   </em>/
-  public static List<String> getAcceptedVendors(Context appContext);</p>
-<p>/*<em>
-   * Get the list of everything that was accepted.
-   * @param appContext the application context.
-   * @return a List of PRIVACY_VEN_IDs and PRIVACY_CAT_IDs.
-   </em>/
-  public static List<String> getAllAcceptedConsent(Context appContext);</p>
-<p>/*<em>
-   * Check if a purpose has been accepted.
-   * @param ID the purpose ID.
-   * @param appContext the application context.
-   * @return true or false.
-   </em>/
-  public static boolean isIABPurposeAccepted(int ID, Context appContext);</p>
-<p>/*<em>
-   * Check if a vendor has been accepted.
-   * @param ID the vendor ID.
-   * @param appContext the application context.
-   * @return true or false.
-   </em>/
-  public static boolean isIABVendorAccepted(int ID, Context appContext);</p>
-<p>/*<em>
-   * Check if a special feature has been accepted.
-   * @param ID the vendor ID.
-   * @param appContext the application context.
-   * @return true or false.
-   </em>/
-  public static boolean isIABSpecialFeatureAccepted(int ID, Context appContext);</p>
+<pre><code>/**
+* Checks if we should display privacy center for any reason.
+* @param appContext the application context.
+* @return True or False.
+*/
+public static boolean shouldDisplayPrivacyCenter(Context context)
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+* Checks if consent has already been given by checking if consent information is saved.
+* @param appContext the application context.
+* @return true if the consent was already given, false otherwise.
+*/
+public static boolean isConsentAlreadyGiven(Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+* Return the epochformatted timestamp of the last time the consent was saved.
+* @param appContext the application context.
+* @return epochformatted timestamp or 0.
+*/
+public static Long getLastTimeConsentWasSaved(Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+* Check if a Category has been accepted.
+* @param ID the category ID.
+* @param appContext the application context.
+* @return true or false.
+*/
+public static boolean isCategoryAccepted(int ID, Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+* Check if a vendor has been accepted.
+* @param ID the vendor ID.
+* @param appContext the application context.
+* @return true or false.
+*/
+public static boolean isVendorAccepted(int ID, Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+* Get the list of all accepted categories.
+* @param appContext the application context.
+* @return a List of PRIVACY_CAT_IDs.
+*/
+public static List&lt;String&gt; getAcceptedCategories(Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+* Get the list of all accepted vendors.
+* @param appContext the application context.
+* @return a List of PRIVACY_VEN_IDs.
+*/
+public static List&lt;String&gt; getAcceptedVendors(Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+* Get the list of all google vendors accepted.
+* @param appContext the application context.
+* @return a List of acm_ID.
+*/
+public static List&lt;String&gt; getAcceptedGoogleVendors(Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+* Get the list of everything that was accepted.
+* @param appContext the application context.
+* @return a List of PRIVACY_VEN_IDs and PRIVACY_CAT_IDs.
+*/
+public static List&lt;String&gt; getAllAcceptedConsent(Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+* Check if a purpose has been accepted.
+* @param ID the purpose ID.
+* @param appContext the application context.
+* @return true or false.
+*/
+public static boolean isIABPurposeAccepted(int ID, Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+* Check if a vendor has been accepted.
+* @param ID the vendor ID.
+* @param appContext the application context.
+* @return true or false.
+*/
+public static boolean isIABVendorAccepted(int ID, Context appContext);
+</code></pre>
+<p>&nbsp;</p>
+<pre><code>/**
+* Check if a special feature has been accepted.
+* @param ID the vendor ID.
+* @param appContext the application context.
+* @return true or false.
+*/
+public static boolean isIABSpecialFeatureAccepted(int ID, Context appContext);
+</code></pre>
+<p>&nbsp;</p>
 <h2 id="privacy-center">Privacy Center</h2>
 <p>The Privacy Center is represented by a JSON file that describes the interfaces that will be created by native code inside the application.</p>
+<p>For now this JSON has to be created and managed manually. And the SDK will check for updates of the file automatically.</p>
+<p>Your account should have a consultant that will provide you the corresponding JSON for your project.</p>
 <p>In the Android SDK we create an Activity which is an easy way to display a "page" without have to create a specific fragment space for it.
 Offline JSON has to be saved in the src/main/assets folder.</p>
 <p>To start the Privacy Center, you have to launch the corresponding activity.</p>
@@ -296,8 +319,6 @@ startActivity(PCM);
 <p>Going back without consenting will result in a user not consenting at all. This means that no privacy will be saved, no tag can be called and no consent-string will be created if you use IAB.</p>
 <pre><code>TCPrivacy.getInstance().deactivateBackButton = true;
 </code></pre>
-<p>For now this JSON has to be created and managed manually. And the SDK will check for updates of the file automatically.
-Your account should have a consultant that will provide you the corresponding JSON for your project.</p>
 <h2 id="privacy-statistics">Privacy statistics</h2>
 <p>We have dashboards that allow to have detailed statistics on the choices your users are making.
 Depending on your app privacy configuration you might have to call some additional functions.</p>
@@ -306,7 +327,9 @@ Depending on your app privacy configuration you might have to call some addition
 - Directly to our privacy center
 - Custom privacy center
 </code></pre>
-<p>Whenever saveConsent* is called you will need to provide the list of purposes and vendors that have been consented to.</p>
+<p>Whenever saveConsent* is called you will need to provide the full list of purposes and vendors that have been consented to and refused.</p>
+<p>We reworked saveConsent methods to only use one. If you are using the old functions they will still work for now.
+Otherwise please check the above section "Manually displayed consent" for how this method works.</p>
 <p>Also please note that you will need to call statViewBanner when you display your custom banner.</p>
 <p><img alt="alt tag" src="../res/TCPC_customBanner.jpeg" />
 <img alt="alt tag" src="../res/TCPC_PC.jpeg" />
@@ -323,6 +346,6 @@ Depending on your app privacy configuration you might have to call some addition
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 10/11/2021 16:23:28</p>
+<p>This documentation was generated on 23/11/2021 10:57:44</p>
 </body>
 </html>
