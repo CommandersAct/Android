@@ -7,6 +7,7 @@ Changelog Android
 	~ Updated the full library for AndroidX
 	- Removing all LocalBroadcasts
 	~ Fix on resetSave for ACString
+	~ Fixing missing acm vendors to our server-side tags.
 
 *4.9.1 : 09/13 2021*
 
