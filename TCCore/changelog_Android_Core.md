@@ -6,6 +6,11 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.7.1 : 03/14 2022*
+
+	~ fix for possible concurrent exception in TCEventManager
+	~ fixing lint error with checkClientTrusted/checkServerTrusted
+
 
 *4.7.0 : 11/23 2021*
 
