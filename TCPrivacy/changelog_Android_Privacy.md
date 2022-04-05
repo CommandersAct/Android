@@ -1,6 +1,9 @@
 Changelog Android
 =================
 
+*4.10.1 : 04/04 2021*
+    ~ [IAB] Modified consent string timestamp to comply with new TCF standards of reducing precision.
+
 *4.10.0 : 11/23 2021*
 
 	+ You can now have mandatory categories in your privacy. Please check with your consultant and the online documentation.
