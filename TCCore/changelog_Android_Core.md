@@ -15,7 +15,6 @@ Changelog Android
 	~ fix for possible concurrent exception in TCEventManager
 	~ fixing lint error with checkClientTrusted/checkServerTrusted
 
-
 *4.7.0 : 11/23 2021*
 
 	~ Updated the full library for AndroidX

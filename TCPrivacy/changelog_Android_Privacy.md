@@ -1,7 +1,13 @@
 Changelog Android
 =================
 
+*4.10.2 : 04/11/2022*
+
+    ~ fix purpose and vendor screen content text not appearing.
+    + Added a possibility to explicitle distinguish IAB vendors with a title in JSON at vendors.IABVendorsDef.
+
 *4.10.1 : 04/04 2021*
+
     ~ [IAB] Modified consent string timestamp to comply with new TCF standards of reducing precision.
 
 *4.10.0 : 11/23 2021*
