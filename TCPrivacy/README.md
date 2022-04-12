@@ -5,7 +5,7 @@
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>Android</strong></p>
 <p>Last update : <em>12/04/2022</em><br />
-Release version : <em>4.10.2</em></p>
+Release version : <em>4.10.3</em></p>
 <p><div id="end_first_page" /></p>
 
 <div class="toc">
@@ -346,6 +346,6 @@ Otherwise please check the above section "Manually displayed consent" for how th
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 12/04/2022 10:45:10</p>
+<p>This documentation was generated on 12/04/2022 15:28:20</p>
 </body>
 </html>

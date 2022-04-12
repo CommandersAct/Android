@@ -1,6 +1,10 @@
 Changelog Android
 =================
 
+*4.10.3 : 04/12 2022*
+
+    ~ [IAB] Fixing consent string timestamp precision bug.
+    
 *4.10.2 : 04/11/2022*
 
     ~ fix purpose and vendor screen content text not appearing.
