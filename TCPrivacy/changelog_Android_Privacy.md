@@ -1,6 +1,10 @@
 Changelog Android
 =================
 
+*4.10.4 : 04/26 2022*
+
+    ~ faster saving for categories and vendors consent into sharedPreferences.
+
 *4.10.3 : 04/12 2022*
 
     ~ [IAB] Fixing consent string timestamp precision bug.

@@ -6,9 +6,13 @@ Changelog Android
 
 [Previous changelist](../res/changelog_Android_3.md)
 
+*4.7.3 : 26/04 2022*
+
+    	~ adding functions for faster saving of HashMaps.  
+
 *4.7.2 : 05/04 2022*
 
-    ~ changed saving in the sharedPreferences to asynchronous.
+   	~ changed saving in the sharedPreferences to asynchronous.
 
 *4.7.1 : 03/14 2022*
 
