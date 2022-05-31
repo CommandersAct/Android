@@ -1,6 +1,10 @@
 Changelog Android
 =================
 
+*4.10.5 : 05/31/2022*
+
+	~ Fixing some stats where we would loose the click information for a consent status.
+
 *4.10.4 : 04/26 2022*
 
     ~ faster saving for categories and vendors consent into sharedPreferences.
