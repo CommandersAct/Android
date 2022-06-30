@@ -1,18 +1,23 @@
 Changelog Android
 =================
 
+*4.10.6 : 06/30/2022*
+
+    ~ Annoting getPrivacyUserID as Nullable. 
+
 *4.10.5 : 05/31/2022*
 
 	~ Fixing some stats where we would loose the click information for a consent status.
 
 *4.10.4 : 04/26 2022*
 
+    /!\ TCCore 4.7.3 or above is now required.
     ~ faster saving for categories and vendors consent into sharedPreferences.
 
 *4.10.3 : 04/12 2022*
 
     ~ [IAB] Fixing consent string timestamp precision bug.
-    
+
 *4.10.2 : 04/11/2022*
 
     ~ fix purpose and vendor screen content text not appearing.
