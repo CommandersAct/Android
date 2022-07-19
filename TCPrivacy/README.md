@@ -4,7 +4,7 @@
 <p><img alt="alt tag" src="../res/ca_logo.png" /></p>
 <h1 id="privacys-implementation-guide">Privacy's Implementation Guide</h1>
 <p><strong>Android</strong></p>
-<p>Last update : <em>30/06/2022</em><br />
+<p>Last update : <em>19/07/2022</em><br />
 Release version : <em>4.10.6</em></p>
 <p><div id="end_first_page" /></p>
 
@@ -38,7 +38,10 @@ Release version : <em>4.10.6</em></p>
 <li><a href="#consent-internal-api">Consent internal API</a></li>
 <li><a href="#privacy-center">Privacy Center</a><ul>
 <li><a href="#change-the-default-state-of-the-switch-button-to-disabled">Change the default state of the switch button to disabled:</a></li>
-<li><a href="#deactivate-the-back-button-to-force-the-consent">Deactivate the back button to force the consent:</a></li>
+<li><a href="#deactivate-the-back-button-to-force-the-consent">Deactivate the back button to force the consent:</a><ul>
+<li><a href="#testing-on-your-own-app">Testing on your own app</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#privacy-statistics">Privacy statistics</a></li>
@@ -319,6 +322,7 @@ startActivity(PCM);
 <p>Going back without consenting will result in a user not consenting at all. This means that no privacy will be saved, no tag can be called and no consent-string will be created if you use IAB.</p>
 <pre><code>TCPrivacy.getInstance().deactivateBackButton = true;
 </code></pre>
+<h4 id="testing-on-your-own-app">Testing on your own app</h4>
 <h2 id="privacy-statistics">Privacy statistics</h2>
 <p>We have dashboards that allow to have detailed statistics on the choices your users are making.
 Depending on your app privacy configuration you might have to call some additional functions.</p>
@@ -346,6 +350,6 @@ Otherwise please check the above section "Manually displayed consent" for how th
 <p>http://www.commandersact.com</p>
 <p>Commanders Act | 3/5 rue Saint Georges - 75009 PARIS - France</p>
 <hr />
-<p>This documentation was generated on 30/06/2022 14:44:42</p>
+<p>This documentation was generated on 19/07/2022 16:25:24</p>
 </body>
 </html>

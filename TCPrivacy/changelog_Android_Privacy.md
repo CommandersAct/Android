@@ -1,9 +1,9 @@
 Changelog Android
 =================
 
-*4.10.6 : 06/30/2022*
+*4.10.6 : 07/19/2022*
 
-    ~ Annoting getPrivacyUserID as Nullable. 
+    + [IAB] Partners disclosures are now shown on the vendor details.
 
 *4.10.5 : 05/31/2022*
 
@@ -11,8 +11,8 @@ Changelog Android
 
 *4.10.4 : 04/26 2022*
 
-    /!\ TCCore 4.7.3 or above is now required.
     ~ faster saving for categories and vendors consent into sharedPreferences.
+		/!\ TCCore 4.7.3 or above is now required.
 
 *4.10.3 : 04/12 2022*
 
