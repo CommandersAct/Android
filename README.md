@@ -1,6 +1,8 @@
 
 <html>
 <body>
+THIS REPOSITORY IS DEPRECATED<br>Please use our newer version here: https://github.com/CommandersAct/androidv5/
+<br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> 
 <p><img alt="alt tag" src="res/ca_logo.png" /></p>
 <h1 id="developers-implementation-guide">Developers' Implementation Guide</h1>
 <p><strong>Android</strong></p>
